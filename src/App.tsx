@@ -1,18 +1,41 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+// Pages
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Blog from "./pages/Blog";
+import Lectures from "./pages/Lectures";
+import Projects from "./pages/Projects";
+import Publications from "./pages/Publications";
+import Skills from "./pages/Skills";
+
+// Components
+import NavBar from "./components/Navbar";
+
+// Stylesheets
 import "./App.css";
+import "./fonts.css";
+import PageSelector from "./components/PageSelector";
 
 const App: React.FC = () => {
   return (
-    <Router>
-      <h1 className="text-3xl font-bold underline">Hallo!</h1>
-      <Routes>
-        <Route path="portfolio/" element={<Home />} />
-        <Route path="portfolio/about" element={<About />} />
-      </Routes>
-    </Router>
+    <div className="page-outer bg-zinc-50 h-screen w-screen" style={{ fontFamily: "Manrope" }}>
+      <div className="page-inner">
+        <NavBar />
+        <PageSelector />
+        <Router>
+          <Routes>
+            <Route path="portfolio/" element={<Home />} />
+            <Route path="portfolio/about" element={<About />} />
+            <Route path="portfolio/blog" element={<Blog />} />
+            <Route path="portfolio/lectures" element={<Lectures />} />
+            <Route path="portfolio/projects" element={<Projects />} />
+            <Route path="portfolio/publications" element={<Publications />} />
+            <Route path="portfolio/skills" element={<Skills />} />
+          </Routes>
+        </Router>
+      </div>
+    </div>
   );
 };
 
