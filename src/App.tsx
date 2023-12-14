@@ -11,16 +11,12 @@ import Skills from "./pages/Skills";
 
 // Components
 import NavBar from "./components/Navbar";
-
-// Stylesheets
-import "./App.css";
-import "./fonts.css";
 import PageSelector from "./components/PageSelector";
 
 const App: React.FC = () => {
   return (
-    <div className="page-outer bg-zinc-50 h-screen w-screen" style={{ fontFamily: "Manrope" }}>
-      <div className="page-inner">
+    <div className="page-outer" style={{ fontFamily: "Manrope" }}>
+      <div className="page-inner max-w-[800px] w-[100%] mx-auto p-4">
         <NavBar />
         <PageSelector />
         <Router>
