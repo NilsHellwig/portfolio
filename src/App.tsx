@@ -17,9 +17,9 @@ const App: React.FC = () => {
   return (
     <div className="page-outer" style={{ fontFamily: "Manrope" }}>
       <div className="page-inner max-w-[800px] w-[100%] mx-auto p-4">
-        <NavBar />
-        <PageSelector />
         <Router>
+          <NavBar />
+          <PageSelector />
           <Routes>
             <Route path="portfolio/" element={<Home />} />
             <Route path="portfolio/about" element={<About />} />

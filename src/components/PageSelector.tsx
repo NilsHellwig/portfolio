@@ -1,28 +1,37 @@
 import React from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const PageSelector: React.FC = () => {
+  const location = useLocation();
+  console.log(location);
+
+  const getTextColor = (path: string) => {
+    // Wenn der Pfad dem aktuellen Standort entspricht, gib eine dunklere Farbe zurück, sonst die Standardfarbe
+    return location.pathname === path ? "text-gray-600" : "text-gray-300 hover:text-gray-400 cursor-pointer";
+  };
+
   return (
     <div className="flex flex-row font-bold gap-3 text-sm mb-4">
-      <span className="">
-        <a href="/portfolio/">Home</a>
+      <span className={getTextColor("/portfolio")}>
+        <Link to="/portfolio">Home</Link>
       </span>
-      <span className="text-gray-300 hover:text-gray-400 cursor-pointer">
-        <a href="/portfolio/about">About</a>
+      <span className={getTextColor("/portfolio/about")}>
+        <Link to="/portfolio/about">About</Link>
       </span>
-      <span className="text-gray-300 hover:text-gray-400 cursor-pointer">
-        <a href="/portfolio/skills">Skills</a>
+      <span className={getTextColor("/portfolio/skills")}>
+        <Link to="/portfolio/skills">Skills</Link>
       </span>
-      <span className="text-gray-300 hover:text-gray-400 cursor-pointer">
-        <a href="/portfolio/projects">Projects</a>
+      <span className={getTextColor("/portfolio/projects")}>
+        <Link to="/portfolio/projects">Projects</Link>
       </span>
-      <span className="text-gray-300 hover:text-gray-400 cursor-pointer">
-        <a href="/portfolio/blog">Blog</a>
+      <span className={getTextColor("/portfolio/blog")}>
+        <Link to="/portfolio/blog">Blog</Link>
       </span>
-      <span className="text-gray-300 hover:text-gray-400 cursor-pointer">
-        <a href="/portfolio/publications">Publications</a>
+      <span className={getTextColor("/portfolio/publications")}>
+        <Link to="/portfolio/publications">Publications</Link>
       </span>
-      <span className="text-gray-300 hover:text-gray-400 cursor-pointer">
-        <a href="/portfolio/lectures">Lectures</a>
+      <span className={getTextColor("/portfolio/lectures")}>
+        <Link to="/portfolio/lectures">Lectures</Link>
       </span>
     </div>
   );
