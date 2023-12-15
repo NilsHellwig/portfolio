@@ -1,5 +1,6 @@
 import React from "react";
 import { Student, TwitterLogo, At, GithubLogo, LinkedinLogo } from "phosphor-react";
+import { Link } from "react-router-dom";
 
 const NavBar: React.FC = () => {
   const openLinkInNewTab = (url: string) => {
@@ -9,7 +10,9 @@ const NavBar: React.FC = () => {
 
   return (
     <div className="flex flex-row items-center mt-6 mb-8 justify-center flex-col gap-2 md:justify-between md:flex-row md:gap-0">
-      <h1 className="font-bold text-md hover:cursor-pointer">Nils Hellwig</h1>
+      <Link to="/portfolio">
+        <h1 className="font-bold text-md hover:cursor-pointer hover:text-gray-500 duration-300">Nils Hellwig</h1>
+      </Link>
       <div className="flex flex-row gap-3">
         <div className="p-1 hover:bg-gray-200 rounded-lg cursor-pointer duration-300" onClick={() => openLinkInNewTab("https://twitter.com/nchllwg")}>
           <TwitterLogo size={24} color="#1a1a1a" weight="regular" />
