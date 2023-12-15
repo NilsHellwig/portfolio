@@ -3,11 +3,10 @@ import { Link, useLocation } from "react-router-dom";
 
 const PageSelector: React.FC = () => {
   const location = useLocation();
-  console.log(location);
 
   const getTextColor = (path: string) => {
     // Wenn der Pfad dem aktuellen Standort entspricht, gib eine dunklere Farbe zurück, sonst die Standardfarbe
-    return location.pathname === path ? "text-gray-600" : "text-gray-300 hover:text-gray-400 cursor-pointer";
+    return location.pathname === path ? "text-gray-600" : "text-gray-300 hover:text-gray-400 cursor-pointer duration-300";
   };
 
   return (

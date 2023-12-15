@@ -20,15 +20,17 @@ const App: React.FC = () => {
         <Router>
           <NavBar />
           <PageSelector />
-          <Routes>
-            <Route path="portfolio/" element={<Home />} />
-            <Route path="portfolio/about" element={<About />} />
-            <Route path="portfolio/blog" element={<Blog />} />
-            <Route path="portfolio/lectures" element={<Lectures />} />
-            <Route path="portfolio/projects" element={<Projects />} />
-            <Route path="portfolio/publications" element={<Publications />} />
-            <Route path="portfolio/skills" element={<Skills />} />
-          </Routes>
+          <div className="mt-8">
+            <Routes>
+              <Route path="portfolio/" element={<Home />} />
+              <Route path="portfolio/about" element={<About />} />
+              <Route path="portfolio/blog" element={<Blog />} />
+              <Route path="portfolio/lectures" element={<Lectures />} />
+              <Route path="portfolio/projects" element={<Projects />} />
+              <Route path="portfolio/publications" element={<Publications />} />
+              <Route path="portfolio/skills" element={<Skills />} />
+            </Routes>
+          </div>
         </Router>
       </div>
     </div>
