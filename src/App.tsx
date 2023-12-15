@@ -16,25 +16,25 @@ import PageSelector from "./components/PageSelector";
 const App: React.FC = () => {
   return (
     <div className="page-outer" style={{ fontFamily: "Manrope" }}>
-      <div className="page-inner max-w-[800px] w-[100%] mx-auto p-4">
-        <Router>
-          <header className="fixed max-w-[800px] w-[100%] mx-auto bg-zinc-50">
+      <Router>
+        <div className="fixed w-screen bg-zinc-50 bg-opacity-90 backdrop-blur-sm">
+          <header className="max-w-[800px] w-[100%] mx-auto p-4 mt-0">
             <NavBar />
             <PageSelector />
           </header>
-          <div className="mt-40">
-            <Routes>
-              <Route path="portfolio/" element={<Home />} />
-              <Route path="portfolio/about" element={<About />} />
-              <Route path="portfolio/blog" element={<Blog />} />
-              <Route path="portfolio/lectures" element={<Lectures />} />
-              <Route path="portfolio/projects" element={<Projects />} />
-              <Route path="portfolio/publications" element={<Publications />} />
-              <Route path="portfolio/skills" element={<Skills />} />
-            </Routes>
-          </div>
-        </Router>
-      </div>
+        </div>
+        <div className="page-inner max-w-[800px] w-[100%] mx-auto p-4 pt-24">
+          <Routes>
+            <Route path="portfolio/" element={<Home />} />
+            <Route path="portfolio/about" element={<About />} />
+            <Route path="portfolio/blog" element={<Blog />} />
+            <Route path="portfolio/lectures" element={<Lectures />} />
+            <Route path="portfolio/projects" element={<Projects />} />
+            <Route path="portfolio/publications" element={<Publications />} />
+            <Route path="portfolio/skills" element={<Skills />} />
+          </Routes>
+        </div>
+      </Router>
     </div>
   );
 };
