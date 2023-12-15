@@ -23,7 +23,7 @@ const App: React.FC = () => {
             <PageSelector />
           </header>
         </div>
-        <div className="page-inner max-w-[800px] w-[100%] mx-auto p-4 pt-24">
+        <div className="page-inner max-w-[800px] w-[100%] mx-auto p-4 pt-48">
           <Routes>
             <Route path="portfolio/" element={<Home />} />
             <Route path="portfolio/about" element={<About />} />

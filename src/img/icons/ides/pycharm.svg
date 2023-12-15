@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <clipPath id="clip-Icons">
+      <rect width="128" height="128"/>
+    </clipPath>
+  </defs>
+  <g id="Icons" clip-path="url(#clip-Icons)">
+    <g id="Gruppe_18" data-name="Gruppe 18" transform="translate(-13.4 -13.4)">
+      <rect id="Rechteck_48" data-name="Rechteck 48" width="128" height="128" transform="translate(13.4 13.4)" fill="#4e4e4e"/>
+      <rect id="Rechteck_49" data-name="Rechteck 49" width="48" height="8" transform="translate(25.548 117.4)" fill="#ececec"/>
+      <path id="Pfad_38" data-name="Pfad 38" d="M17.3,19.1H38.93c12.741,0,20.444,7.407,20.444,18.37v.3c0,12.148-9.481,18.667-21.333,18.667H29.152v15.7H17.6V19.1ZM38.337,45.767c5.926,0,9.185-3.556,9.185-8v-.3c0-5.333-3.556-8-9.481-8H29.152v16.3Z" transform="translate(7.656 11.189)" fill="#ececec"/>
+      <path id="Pfad_39" data-name="Pfad 39" d="M33.1,46.356h0C33.1,31.244,44.359,18.8,60.656,18.8c10.074,0,16,3.259,21.037,8.3l-7.407,8.593c-4.148-3.852-8.3-5.926-13.63-5.926-8.889,0-15.407,7.407-15.407,16.593v-.3c0,9.185,6.222,16.593,15.407,16.593,5.926,0,9.778-2.37,13.926-6.222l7.407,7.407c-5.333,5.926-11.556,9.481-21.63,9.481-15.7.3-27.259-11.852-27.259-26.963" transform="translate(38.67 10.6)" fill="#ececec"/>
+    </g>
+  </g>
+</svg>

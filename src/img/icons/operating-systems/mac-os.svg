@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <clipPath id="clip-Icons">
+      <rect width="128" height="128"/>
+    </clipPath>
+  </defs>
+  <g id="Icons" clip-path="url(#clip-Icons)">
+    <g id="Gruppe_7" data-name="Gruppe 7" transform="translate(-5)">
+      <rect id="Rechteck_32" data-name="Rechteck 32" width="137" height="137" fill="none"/>
+      <line id="Linie_4" data-name="Linie 4" x2="12.921" y2="21.868" transform="translate(55.989 17.227)" fill="none" stroke="#4e4e4e" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+      <line id="Linie_5" data-name="Linie 5" x1="40.721" y2="68.91" transform="translate(41.109 17.227)" fill="none" stroke="#4e4e4e" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+      <line id="Linie_6" data-name="Linie 6" x2="28.188" transform="translate(96.711 86.137)" fill="none" stroke="#4e4e4e" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+      <line id="Linie_7" data-name="Linie 7" x2="30.563" y2="51.72" transform="translate(81.416 60.259)" fill="none" stroke="#4e4e4e" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+      <line id="Linie_8" data-name="Linie 8" x2="58.762" transform="translate(12.921 86.137)" fill="none" stroke="#4e4e4e" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+      <line id="Linie_9" data-name="Linie 9" x1="2.546" y2="4.307" transform="translate(25.841 107.672)" fill="none" stroke="#4e4e4e" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+    </g>
+  </g>
+</svg>

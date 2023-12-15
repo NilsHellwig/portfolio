@@ -3,8 +3,8 @@ import React from "react";
 const About: React.FC = () => {
   return (
     <div>
-      <h2 className="text-4xl font-bold">About</h2>
-      <div className="mt-16 text-zinc-500 flex flex-col gap-4">
+      <h2 className="text-2xl font-bold">About</h2>
+      <div className="text-zinc-500 flex flex-col gap-4 mt-8">
         <p>
           I’m a 23 year old developer living in Regensburg, Germany. During my studies of media informatics at the University of Regensburg, I got especially interested in the development of web and
           mobile applications.

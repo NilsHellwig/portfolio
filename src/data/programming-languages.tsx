@@ -1,4 +1,4 @@
-export const programmingLanguages = [
+export const PROGRAMMING_LANGUAGES = [
   {
     name: "Python",
     description:

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <clipPath id="clip-Icons">
+      <rect width="128" height="128"/>
+    </clipPath>
+  </defs>
+  <g id="Icons" clip-path="url(#clip-Icons)">
+    <path id="vs-code-logo-microsoft-svgrepo-com" d="M132,119.2,100.533,132,48.8,80.8,16.267,106.4,4,99.467V36.533l12.267-6.4L48.8,55.733,100.533,4,132,16.8ZM66.4,68,100,94.667h0V41.333L66.4,68ZM16.267,87.733h0L36,68,16.8,48.267h0l-.533,39.467Z" transform="translate(-4 -4)" fill="#4e4e4e"/>
+  </g>
+</svg>
