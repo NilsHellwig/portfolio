@@ -3,14 +3,16 @@ import React, { useState } from "react";
 import { PROGRAMMING_LANGUAGES } from "../data/programming-languages";
 import { IDES } from "../data/ides";
 import { OPERATING_SYSTEMS } from "../data/operating-systems";
+import { TECHNOLOGIES } from "../data/technologies";
 
 const Skills: React.FC = () => {
   const [languages] = useState(PROGRAMMING_LANGUAGES);
   const [operatingSystems] = useState(OPERATING_SYSTEMS);
   const [ides] = useState(IDES);
+  const [technologies] = useState(TECHNOLOGIES);
 
   return (
-    <div>
+    <div className="pb-8">
       <h2 className="text-2xl font-bold">Skills</h2>
       <section className="pt-8">
         <h3 className="font-bold text-md mt-6">Programming Languages</h3>
@@ -48,6 +50,18 @@ const Skills: React.FC = () => {
           ))}
         </div>
       </section>
+      {technologies.map((category) => {
+        return (
+          <div>
+            <h3 className="font-bold text-md mt-6">{category.name}</h3>
+            <div className="mt-4 gap-2 grid grid-cols-1 vsm:grid-cols-2 md:grid-cols-3">
+              {category.technologies.map((name) => {
+                return <div className="border border-zinc-150 p-3 rounded-xl text-sm font-bold text-zinc-600">{name}</div>;
+              })}
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 };
