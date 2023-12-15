@@ -4,6 +4,9 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      colors: {
+        "hover-gray": "#EFEFEF",
+      },
       screens: {
         vsm: "500px",
       },

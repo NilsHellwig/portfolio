@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="400" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.865" y1="0.247" x2="0.216" y2="0.834" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#6a0000"/>
+      <stop offset="1" stop-color="#49be00"/>
+    </linearGradient>
+    <clipPath id="clip-Zeichenfläche_3">
+      <rect width="400" height="400"/>
+    </clipPath>
+  </defs>
+  <g id="Zeichenfläche_3" data-name="Zeichenfläche – 3" clip-path="url(#clip-Zeichenfläche_3)">
+    <line id="Linie_21" data-name="Linie 21" x2="98.63" y2="100.154" transform="translate(31.05 116.855)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="8" stroke-dasharray="0.01 16"/>
+    <line id="Linie_22" data-name="Linie 22" x1="91.324" y2="123.267" transform="translate(129.68 93.743)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="8" stroke-dasharray="0.01 16"/>
+    <circle id="Ellipse_17" data-name="Ellipse 17" cx="42.5" cy="42.5" r="42.5" transform="translate(0 84)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_18" data-name="Ellipse 18" cx="48" cy="48" r="48" transform="translate(82 169)" fill="url(#linear-gradient)"/>
+    <line id="Linie_23" data-name="Linie 23" x2="98.63" y2="219.569" transform="translate(221.004 93.743)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="8" stroke-dasharray="0.01 16"/>
+    <circle id="Ellipse_14" data-name="Ellipse 14" cx="65" cy="65" r="65" transform="translate(166 39)" fill="url(#linear-gradient)"/>
+    <line id="Linie_24" data-name="Linie 24" x1="80.365" y2="219.569" transform="translate(319.635 93.743)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="8" stroke-dasharray="0.01 16"/>
+    <circle id="Ellipse_15" data-name="Ellipse 15" cx="38.5" cy="38.5" r="38.5" transform="translate(283 265)" fill="url(#linear-gradient)"/>
+  </g>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="400" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="linear-gradient" x1="1" y1="0.5" x2="0.041" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0"/>
+      <stop offset="1" stop-color="#db7676"/>
+    </linearGradient>
+    <clipPath id="clip-Zeichenfläche_1">
+      <rect width="400" height="400"/>
+    </clipPath>
+  </defs>
+  <g id="Zeichenfläche_1" data-name="Zeichenfläche – 1" clip-path="url(#clip-Zeichenfläche_1)">
+    <g id="Gruppe_24" data-name="Gruppe 24" transform="translate(0 -4)">
+      <rect id="Rechteck_127" data-name="Rechteck 127" width="408" height="408" fill="none"/>
+      <path id="Pfad_54" data-name="Pfad 54" d="M399.685,181.918a6.344,6.344,0,0,1-2.823,5.282l-76.131,50.754a6.344,6.344,0,0,1-9.865-5.282V194.607H114.2v76.131h57.1V258.049a19.033,19.033,0,0,1,19.033-19.033H241.08a19.033,19.033,0,0,1,19.033,19.033V308.8a19.033,19.033,0,0,1-19.033,19.033H190.326A19.033,19.033,0,0,1,171.294,308.8V296.114H114.2a25.377,25.377,0,0,1-25.377-25.377V194.607H12.688a12.688,12.688,0,1,1,0-25.377H88.819V93.1A25.377,25.377,0,0,1,114.2,67.722h58.954a44.41,44.41,0,1,1,0,25.377H114.2V169.23H310.866V131.165a6.344,6.344,0,0,1,9.865-5.282l76.131,50.754A6.344,6.344,0,0,1,399.685,181.918Z" transform="translate(0 21.097)" fill="url(#linear-gradient)"/>
+    </g>
+  </g>
+</svg>

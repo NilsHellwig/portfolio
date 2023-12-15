@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="400" viewBox="0 0 400 400">
+  <defs>
+    <clipPath id="clip-Zeichenfläche_1">
+      <rect width="400" height="400"/>
+    </clipPath>
+  </defs>
+  <g id="Zeichenfläche_1" data-name="Zeichenfläche – 1" clip-path="url(#clip-Zeichenfläche_1)">
+    <g id="flickr-svgrepo-com" transform="translate(0 88.629)">
+      <circle id="Ellipse_19" data-name="Ellipse 19" cx="112.441" cy="112.441" r="112.441" transform="translate(0 0)" fill="#005de1"/>
+      <circle id="Ellipse_20" data-name="Ellipse 20" cx="112.441" cy="112.441" r="112.441" transform="translate(175.117 0)" fill="#ff007e"/>
+    </g>
+    <text id="Fetcher." transform="translate(68 225.5)" fill="#fff" font-size="67" font-family="Manrope-Bold, Manrope" font-weight="700"><tspan x="0" y="0">Fetcher.</tspan></text>
+  </g>
+</svg>

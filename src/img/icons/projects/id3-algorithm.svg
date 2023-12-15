@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="400" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.868" y1="0.053" x2="0.038" y2="0.981" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#237400"/>
+      <stop offset="1" stop-color="#34a853"/>
+    </linearGradient>
+    <clipPath id="clip-Zeichenfläche_2">
+      <rect width="400" height="400"/>
+    </clipPath>
+  </defs>
+  <g id="Zeichenfläche_2" data-name="Zeichenfläche – 2" clip-path="url(#clip-Zeichenfläche_2)">
+    <path id="Pfad_51" data-name="Pfad 51" d="M427.312,49.039a16.89,16.89,0,0,0-15.876-15.876C250.71,23.725,121.968,72.114,67.077,162.9A183.865,183.865,0,0,0,40.138,266.345a214.753,214.753,0,0,0,14.018,67.981,8.445,8.445,0,0,0,13.955,3.019l179.452-182.2a16.9,16.9,0,1,1,23.9,23.9L75.353,378.112,45.4,408.07A17.312,17.312,0,0,0,44.128,431.5a16.89,16.89,0,0,0,24.722.908L104.3,396.965c29.852,14.441,59.979,22.315,89.853,23.371q3.526.127,7.03.127a183.528,183.528,0,0,0,96.4-27.066C388.36,338.506,436.77,209.786,427.312,49.039Z" transform="matrix(1, 0.017, -0.017, 1, -30.103, -38.729)" fill="url(#linear-gradient)"/>
+  </g>
+</svg>
