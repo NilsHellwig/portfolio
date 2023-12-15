@@ -6,7 +6,7 @@ const PageSelector: React.FC = () => {
 
   const getTextColor = (path: string) => {
     // Wenn der Pfad dem aktuellen Standort entspricht, gib eine dunklere Farbe zurück, sonst die Standardfarbe
-    return location.pathname === path ? "text-gray-600" : "text-gray-300 hover:text-gray-400 cursor-pointer duration-300";
+    return location.pathname === path ? "text-zinc-600" : "text-zinc-300 hover:text-zinc-400 cursor-pointer duration-300";
   };
 
   return (
