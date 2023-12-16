@@ -31,13 +31,25 @@ const App: React.FC = () => {
             <Route path="portfolio/about" element={<About />} />
             <Route path="portfolio/blog" element={<Blog />} />
             <Route path="portfolio/lectures" element={<Lectures />} />
-            <Route path="portfolio/projects" element={<Projects showOverlay={showOverlay} setShowOverlay={setShowOverlay} />} />
+            <Route path="portfolio/projects/:projectName?" element={<Projects showOverlay={showOverlay} setShowOverlay={setShowOverlay} />} />
             <Route path="portfolio/publications" element={<Publications />} />
             <Route path="portfolio/skills" element={<Skills />} />
           </Routes>
         </div>
       </Router>
-      {showOverlay && <div className="bg-gray-200 fixed flex w-screen h-screen top-0 bg-opacity-70 backdrop-blur-sm z-20"></div>}
+      {showOverlay && (
+        <div
+          className="bg-gray-200 fixed flex w-screen h-screen top-0 bg-opacity-70 backdrop-blur-sm z-20"
+          onClick={() => {
+            setShowOverlay(false);
+            if (document.body.style.overflow !== "hidden") {
+              document.body.style.overflow = "hidden";
+            } else {
+              document.body.style.overflow = "scroll";
+            }
+          }}
+        ></div>
+      )}
     </div>
   );
 };

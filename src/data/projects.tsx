@@ -22,6 +22,7 @@ export const PROJECTS = [
     subtitle: "App for Bird species identification",
     type: "App",
     iconPath: require("../img/icons/projects/bird-id.png"),
+    screenshots: [require("../img/screenshots-projects/bird-id/bird-id-1.png")]
   },
   {
     title: "Vall Music",

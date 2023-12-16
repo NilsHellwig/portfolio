@@ -9,13 +9,14 @@
     </clipPath>
   </defs>
   <g id="Zeichenfläche_3" data-name="Zeichenfläche – 3" clip-path="url(#clip-Zeichenfläche_3)">
-    <line id="Linie_21" data-name="Linie 21" x2="98.63" y2="100.154" transform="translate(31.05 116.855)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="8" stroke-dasharray="0.01 16"/>
-    <line id="Linie_22" data-name="Linie 22" x1="91.324" y2="123.267" transform="translate(129.68 93.743)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="8" stroke-dasharray="0.01 16"/>
-    <circle id="Ellipse_17" data-name="Ellipse 17" cx="42.5" cy="42.5" r="42.5" transform="translate(0 84)" fill="url(#linear-gradient)"/>
-    <circle id="Ellipse_18" data-name="Ellipse 18" cx="48" cy="48" r="48" transform="translate(82 169)" fill="url(#linear-gradient)"/>
-    <line id="Linie_23" data-name="Linie 23" x2="98.63" y2="219.569" transform="translate(221.004 93.743)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="8" stroke-dasharray="0.01 16"/>
-    <circle id="Ellipse_14" data-name="Ellipse 14" cx="65" cy="65" r="65" transform="translate(166 39)" fill="url(#linear-gradient)"/>
-    <line id="Linie_24" data-name="Linie 24" x1="80.365" y2="219.569" transform="translate(319.635 93.743)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="8" stroke-dasharray="0.01 16"/>
-    <circle id="Ellipse_15" data-name="Ellipse 15" cx="38.5" cy="38.5" r="38.5" transform="translate(283 265)" fill="url(#linear-gradient)"/>
+    <line id="Linie_21" data-name="Linie 21" x1="56.892" y2="195.926" transform="translate(82.393 98.286)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="8" stroke-dasharray="0.01 16"/>
+    <line id="Linie_44" data-name="Linie 44" x2="70.084" y2="97.963" transform="translate(139.284 98.286)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="8" stroke-dasharray="0.01 16"/>
+    <line id="Linie_45" data-name="Linie 45" x1="84.1" y2="90.485" transform="translate(209.368 105.764)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="8" stroke-dasharray="0.01 16"/>
+    <line id="Linie_46" data-name="Linie 46" x2="26.384" y2="191.439" transform="translate(293.469 105.764)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="8" stroke-dasharray="0.01 16"/>
+    <circle id="Ellipse_17" data-name="Ellipse 17" cx="33" cy="33" r="33" transform="translate(49 264)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_30" data-name="Ellipse 30" cx="33" cy="33" r="33" transform="translate(106 68)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_31" data-name="Ellipse 31" cx="33" cy="33" r="33" transform="translate(176 166)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_32" data-name="Ellipse 32" cx="33" cy="33" r="33" transform="translate(260 75)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_33" data-name="Ellipse 33" cx="33" cy="33" r="33" transform="translate(286 267)" fill="url(#linear-gradient)"/>
   </g>
 </svg>

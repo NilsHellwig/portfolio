@@ -9,7 +9,8 @@ module.exports = {
       },
       screens: {
         vsm: "500px",
-        xsm: "340px"
+        xsm: "340px",
+        xmd: "800px"
       },
     },
   },

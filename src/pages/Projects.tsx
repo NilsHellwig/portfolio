@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { PROJECTS } from "../data/projects";
+import { useParams } from "react-router";
+import SingleProject from "../popups/SingleProject";
 
 interface ProjectsProps {
   showOverlay: boolean;
@@ -7,13 +9,16 @@ interface ProjectsProps {
 }
 
 const Projects: React.FC<ProjectsProps> = ({ showOverlay, setShowOverlay }) => {
+  const { projectName } = useParams();
+  console.log(projectName);
   const [projects] = useState(PROJECTS);
 
   function showSingleProjectFct() {
+    //window.history.replaceState(null, "New Page Title", "/pathname/goes/here")
     if (document.body.style.overflow !== "hidden") {
       document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "scroll";
     }
 
     setShowOverlay(!showOverlay);
@@ -48,11 +53,7 @@ const Projects: React.FC<ProjectsProps> = ({ showOverlay, setShowOverlay }) => {
             </div>
           ))}
         </div>
-        {showOverlay && (
-          <div className="fixed top-0 max-w-[800px] w-[100%] mx-auto my-auto z-50 bg-white rounded-xl p-4">
-            <span>Hallo Welt!</span>
-          </div>
-        )}
+        {showOverlay && <SingleProject showSingleProjectFct={showSingleProjectFct} />}
       </section>
     </div>
   );
