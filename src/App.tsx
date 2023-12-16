@@ -17,13 +17,13 @@ const App: React.FC = () => {
   return (
     <div className="page-outer" style={{ fontFamily: "Manrope" }}>
       <Router>
-        <div className="fixed w-screen bg-zinc-50 bg-opacity-90 backdrop-blur-sm">
-          <header className="max-w-[800px] w-[100%] mx-auto p-4 mt-0">
+        <div className="fixed w-screen bg-zinc-50 bg-opacity-90 backdrop-blur-sm pt-2">
+          <header className="max-w-[800px] w-[100%] mx-auto px-4 mt-0">
             <NavBar />
             <PageSelector />
           </header>
         </div>
-        <div className="page-inner max-w-[800px] w-[100%] mx-auto p-4 pt-48">
+        <div className="page-inner max-w-[800px] w-[100%] mx-auto p-4 py-40">
           <Routes>
             <Route path="portfolio/" element={<Home />} />
             <Route path="portfolio/about" element={<About />} />

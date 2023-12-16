@@ -9,7 +9,7 @@ const NavBar: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-row items-center mt-6 mb-8 justify-center flex-col gap-2 md:justify-between md:flex-row md:gap-0">
+    <div className="flex flex-row items-center mt-2 mb-4 justify-center flex-col gap-2 xsm:justify-between xsm:flex-row xsm:gap-0">
       <Link to="/portfolio">
         <h1 className="font-bold text-md hover:cursor-pointer hover:text-zinc-500 duration-300">Nils Hellwig</h1>
       </Link>

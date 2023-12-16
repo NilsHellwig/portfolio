@@ -10,7 +10,7 @@ const PageSelector: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-wrap font-bold gap-3 text-sm mb-4 md:flex-row">
+    <div className="flex font-bold gap-3 text-sm mb-4 overflow-scroll no-scrollbar">
       <span className={getTextColor("/portfolio")}>
         <Link to="/portfolio">Home</Link>
       </span>
