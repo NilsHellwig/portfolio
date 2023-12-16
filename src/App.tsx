@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 // Pages
 import Home from "./pages/Home";
@@ -14,6 +14,8 @@ import NavBar from "./components/Navbar";
 import PageSelector from "./components/PageSelector";
 
 const App: React.FC = () => {
+  const [showOverlay, setShowOverlay] = useState(false);
+
   return (
     <div className="page-outer" style={{ fontFamily: "Manrope" }}>
       <Router>
@@ -29,12 +31,13 @@ const App: React.FC = () => {
             <Route path="portfolio/about" element={<About />} />
             <Route path="portfolio/blog" element={<Blog />} />
             <Route path="portfolio/lectures" element={<Lectures />} />
-            <Route path="portfolio/projects" element={<Projects />} />
+            <Route path="portfolio/projects" element={<Projects showOverlay={showOverlay} setShowOverlay={setShowOverlay} />} />
             <Route path="portfolio/publications" element={<Publications />} />
             <Route path="portfolio/skills" element={<Skills />} />
           </Routes>
         </div>
       </Router>
+      {showOverlay && <div className="bg-gray-200 fixed flex w-screen h-screen top-0 bg-opacity-70 backdrop-blur-sm z-20"></div>}
     </div>
   );
 };

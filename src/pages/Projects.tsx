@@ -1,8 +1,24 @@
 import React, { useState } from "react";
 import { PROJECTS } from "../data/projects";
 
-const Projects: React.FC = () => {
+interface ProjectsProps {
+  showOverlay: boolean;
+  setShowOverlay: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Projects: React.FC<ProjectsProps> = ({ showOverlay, setShowOverlay }) => {
   const [projects] = useState(PROJECTS);
+
+  function showSingleProjectFct() {
+    if (document.body.style.overflow !== "hidden") {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    setShowOverlay(!showOverlay);
+  }
+
   return (
     <div className="pb-8">
       <h2 className="text-2xl font-bold">Projects</h2>
@@ -10,7 +26,13 @@ const Projects: React.FC = () => {
         <h3 className="font-bold text-md mt-6">Operating Systems</h3>
         <div className="mt-6 grid grid-cols vsm:grid-cols-2 sm:grid-cols-2 gap-6">
           {projects.map((project, index) => (
-            <div key={index} className="border-[0.5px] border-zinc-300 rounded-xl flex p-4 flex-col gap-4 bg-zinc-100 hover:bg-hover-gray cursor-pointer">
+            <div
+              key={index}
+              className="border-[0.5px] border-zinc-300 rounded-xl flex p-4 flex-col gap-4 bg-zinc-100 hover:bg-hover-gray cursor-pointer"
+              onClick={() => {
+                showSingleProjectFct();
+              }}
+            >
               <div className="flex justify-end">
                 <div className="flex bg-white rounded-full border-[0.5px] border-zinc-300 items-center px-2 py-1">
                   <span className="text-xs font-bold">{project.type}</span>
@@ -26,6 +48,11 @@ const Projects: React.FC = () => {
             </div>
           ))}
         </div>
+        {showOverlay && (
+          <div className="fixed top-0 max-w-[800px] w-[100%] mx-auto my-auto z-50 bg-white rounded-xl p-4">
+            <span>Hallo Welt!</span>
+          </div>
+        )}
       </section>
     </div>
   );

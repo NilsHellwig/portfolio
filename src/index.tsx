@@ -6,7 +6,7 @@ import App from "./App";
 import "./App.css";
 import "./fonts.css";
 
-document.body.style.backgroundColor = 'rgb(249, 250, 251)';
+document.body.style.backgroundColor = "rgb(249, 250, 251)";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(<App />);
