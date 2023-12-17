@@ -1,12 +1,9 @@
 import React from "react";
 import { Student, TwitterLogo, At, GithubLogo, LinkedinLogo } from "phosphor-react";
 import { Link } from "react-router-dom";
+import { openLinkInNewTab } from "../helper";
 
 const NavBar: React.FC = () => {
-  const openLinkInNewTab = (url: string) => {
-    const newWindow = window.open(url, "_blank", "noopener,noreferrer");
-    if (newWindow) newWindow.opener = null;
-  };
 
   return (
     <div className="flex flex-row items-center mt-2 mb-4 justify-center flex-col gap-2 xsm:justify-between xsm:flex-row xsm:gap-0">
