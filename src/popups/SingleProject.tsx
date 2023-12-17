@@ -9,7 +9,7 @@ interface SingleProjectProps {
 const SingleProject: React.FC<SingleProjectProps> = ({ showSingleProjectFct }) => {
   return (
     <div className="fixed top-0 left-0 right-0 bottom-0 max-w-[800px] w-[100%] xmd:my-auto xmd:h-3/4 my-auto xmd:mx-auto z-50 bg-white xmd:rounded-xl p-6 overflow-scroll">
-      <header className="flex justify-end right-6">
+      <header className="flex justify-end fixed">
         <div className="bg-black rounded-full h-8 w-8 flex justify-center items-center cursor-pointer hover:bg-zinc-700" onClick={showSingleProjectFct}>
           <X size={20} color="#ffffff" />
         </div>
