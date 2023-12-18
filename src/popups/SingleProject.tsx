@@ -62,11 +62,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ showSingleProjectFct, pro
 
   return (
     <div className="fixed top-0 left-0 right-0 bottom-0 max-w-[800px] w-[100%] xmd:my-auto xmd:h-3/4 my-auto xmd:mx-auto z-50 bg-white xmd:rounded-xl p-6 pb-12 overflow-scroll scroll-smooth no-scrollbar">
-      {isOpen && project && project.galleryImages && (
-        <ModalContent onClose={() => setIsopen(false)}>
-          <img src={require("../img/screenshots-projects/" + project?.galleryImages[galleryIndex])} alt="" className="rounded-xl" />
-        </ModalContent>
-      )}
+      {isOpen && project && project.galleryImages && <ModalContent onClose={() => setIsopen(false)} screenshotUrl={require("../img/screenshots-projects/" + project?.galleryImages[galleryIndex])} />}
       <header className="flex justify-end fixed">
         <div className="bg-black opacity-75 rounded-full h-8 w-8 flex justify-center items-center cursor-pointer hover:bg-zinc-700" onClick={showSingleProjectFct}>
           <X size={20} color="#ffffff" />
