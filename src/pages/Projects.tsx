@@ -12,6 +12,7 @@ const Projects: React.FC<ProjectsProps> = ({ showOverlay, setShowOverlay }) => {
   const { projectName } = useParams();
   console.log(projectName);
   const [projects] = useState(PROJECTS);
+  const [projectId, setProjectId] = useState("basisdokument");
 
   function showSingleProjectFct() {
     //window.history.replaceState(null, "New Page Title", "/pathname/goes/here")
@@ -35,6 +36,7 @@ const Projects: React.FC<ProjectsProps> = ({ showOverlay, setShowOverlay }) => {
               key={index}
               className="border-[0.5px] border-zinc-300 rounded-xl flex p-4 flex-col gap-4 bg-zinc-100 hover:bg-hover-gray cursor-pointer"
               onClick={() => {
+                setProjectId(project.id!);
                 showSingleProjectFct();
               }}
             >
@@ -53,7 +55,7 @@ const Projects: React.FC<ProjectsProps> = ({ showOverlay, setShowOverlay }) => {
             </div>
           ))}
         </div>
-        {showOverlay && <SingleProject showSingleProjectFct={showSingleProjectFct} />}
+        {showOverlay && <SingleProject showSingleProjectFct={showSingleProjectFct} projectId={projectId} />}
       </section>
     </div>
   );

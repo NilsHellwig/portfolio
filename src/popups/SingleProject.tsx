@@ -7,11 +7,11 @@ import { openLinkInNewTab } from "../helper";
 
 interface SingleProjectProps {
   showSingleProjectFct: MouseEventHandler<HTMLDivElement>;
+  projectId: string;
 }
 
-const SingleProject: React.FC<SingleProjectProps> = ({ showSingleProjectFct }) => {
+const SingleProject: React.FC<SingleProjectProps> = ({ showSingleProjectFct, projectId }) => {
   const [galleryIndex, setGalleryIndex] = useState(0);
-  const [projectId] = useState("basisdokument");
 
   const getProjectById = (projectId: string) => {
     return PROJECTS.find((project) => project.id === projectId);
@@ -58,18 +58,23 @@ const SingleProject: React.FC<SingleProjectProps> = ({ showSingleProjectFct }) =
         <div>
           <h3 className="font-bold text-center">Gallery</h3>
           <div className="bg-zinc-100 rounded-xl border border-zinc-300 p-4 mt-4">
-            <div className="flex flex-row justify-between">
+            <div className="flex flex-row justify-between gap-4">
               <div className="flex items-center justify-center">
-                <div className={`px-1 py-2 rounded-md ${galleryIndex === 0 ? "bg-zinc-200 cursor-not-allowed" : "bg-zinc-200 hover:bg-zinc-300"}`} onClick={lowerGalleryIndex}>
+                <div className={`px-1 py-2 rounded-md ${galleryIndex === 0 ? "bg-zinc-200 cursor-not-allowed" : "bg-zinc-200 hover:bg-zinc-300 cursor-pointer"}`} onClick={lowerGalleryIndex}>
                   <ArrowLeft size={24} color={`${galleryIndex === 0 ? "#cccccc" : "#555555"}`} />
                 </div>
               </div>
               {project?.galleryImages?.[galleryIndex] && (
-                <img className="h-96 border border-zinc-300 rounded-md" src={require("../img/screenshots-projects/" + project?.galleryImages[galleryIndex])} alt={`${project?.title} icon`} />
+                <img
+                  className=" w-2/4 vsm:w-3/4 border border-zinc-300 rounded-md cursor-pointer"
+                  src={require("../img/screenshots-projects/" + project?.galleryImages[galleryIndex])}
+                  alt={`${project?.title} icon`}
+                  onClick={higherGalleryIndex}
+                />
               )}
               <div className="flex items-center justify-center">
                 <div
-                  className={`px-1 py-2 rounded-md ${galleryIndex + 1 === project?.galleryImages?.length ? "bg-zinc-200 cursor-not-allowed" : "bg-zinc-200 hover:bg-zinc-300"}`}
+                  className={`px-1 py-2 rounded-md ${galleryIndex + 1 === project?.galleryImages?.length ? "bg-zinc-200 cursor-not-allowed" : "bg-zinc-200 hover:bg-zinc-300 cursor-pointer"}`}
                   onClick={higherGalleryIndex}
                 >
                   <ArrowRight size={24} color={`${galleryIndex + 1 === project?.galleryImages?.length ? "#cccccc" : "#555555"}`} />
@@ -104,7 +109,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ showSingleProjectFct }) =
         <div>
           <h3 className="font-bold text-center mb-4">Technologies</h3>
           <div className="grid grid-cols sm:grid-cols-2 gap-4">
-            {["React.js", "HTML", "CSS", "nginx"].map((technology, index) => {
+            {project?.technologies?.map((technology, index) => {
               return (
                 <div key={index} className="bg-zinc-100 p-3 border border-zinc-300 rounded-xl">
                   <span className="text-zinc-600 text-sm font-bold">{technology}</span>
@@ -115,21 +120,22 @@ const SingleProject: React.FC<SingleProjectProps> = ({ showSingleProjectFct }) =
         </div>
         <div>
           <h3 className="font-bold text-center mb-4">Links</h3>
-          <div>
-            {[{ name: "GitHub Repository", url: "https://github.com/NilsHellwig/BirdID" }].map((link, index) => {
+          <div className="flex flex-col gap-4">
+            {project?.links?.map((link, index) => {
               return (
-                <div
-                  key={index}
-                  className="p-3 border border-zinc-200 rounded-xl flex justify-between hover:bg-zinc-100 cursor-pointer"
-                  onClick={() => {
-                    openLinkInNewTab(link.url);
-                  }}
-                >
-                  <span className="text-sm text-zinc-600 font-bold">{link.name}</span>
-                  <div>
-                    <Link size={24} />
+                <Tooltip text={link.url} key={index}>
+                  <div
+                    className="p-3 border border-zinc-200 rounded-xl flex justify-between hover:bg-zinc-100 cursor-pointer items-center"
+                    onClick={() => {
+                      openLinkInNewTab(link.url);
+                    }}
+                  >
+                    <span className="text-sm text-zinc-600 font-bold">{link.name}</span>
+                    <div>
+                      <Link size={24} />
+                    </div>
                   </div>
-                </div>
+                </Tooltip>
               );
             })}
           </div>

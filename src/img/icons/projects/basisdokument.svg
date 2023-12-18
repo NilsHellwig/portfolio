@@ -1,52 +1,52 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="400" viewBox="0 0 400 400">
   <defs>
-    <filter id="Linie_19" x="132" y="336" width="134" height="48" filterUnits="userSpaceOnUse">
+    <filter id="Linie_19" x="142" y="301" width="111" height="46" filterUnits="userSpaceOnUse">
       <feOffset dy="3" input="SourceAlpha"/>
       <feGaussianBlur stdDeviation="3" result="blur"/>
       <feFlood flood-opacity="0.161"/>
       <feComposite operator="in" in2="blur"/>
       <feComposite in="SourceGraphic"/>
     </filter>
-    <filter id="Linie_20" x="43.963" y="45.963" width="309.073" height="114.074" filterUnits="userSpaceOnUse">
+    <filter id="Linie_20" x="73.183" y="76.183" width="248.634" height="97.633" filterUnits="userSpaceOnUse">
       <feOffset dy="3" input="SourceAlpha"/>
       <feGaussianBlur stdDeviation="3" result="blur-2"/>
       <feFlood flood-opacity="0.161"/>
       <feComposite operator="in" in2="blur-2"/>
       <feComposite in="SourceGraphic"/>
     </filter>
-    <filter id="Pfad_52" x="-8.692" y="107.704" width="161.613" height="232.622" filterUnits="userSpaceOnUse">
+    <filter id="Pfad_52" x="33.028" y="124.102" width="134.074" height="189.12" filterUnits="userSpaceOnUse">
       <feOffset dy="3" input="SourceAlpha"/>
       <feGaussianBlur stdDeviation="3" result="blur-3"/>
       <feFlood flood-opacity="0.161"/>
       <feComposite operator="in" in2="blur-3"/>
       <feComposite in="SourceGraphic"/>
     </filter>
-    <filter id="Pfad_53" x="246.938" y="50.897" width="161.613" height="232.622" filterUnits="userSpaceOnUse">
+    <filter id="Pfad_53" x="231.194" y="80.065" width="134.074" height="189.12" filterUnits="userSpaceOnUse">
       <feOffset dy="3" input="SourceAlpha"/>
       <feGaussianBlur stdDeviation="3" result="blur-4"/>
       <feFlood flood-opacity="0.161"/>
       <feComposite operator="in" in2="blur-4"/>
       <feComposite in="SourceGraphic"/>
     </filter>
-    <clipPath id="clip-Zeichenfläche_1">
+    <clipPath id="clip-Zeichenfläche_9">
       <rect width="400" height="400"/>
     </clipPath>
   </defs>
-  <g id="Zeichenfläche_1" data-name="Zeichenfläche – 1" clip-path="url(#clip-Zeichenfläche_1)">
-    <g id="Gruppe_23" data-name="Gruppe 23" transform="translate(-27.298 -27.515)">
-      <rect id="Rechteck_122" data-name="Rechteck 122" width="455" height="456" transform="translate(0.298 -0.485)" fill="none"/>
-      <line id="Linie_18" data-name="Linie 18" y2="313" transform="translate(225.298 71.515)" fill="none" stroke="#4da6ce" stroke-linecap="round" stroke-linejoin="round" stroke-width="30"/>
-      <g transform="matrix(1, 0, 0, 1, 27.3, 27.51)" filter="url(#Linie_19)">
-        <line id="Linie_19-2" data-name="Linie 19" x2="86" transform="translate(156 357)" fill="none" stroke="#4da6ce" stroke-linecap="round" stroke-linejoin="round" stroke-width="30"/>
+  <g id="Zeichenfläche_9" data-name="Zeichenfläche – 9" clip-path="url(#clip-Zeichenfläche_9)">
+    <g id="Gruppe_23" data-name="Gruppe 23" transform="translate(23 23)">
+      <rect id="Rechteck_122" data-name="Rechteck 122" width="354" height="354" fill="none"/>
+      <line id="Linie_18" data-name="Linie 18" y2="242" transform="translate(175 56)" fill="none" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" stroke-width="28"/>
+      <g transform="matrix(1, 0, 0, 1, -23, -23)" filter="url(#Linie_19)">
+        <line id="Linie_19-2" data-name="Linie 19" x2="65" transform="translate(165 321)" fill="none" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" stroke-width="28"/>
       </g>
-      <g transform="matrix(1, 0, 0, 1, 27.3, 27.51)" filter="url(#Linie_20)">
-        <line id="Linie_20-2" data-name="Linie 20" y1="60" x2="255" transform="translate(71 70)" fill="none" stroke="#4da6ce" stroke-linecap="round" stroke-linejoin="round" stroke-width="30"/>
+      <g transform="matrix(1, 0, 0, 1, -23, -23)" filter="url(#Linie_20)">
+        <line id="Linie_20-2" data-name="Linie 20" y1="46" x2="197" transform="translate(99 99)" fill="none" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" stroke-width="28"/>
       </g>
-      <g transform="matrix(1, 0, 0, 1, 27.3, 27.51)" filter="url(#Pfad_52)">
-        <path id="Pfad_52-2" data-name="Pfad 52" d="M24,230.017c0,31.368,35.5,42.605,56.807,42.605s56.807-11.237,56.807-42.605L80.807,88Z" transform="translate(-8.69 40.7)" fill="rgba(0,0,0,0)" stroke="#4da6ce" stroke-linecap="round" stroke-linejoin="round" stroke-width="30"/>
+      <g transform="matrix(1, 0, 0, 1, -23, -23)" filter="url(#Pfad_52)">
+        <path id="Pfad_52-2" data-name="Pfad 52" d="M24,198.092c0,24.317,27.523,33.028,44.037,33.028s44.037-8.711,44.037-33.028L68.037,88Z" transform="translate(32.03 56.1)" fill="rgba(0,0,0,0)" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" stroke-width="28"/>
       </g>
-      <g transform="matrix(1, 0, 0, 1, 27.3, 27.51)" filter="url(#Pfad_53)">
-        <path id="Pfad_53-2" data-name="Pfad 53" d="M168,198.017c0,31.368,35.5,42.6,56.807,42.6s56.807-11.237,56.807-42.6L224.807,56Z" transform="translate(102.94 15.9)" fill="rgba(0,0,0,0)" stroke="#4da6ce" stroke-linecap="round" stroke-linejoin="round" stroke-width="30"/>
+      <g transform="matrix(1, 0, 0, 1, -23, -23)" filter="url(#Pfad_53)">
+        <path id="Pfad_53-2" data-name="Pfad 53" d="M168,166.092c0,24.317,27.523,33.028,44.037,33.028s44.037-8.711,44.037-33.028L212.037,56Z" transform="translate(86.19 44.06)" fill="rgba(0,0,0,0)" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" stroke-width="28"/>
       </g>
     </g>
   </g>
