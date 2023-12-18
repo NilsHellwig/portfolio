@@ -173,7 +173,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ showSingleProjectFct, pro
                       openLinkInNewTab(link.url);
                     }}
                   >
-                    <span className="text-sm text-zinc-600 font-bold">{link.name}</span>
+                    <span className="text-sm text-zinc-600 font-bold text-left">{link.name}</span>
                     <div>
                       <Link size={24} />
                     </div>
