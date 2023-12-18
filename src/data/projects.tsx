@@ -17,7 +17,7 @@ export const PROJECTS: Project[] = [
     title: "Das Basisdokument",
     subtitle: "Digital structuring for civil proceedings.",
     description:
-      '"Das Basisdokument" enables lawyers and judges to create their previous analogue correspondence in a digital environment. The application was created as a co-operation between Media Informatics group and the faculty of law at University of Regensburg. From 2023 on, the implemented application was used at several courts in Bavaria and Lower Saxony, laying the first foundation stone for the digitalisation of civil proceedings. I recommend using the demo at https://app.parteivortrag.de/ since the hosted application does not have a backend for privacy reasons. You can experiment freely on the domain without any concerns.',
+      '"Das Basisdokument" enables lawyers and judges to create their previous analogue correspondence in a digital environment. The application was created as a co-operation between media informatics group and the faculty of law at University of Regensburg. From 2023 on, the implemented application was used at several courts in Bavaria and Lower Saxony, laying the first foundation stone for the digitalisation of civil proceedings. I recommend using the demo at https://app.parteivortrag.de/ since the hosted application does not have a backend for privacy reasons. You can experiment freely on the domain without any concerns.',
     type: "Web-App",
     programmingLanguages: ["TypeScript"],
     technologies: ["Tailwind", "HTML", "CSS", "Radix", "Draft.js"],
