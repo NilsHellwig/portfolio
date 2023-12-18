@@ -55,6 +55,7 @@ export const PROJECTS: Project[] = [
     subtitle: "Free, data protection-compliant lesson evaluation",
     type: "Web-App",
     iconPath: require("../img/icons/projects/amadeus.svg").default,
+    galleryImages: ["amadeus/amadeus-1.png", "amadeus/amadeus-2.png", "amadeus/amadeus-3.png", "amadeus/amadeus-4.png"],
   },
   {
     id: "bird-id",
@@ -64,6 +65,7 @@ export const PROJECTS: Project[] = [
     description:
       "BirdID is a mobile application designed for the recognition of 307 distinct bird species through image recognition utilizing Convolutional Neural Networks (CNN). This project was developed as a component of my bachelor’s thesis. React Native served as the framework for the application, while the CNN underwent training, validation, and testing processes with an extensive dataset comprising almost 300,000 bird images sourced from Flickr. The deployment of the trained CNN model was achieved using Flask.",
     iconPath: require("../img/icons/projects/bird-id.png"),
+    galleryImages: ["bird-id/bird-id-1.png", "bird-id/bird-id-2.png", "bird-id/bird-id-3.png"],
   },
   {
     id: "vall-music",
@@ -71,6 +73,7 @@ export const PROJECTS: Project[] = [
     subtitle: "New Portfolio for French producer Vall",
     type: "Website",
     iconPath: require("../img/icons/projects/vall-music.svg").default,
+    galleryImages: ["vall-music/vall-music-1.png", "vall-music/vall-music-2.png", "vall-music/vall-music-3.png", "vall-music/vall-music-4.png"],
   },
   {
     id: "whistle-tube",
@@ -78,6 +81,7 @@ export const PROJECTS: Project[] = [
     subtitle: "A slightly different messenger service",
     type: "Web-App",
     iconPath: require("../img/icons/projects/whistle-tube.svg").default,
+    galleryImages: ["whistle-tube/whistle-tube-1.png", "whistle-tube/whistle-tube-2.png", "whistle-tube/whistle-tube-3.png"],
   },
   {
     id: "discover-malta",
@@ -85,6 +89,7 @@ export const PROJECTS: Project[] = [
     subtitle: "A fictional vacation blog implemented with docsify",
     type: "Website",
     iconPath: require("../img/icons/projects/discover-malta.png"),
+    galleryImages: ["discover-malta/discover-malta-1.png", "discover-malta/discover-malta-2.png", "discover-malta/discover-malta-1.png"],
   },
   {
     id: "game-hub",
@@ -92,6 +97,7 @@ export const PROJECTS: Project[] = [
     subtitle: "A platform for reviewing games",
     type: "Web-App",
     iconPath: require("../img/icons/projects/game-hub.svg").default,
+    galleryImages: [],
   },
   {
     id: "wheater-assistant",
@@ -99,6 +105,7 @@ export const PROJECTS: Project[] = [
     subtitle: "ChatBot for the weather",
     type: "Python Application",
     iconPath: require("../img/icons/projects/wheater-assistant.svg").default,
+    galleryImages: [],
   },
   {
     id: "uni-hub",
@@ -106,6 +113,7 @@ export const PROJECTS: Project[] = [
     subtitle: "Platform for storing documents during academic studies.",
     type: "App",
     iconPath: require("../img/icons/projects/uni-hub.svg").default,
+    galleryImages: [],
   },
   {
     id: "flickr-fetcher",
@@ -113,6 +121,7 @@ export const PROJECTS: Project[] = [
     subtitle: "Image data extraction tool for Flickr",
     type: "Python Utility",
     iconPath: require("../img/icons/projects/flickr-fetcher.svg").default,
+    galleryImages: [],
   },
   {
     id: "image-fetcher",
@@ -120,6 +129,7 @@ export const PROJECTS: Project[] = [
     subtitle: "Image data extraction tool for Google images",
     type: "Python Utility",
     iconPath: require("../img/icons/projects/image-fetcher.svg").default,
+    galleryImages: [],
   },
   {
     id: "id3-algorithm",
@@ -127,6 +137,7 @@ export const PROJECTS: Project[] = [
     subtitle: "A decision tree algorithm implemented in Java",
     type: "Java Utility",
     iconPath: require("../img/icons/projects/id3-algorithm.svg").default,
+    galleryImages: [],
   },
   {
     id: "predestrian-rnn",
@@ -134,6 +145,7 @@ export const PROJECTS: Project[] = [
     subtitle: "Position prediction using a recurrent neural network",
     type: "Python Utility",
     iconPath: require("../img/icons/projects/pedestrian-rnn.svg").default,
+    galleryImages: [],
   },
   {
     id: "painting-colorizer",
@@ -141,6 +153,7 @@ export const PROJECTS: Project[] = [
     subtitle: "Colorizing black and white images",
     type: "Python Utility",
     iconPath: require("../img/icons/projects/painting-colorizer.png"),
+    galleryImages: [],
   },
   {
     id: "flight-delay-prediction",
@@ -148,5 +161,6 @@ export const PROJECTS: Project[] = [
     subtitle: "Flight delay prediction for munich airport ",
     type: "R Project",
     iconPath: require("../img/icons/projects/flight-delay-prediction.svg").default,
+    galleryImages: [],
   },
 ];
