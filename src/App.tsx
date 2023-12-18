@@ -13,7 +13,6 @@ import Skills from "./pages/Skills";
 import NavBar from "./components/Navbar";
 import PageSelector from "./components/PageSelector";
 
-// keinen eigenen state
 // gallery ordentlich machen
 // share option
 // galery hover

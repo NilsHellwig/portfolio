@@ -66,10 +66,9 @@ const SingleProject: React.FC<SingleProjectProps> = ({ showSingleProjectFct, pro
               </div>
               {project?.galleryImages?.[galleryIndex] && (
                 <img
-                  className=" w-2/4 vsm:w-3/4 border border-zinc-300 rounded-md cursor-pointer"
+                  className=" w-2/4 vsm:w-3/4 border border-zinc-300 rounded-md hover:scale-125 transition-transform duration-300 hover:border-zinc-400"
                   src={require("../img/screenshots-projects/" + project?.galleryImages[galleryIndex])}
                   alt={`${project?.title} icon`}
-                  onClick={higherGalleryIndex}
                 />
               )}
               <div className="flex items-center justify-center">
