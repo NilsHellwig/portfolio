@@ -33,7 +33,8 @@ const Projects: React.FC<ProjectsProps> = ({ showOverlay, setShowOverlay }) => {
       setProjectId(projectName);
       showSingleProjectFct();
     }
-  }, []);
+    // eslint-disable-next-line
+  }, []); // eslint-disable-next-line
 
   return (
     <div className="pb-8">
