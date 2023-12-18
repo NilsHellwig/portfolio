@@ -21,7 +21,7 @@ const App: React.FC = () => {
   const [showOverlay, setShowOverlay] = useState(false);
 
   return (
-    <div className="page-outer" style={{ fontFamily: "Manrope" }}>
+    <div className="page-outer" style={{ fontFamily: "Inter" }}>
       <Router>
         <div className="fixed w-screen bg-zinc-50 bg-opacity-90 backdrop-blur-sm pt-2">
           <header className="max-w-[800px] w-[100%] mx-auto px-4 mt-0">

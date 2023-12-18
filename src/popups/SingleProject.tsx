@@ -96,7 +96,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ showSingleProjectFct, pro
         </div>
         <div>
           <h3 className="font-bold text-center">Gallery</h3>
-          <div className="bg-zinc-100 rounded-xl border border-zinc-300 p-4 mt-4 flex flex-col justify-between h-[540px]">
+          <div className="bg-zinc-100 rounded-xl border border-zinc-300 p-4 mt-4 flex flex-col justify-between h-[580px]">
             <div className="flex justify-center w-full h-full items-center">
               <div className="flex flex-row justify-between gap-4 w-full h-fit">
                 <div className="flex items-center justify-center">
@@ -107,7 +107,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ showSingleProjectFct, pro
                 {project?.galleryImages?.[galleryIndex] && (
                   <Modal onOpen={toggleGalleryFullView} className="flex justify-center">
                     <img
-                      className={`border border-zinc-300 rounded-md ${imageDimensions.width > imageDimensions.height ? "w-full" : "h-[400px]"}`}
+                      className={`border border-zinc-300 rounded-md ${imageDimensions.width > imageDimensions.height ? "w-4/5" : "h-[500px]"}`}
                       src={require(`../img/screenshots-projects/${project?.galleryImages[galleryIndex]}`)}
                       alt={`${project?.title} icon`}
                     />
