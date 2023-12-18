@@ -104,7 +104,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ showSingleProjectFct, pro
         </div>
         <div>
           <h3 className="font-bold text-center">About</h3>
-          <p className="text-sm text-zinc-400 mt-4">{project?.description}</p>
+          <p className="text-sm text-zinc-400 mt-4 text-justify">{project?.description}</p>
         </div>
         <div>
           <h3 className="font-bold text-center mb-4">Technologies</h3>
