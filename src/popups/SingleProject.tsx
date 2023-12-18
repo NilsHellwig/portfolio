@@ -14,9 +14,9 @@ interface SingleProjectProps {
 const SingleProject: React.FC<SingleProjectProps> = ({ showSingleProjectFct, projectId }) => {
   const [galleryIndex, setGalleryIndex] = useState(0);
 
-  const [isOpen, setIsopen] = useState(false);
-  const showModal = () => {
-    setIsopen((prev) => !prev);
+  const [galleryFullView, setGalleryFullView] = useState(false);
+  const toggleGalleryFullView = () => {
+    setGalleryFullView((prev) => !prev);
   };
 
   const getProjectById = (projectId: string) => {
@@ -65,13 +65,13 @@ const SingleProject: React.FC<SingleProjectProps> = ({ showSingleProjectFct, pro
   return (
     <div
       className={`fixed top-0 left-0 right-0 bottom-0 max-w-[800px] w-[100%] xmd:my-auto xmd:h-3/4 my-auto xmd:mx-auto z-50 bg-white xmd:rounded-xl p-6 pb-12 ${
-        isOpen ? "overflow-hidden" : "overflow-scroll scroll-smooth no-scrollbar"
+        galleryFullView ? "overflow-hidden" : "overflow-scroll scroll-smooth no-scrollbar"
       }`}
     >
-      {isOpen && project && project.galleryImages && (
+      {galleryFullView && project && project.galleryImages && (
         <ModalContent
           onClose={() => {
-            setIsopen(false);
+            setGalleryFullView(false);
           }}
           screenshotUrl={require("../img/screenshots-projects/" + project?.galleryImages[galleryIndex])}
         />
@@ -105,7 +105,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ showSingleProjectFct, pro
                   </div>
                 </div>
                 {project?.galleryImages?.[galleryIndex] && (
-                  <Modal onOpen={showModal} className="flex justify-center">
+                  <Modal onOpen={toggleGalleryFullView} className="flex justify-center">
                     <img
                       className={`border border-zinc-300 rounded-md ${imageDimensions.width > imageDimensions.height ? "w-full" : "h-[400px]"}`}
                       src={require(`../img/screenshots-projects/${project?.galleryImages[galleryIndex]}`)}

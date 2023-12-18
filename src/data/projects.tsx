@@ -21,7 +21,7 @@ export const PROJECTS: Project[] = [
     type: "Web-App",
     programmingLanguages: ["TypeScript"],
     technologies: ["Tailwind", "HTML", "CSS", "Radix", "Draft.js"],
-    iconPath: require("../img/icons/projects/basisdokument.svg").default,
+    iconPath: require("../img/icons/projects/basisdokument.png"),
     galleryImages: [
       "basisdokument/basisdokument-1.png",
       "basisdokument/basisdokument-2.png",
