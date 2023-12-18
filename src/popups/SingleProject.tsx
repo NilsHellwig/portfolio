@@ -11,7 +11,7 @@ interface SingleProjectProps {
 
 const SingleProject: React.FC<SingleProjectProps> = ({ showSingleProjectFct }) => {
   const [galleryIndex, setGalleryIndex] = useState(0);
-  const [projectId, setProjectId] = useState("basisdokument");
+  const [projectId] = useState("basisdokument");
 
   const getProjectById = (projectId: string) => {
     return PROJECTS.find((project) => project.id === projectId);
