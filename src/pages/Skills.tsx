@@ -50,13 +50,13 @@ const Skills: React.FC = () => {
           ))}
         </div>
       </section>
-      {technologies.map((category) => {
+      {technologies.map((category, idx_cat) => {
         return (
-          <div>
+          <div key={idx_cat}>
             <h3 className="font-bold text-md mt-6">{category.name}</h3>
             <div className="mt-4 gap-2 grid grid-cols-1 vsm:grid-cols-2 md:grid-cols-3">
-              {category.technologies.map((name) => {
-                return <div className="border border-zinc-150 p-3 rounded-xl text-sm font-bold text-zinc-600">{name}</div>;
+              {category.technologies.map((name, index) => {
+                return <div key={index} className="border border-zinc-150 p-3 rounded-xl text-sm font-bold text-zinc-600">{name}</div>;
               })}
             </div>
           </div>

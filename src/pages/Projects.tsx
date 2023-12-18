@@ -11,7 +11,6 @@ interface ProjectsProps {
 const Projects: React.FC<ProjectsProps> = ({ showOverlay, setShowOverlay }) => {
   const { projectName } = useParams();
   console.log(projectName);
-  const [projects] = useState(PROJECTS);
   const [projectId, setProjectId] = useState("basisdokument");
 
   function showSingleProjectFct() {
@@ -31,7 +30,7 @@ const Projects: React.FC<ProjectsProps> = ({ showOverlay, setShowOverlay }) => {
       <section className="pt-8">
         <h3 className="font-bold text-md mt-6">Operating Systems</h3>
         <div className="mt-6 grid grid-cols vsm:grid-cols-2 sm:grid-cols-2 gap-6">
-          {projects.map((project, index) => (
+          {PROJECTS.map((project, index) => (
             <div
               key={index}
               className="border-[0.5px] border-zinc-300 rounded-xl flex p-4 flex-col gap-4 bg-zinc-100 hover:bg-hover-gray cursor-pointer"
