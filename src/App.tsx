@@ -13,9 +13,7 @@ import Skills from "./pages/Skills";
 import NavBar from "./components/Navbar";
 import PageSelector from "./components/PageSelector";
 
-// gallery ordentlich machen
 // share option
-// galery hover
 // blog implementieren
 // darkmode?
 // texte durchlesen
