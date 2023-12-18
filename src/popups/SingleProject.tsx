@@ -4,6 +4,7 @@ import { PROJECTS } from "../data/projects";
 import { PROGRAMMING_LANGUAGES, ProgrammingLanguage } from "../data/programming-languages";
 import { Tooltip } from "../components/Tooltip";
 import { openLinkInNewTab } from "../helper";
+import { Modal, ModalContent } from "../components/Modal";
 
 interface SingleProjectProps {
   showSingleProjectFct: MouseEventHandler<HTMLDivElement>;
@@ -12,6 +13,9 @@ interface SingleProjectProps {
 
 const SingleProject: React.FC<SingleProjectProps> = ({ showSingleProjectFct, projectId }) => {
   const [galleryIndex, setGalleryIndex] = useState(0);
+
+  const [isOpen, setIsopen] = useState(false);
+  const showModal = () => setIsopen((prev) => !prev);
 
   const getProjectById = (projectId: string) => {
     return PROJECTS.find((project) => project.id === projectId);
@@ -37,6 +41,11 @@ const SingleProject: React.FC<SingleProjectProps> = ({ showSingleProjectFct, pro
 
   return (
     <div className="fixed top-0 left-0 right-0 bottom-0 max-w-[800px] w-[100%] xmd:my-auto xmd:h-3/4 my-auto xmd:mx-auto z-50 bg-white xmd:rounded-xl p-6 pb-12 overflow-scroll scroll-smooth no-scrollbar">
+      {isOpen && project && project.galleryImages && (
+        <ModalContent onClose={() => setIsopen(false)}>
+          <img src={require("../img/screenshots-projects/" + project?.galleryImages[galleryIndex])} alt="" className="rounded-xl"/>
+        </ModalContent>
+      )}
       <header className="flex justify-end fixed">
         <div className="bg-black opacity-75 rounded-full h-8 w-8 flex justify-center items-center cursor-pointer hover:bg-zinc-700" onClick={showSingleProjectFct}>
           <X size={20} color="#ffffff" />
@@ -65,11 +74,13 @@ const SingleProject: React.FC<SingleProjectProps> = ({ showSingleProjectFct, pro
                 </div>
               </div>
               {project?.galleryImages?.[galleryIndex] && (
-                <img
-                  className=" w-2/4 vsm:w-3/4 border border-zinc-300 rounded-md hover:scale-125 transition-transform duration-300 hover:border-zinc-400"
-                  src={require("../img/screenshots-projects/" + project?.galleryImages[galleryIndex])}
-                  alt={`${project?.title} icon`}
-                />
+                <Modal onOpen={showModal} className="flex justify-center">
+                  <img
+                    className=" w-2/4 vsm:w-3/4 border border-zinc-300 rounded-md"
+                    src={require("../img/screenshots-projects/" + project?.galleryImages[galleryIndex])}
+                    alt={`${project?.title} icon`}
+                  />
+                </Modal>
               )}
               <div className="flex items-center justify-center">
                 <div
