@@ -18,6 +18,7 @@ import PageSelector from "./components/PageSelector";
 // galery hover
 // blog implementieren
 // darkmode?
+// texte durchlesen
 
 const App: React.FC = () => {
   const [showOverlay, setShowOverlay] = useState(false);

@@ -1,5 +1,5 @@
 import { ArrowLeft, ArrowRight, Link, X } from "phosphor-react";
-import React, { MouseEventHandler, useState } from "react";
+import React, { MouseEventHandler, useEffect, useState } from "react";
 import { PROJECTS } from "../data/projects";
 import { PROGRAMMING_LANGUAGES, ProgrammingLanguage } from "../data/programming-languages";
 import { Tooltip } from "../components/Tooltip";
@@ -23,6 +23,27 @@ const SingleProject: React.FC<SingleProjectProps> = ({ showSingleProjectFct, pro
 
   const project = getProjectById(projectId);
 
+  const [imageDimensions, setImageDimensions] = useState({ width: 0, height: 0 });
+
+  useEffect(() => {
+    const loadImage = async () => {
+      if (project && project.galleryImages && project.galleryImages[galleryIndex]) {
+        const imageUrl = require(`../img/screenshots-projects/${project.galleryImages[galleryIndex]}`);
+        const image = new Image();
+
+        image.onload = () => {
+          setImageDimensions({ width: image.width, height: image.height });
+        };
+
+        image.src = imageUrl;
+      }
+    };
+
+    if (project && project.galleryImages && typeof galleryIndex === "number") {
+      loadImage();
+    }
+  }, [project, galleryIndex]);
+
   const lowerGalleryIndex = () => {
     if (galleryIndex > 0) {
       setGalleryIndex(galleryIndex - 1);
@@ -43,7 +64,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ showSingleProjectFct, pro
     <div className="fixed top-0 left-0 right-0 bottom-0 max-w-[800px] w-[100%] xmd:my-auto xmd:h-3/4 my-auto xmd:mx-auto z-50 bg-white xmd:rounded-xl p-6 pb-12 overflow-scroll scroll-smooth no-scrollbar">
       {isOpen && project && project.galleryImages && (
         <ModalContent onClose={() => setIsopen(false)}>
-          <img src={require("../img/screenshots-projects/" + project?.galleryImages[galleryIndex])} alt="" className="rounded-xl"/>
+          <img src={require("../img/screenshots-projects/" + project?.galleryImages[galleryIndex])} alt="" className="rounded-xl" />
         </ModalContent>
       )}
       <header className="flex justify-end fixed">
@@ -66,31 +87,34 @@ const SingleProject: React.FC<SingleProjectProps> = ({ showSingleProjectFct, pro
         </div>
         <div>
           <h3 className="font-bold text-center">Gallery</h3>
-          <div className="bg-zinc-100 rounded-xl border border-zinc-300 p-4 mt-4">
-            <div className="flex flex-row justify-between gap-4">
-              <div className="flex items-center justify-center">
-                <div className={`px-1 py-2 rounded-md ${galleryIndex === 0 ? "bg-zinc-200 cursor-not-allowed" : "bg-zinc-200 hover:bg-zinc-300 cursor-pointer"}`} onClick={lowerGalleryIndex}>
-                  <ArrowLeft size={24} color={`${galleryIndex === 0 ? "#cccccc" : "#555555"}`} />
+          <div className="bg-zinc-100 rounded-xl border border-zinc-300 p-4 mt-4 flex flex-col justify-between h-[540px]">
+            <div className="flex justify-center w-full h-full items-center">
+              <div className="flex flex-row justify-between gap-4 w-full h-fit">
+                <div className="flex items-center justify-center">
+                  <div className={`px-1 py-2 rounded-md ${galleryIndex === 0 ? "bg-zinc-200 cursor-not-allowed" : "bg-zinc-200 hover:bg-zinc-300 cursor-pointer"}`} onClick={lowerGalleryIndex}>
+                    <ArrowLeft size={24} color={`${galleryIndex === 0 ? "#cccccc" : "#555555"}`} />
+                  </div>
                 </div>
-              </div>
-              {project?.galleryImages?.[galleryIndex] && (
-                <Modal onOpen={showModal} className="flex justify-center">
-                  <img
-                    className=" w-2/4 vsm:w-3/4 border border-zinc-300 rounded-md"
-                    src={require("../img/screenshots-projects/" + project?.galleryImages[galleryIndex])}
-                    alt={`${project?.title} icon`}
-                  />
-                </Modal>
-              )}
-              <div className="flex items-center justify-center">
-                <div
-                  className={`px-1 py-2 rounded-md ${galleryIndex + 1 === project?.galleryImages?.length ? "bg-zinc-200 cursor-not-allowed" : "bg-zinc-200 hover:bg-zinc-300 cursor-pointer"}`}
-                  onClick={higherGalleryIndex}
-                >
-                  <ArrowRight size={24} color={`${galleryIndex + 1 === project?.galleryImages?.length ? "#cccccc" : "#555555"}`} />
+                {project?.galleryImages?.[galleryIndex] && (
+                  <Modal onOpen={showModal} className="flex justify-center">
+                    <img
+                      className={`border border-zinc-300 rounded-md ${imageDimensions.width > imageDimensions.height ? "w-full" : "h-[400px]"}`}
+                      src={require(`../img/screenshots-projects/${project?.galleryImages[galleryIndex]}`)}
+                      alt={`${project?.title} icon`}
+                    />
+                  </Modal>
+                )}
+                <div className="flex items-center justify-center">
+                  <div
+                    className={`px-1 py-2 rounded-md ${galleryIndex + 1 === project?.galleryImages?.length ? "bg-zinc-200 cursor-not-allowed" : "bg-zinc-200 hover:bg-zinc-300 cursor-pointer"}`}
+                    onClick={higherGalleryIndex}
+                  >
+                    <ArrowRight size={24} color={`${galleryIndex + 1 === project?.galleryImages?.length ? "#cccccc" : "#555555"}`} />
+                  </div>
                 </div>
               </div>
             </div>
+
             <div className="flex justify-center mt-4">
               <div className="bg-zinc-700 rounded-full text-white text-[10px] py-1 px-3 font-bold">
                 {galleryIndex + 1}/{project?.galleryImages?.length}
