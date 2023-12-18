@@ -1,9 +1,27 @@
-export const PROJECTS = [
+type Project = {
+  id?: string;
+  title: string;
+  subtitle: string;
+  description?: string;
+  technologies?: string[];
+  programmingLanguages?: string[];
+  type: string;
+  iconPath: string;
+  galleryImages?: string[];
+};
+
+export const PROJECTS: Project[] = [
   {
+    id: "basisdokument",
     title: "Das Basisdokument",
     subtitle: "Digital structuring for civil proceedings.",
+    description:
+      "BirdID is a mobile application designed for the recognition of 307 distinct bird species through image recognition utilizing Convolutional Neural Networks (CNN). This project was developed as a component of my bachelor’s thesis. React Native served as the framework for the application, while the CNN underwent training, validation, and testing processes with an extensive dataset comprising almost 300,000 bird images sourced from Flickr. The deployment of the trained CNN model was achieved using Flask.",
     type: "Web-App",
+    technologies: ["Tailwind", "HTML", "CSS", "Radix", "Draft.js"],
+    programmingLanguages: ["TypeScript"],
     iconPath: require("../img/icons/projects/basisdokument.svg").default,
+    galleryImages: ["basisdokument/basisdokument-1.png"],
   },
   {
     title: "UR Device Manager",
@@ -22,7 +40,6 @@ export const PROJECTS = [
     subtitle: "App for Bird species identification",
     type: "App",
     iconPath: require("../img/icons/projects/bird-id.png"),
-    screenshots: [require("../img/screenshots-projects/bird-id/bird-id-1.png")]
   },
   {
     title: "Vall Music",

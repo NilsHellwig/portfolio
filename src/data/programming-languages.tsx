@@ -1,4 +1,10 @@
-export const PROGRAMMING_LANGUAGES = [
+export type ProgrammingLanguage = {
+  name: string;
+  description: string;
+  iconPath: string;
+};
+
+export const PROGRAMMING_LANGUAGES: ProgrammingLanguage[] = [
   {
     name: "Python",
     description:
