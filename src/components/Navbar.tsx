@@ -14,7 +14,7 @@ const NavBar: React.FC = () => {
         <div className="p-1 hover:bg-zinc-200 rounded-lg cursor-pointer duration-300" onClick={() => openLinkInNewTab("https://twitter.com/nchllwg")}>
           <TwitterLogo size={24} color="#1a1a1a" weight="regular" />
         </div>
-        <div className="p-1 hover:bg-zinc-200 rounded-lg cursor-pointer duration-300" onClick={() => openLinkInNewTab("https://https://github.com/NilsHellwig")}>
+        <div className="p-1 hover:bg-zinc-200 rounded-lg cursor-pointer duration-300" onClick={() => openLinkInNewTab("https://github.com/NilsHellwig")}>
           <GithubLogo size={24} color="#1a1a1a" weight="regular" />
         </div>
         <div className="p-1 hover:bg-zinc-200 rounded-lg cursor-pointer duration-300" onClick={() => openLinkInNewTab("https://scholar.google.com/citations?user=VzUTKcwAAAAJ")}>
