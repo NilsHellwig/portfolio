@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { PROJECTS } from "../data/projects";
 import { useParams } from "react-router";
 import SingleProject from "../popups/SingleProject";
@@ -9,9 +9,9 @@ interface ProjectsProps {
 }
 
 const Projects: React.FC<ProjectsProps> = ({ showOverlay, setShowOverlay }) => {
+  const [projectId, setProjectId] = useState("");
   const { projectName } = useParams();
   console.log(projectName);
-  const [projectId, setProjectId] = useState("basisdokument");
 
   function showSingleProjectFct() {
     //window.history.replaceState(null, "New Page Title", "/pathname/goes/here")
@@ -21,8 +21,19 @@ const Projects: React.FC<ProjectsProps> = ({ showOverlay, setShowOverlay }) => {
       document.body.style.overflow = "scroll";
     }
 
+    if (showOverlay) {
+      window.history.replaceState(null, "Nils Hellwig - Portfolio", "/portfolio/projects")
+    }
+
     setShowOverlay(!showOverlay);
   }
+
+  useEffect(() => {
+    if (projectName !== undefined) {
+      setProjectId(projectName);
+      showSingleProjectFct();
+    }
+  }, []);
 
   return (
     <div className="pb-8">

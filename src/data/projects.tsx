@@ -128,17 +128,17 @@ export const PROJECTS: Project[] = [
     links: [{ name: "GitHub Repository: GameHub", url: "https://github.com/NilsHellwig/GameHub" }],
   },
   {
-    id: "wheater-assistant",
-    title: "Wheater Assistant",
+    id: "weather-assistant",
+    title: "weather Assistant",
     subtitle: "ChatBot for the weather",
     description:
       "The Weather Assistant is a chat bot designed for users to inquire about weather data. Questions must be posed in German. It can provide answers to highly specific queries about the weather, including details like air pressure, as well as simpler ones such as predicting when it will rain again. The development of this bot was undertaken as part of an advanced Natural Language Processing course, where methods learned in two semesters of Natural Language Processing courses were put into practical application.",
     type: "Python Application",
     programmingLanguages: ["Python", "JavaScript"],
     technologies: ["HTML", "CSS", "geocoder", "geopy", "pywheatherbit", "xmltodict", "Lark", "sklearn", "flask", "spacy", "NLTK", "pandas"],
-    iconPath: require("../img/icons/projects/wheater-assistant.svg").default,
-    galleryImages: ["wheater-assistant/weather-assistant-1.png"],
-    links: [{ name: "GitHub Repository: Wheater Assistant", url: "https://github.com/solaris-isbc/weather-assistant" }],
+    iconPath: require("../img/icons/projects/weather-assistant.svg").default,
+    galleryImages: ["weather-assistant/weather-assistant-1.png"],
+    links: [{ name: "GitHub Repository: weather Assistant", url: "https://github.com/solaris-isbc/weather-assistant" }],
   },
   {
     id: "uni-hub",
