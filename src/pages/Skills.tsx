@@ -16,7 +16,7 @@ const Skills: React.FC = () => {
       <h2 className="text-2xl font-bold">Skills</h2>
       <section className="pt-8">
         <h3 className="font-bold text-md mt-6">Programming Languages</h3>
-        <div className="mt-6 grid vsm:grid-cols-2 gap-6">
+        <div className="mt-6 grid vsm:grid-cols-2 gap-6 font-light">
           {languages.map((language, index) => (
             <div key={index}>
               <div className="w-16 h-16 p-3 rounded-2xl border-zinc-200 border bg-white">{language.iconPath && <img src={language.iconPath} alt={`${language.name} icon`} className="mr-2" />}</div>
