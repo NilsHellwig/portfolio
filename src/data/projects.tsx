@@ -60,7 +60,10 @@ export const PROJECTS: Project[] = [
     technologies: ["Django", "HTML", "CSS", "numpy", "pandas", "matplotlib", "svglib", "seaborn"],
     iconPath: require("../img/icons/projects/amadeus.png"),
     galleryImages: ["amadeus/amadeus-1.png", "amadeus/amadeus-2.png", "amadeus/amadeus-3.png", "amadeus/amadeus-4.png"],
-    links: [{ name: "AMADEUS App", url: "https://amadeus.falko-pv.de/" }],
+    links: [
+      { name: "AMADEUS App", url: "https://amadeus.falko-pv.de/" },
+      { name: "GitHub Repository: AMADEUS", url: "https://github.com/FALKO-PV/amadeus" },
+    ],
   },
   {
     id: "bird-id",
