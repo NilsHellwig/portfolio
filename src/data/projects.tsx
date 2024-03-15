@@ -47,7 +47,7 @@ export const PROJECTS: Project[] = [
     technologies: ["FastApi", "Uvicorn", "Bcrypt", "PyTest", "SQLAlchemy", "Radix", "React.js"],
     iconPath: require("../img/icons/projects/ur-device-manager.svg").default,
     galleryImages: ["device-manager/device-manager-1.png", "device-manager/device-manager-2.gif", "device-manager/device-manager-3.gif", "device-manager/device-manager-4.gif"],
-    links: [{ name: "GitLab Repository: Device Manager", url: "https://git.uni-regensburg.de/ase22ws/abschlussprojekt-device-manager-nils-constantin-hellwig" }],
+    links: [{ name: "GitLab Repository: Device Manager", url: "https://github.com/NilsHellwig/UR-Device-Manager" }],
   },
   {
     id: "amadeus",
