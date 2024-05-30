@@ -1,5 +1,6 @@
-import { DownloadSimple, FilePdf, Minus, Plus } from "phosphor-react";
 import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { DownloadSimple, FilePdf, Minus, Plus } from "phosphor-react";
 
 type LectureProps = {
   lecture: {
@@ -27,7 +28,7 @@ const Lecture: React.FC<LectureProps> = ({ lecture }) => {
   };
 
   return (
-    <div className=" bg-zinc-100 border border-zinc-200 rounded-xl">
+    <div className="bg-zinc-100 border border-zinc-200 rounded-xl">
       <div className="flex flex-row items-center gap-2 p-2">
         <div className="p-2 rounded-xl">
           <img className="h-12 w-12 rounded-xl border border-zinc-200" src={lecture.iconPath} alt={"icon for lecture " + lecture.title} />
@@ -38,7 +39,12 @@ const Lecture: React.FC<LectureProps> = ({ lecture }) => {
           <p className="text-sm text-zinc-400">{lecture.term}</p>
         </div>
       </div>
-      {showDetails && (
+      <motion.div
+        initial={{ height: 0, opacity: 0 }}
+        animate={showDetails ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        style={{ overflow: "hidden" }}
+      >
         <div className="p-4 flex flex-col gap-4">
           <div className="bg-white border border-zinc-200 p-4 rounded-xl flex flex-col gap-2">
             <span className="font-bold">Description</span>
@@ -74,7 +80,7 @@ const Lecture: React.FC<LectureProps> = ({ lecture }) => {
             </div>
           </div>
         </div>
-      )}
+      </motion.div>
       <div className="bg-zinc-200 h-[1px] rounded-full"></div>
       <div
         className="flex justify-center p-1 cursor-pointer-b-xl"

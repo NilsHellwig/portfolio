@@ -15,6 +15,7 @@
     "@types/react-dom": "^18.2.17",
     "@types/react-router": "^5.1.20",
     "classnames": "^2.3.2",
+    "framer-motion": "^11.2.9",
     "phosphor-react": "^1.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -50,6 +51,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "gh-pages": "^6.1.0",
     "tailwindcss": "^3.3.6"
   }
