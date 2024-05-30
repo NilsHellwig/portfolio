@@ -110,7 +110,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ showSingleProjectFct, pro
           screenshotUrl={require("../img/screenshots-projects/" + project?.galleryImages[galleryIndex])}
         />
       )}
-      <motion.header variants={itemVariants} className="flex justify-right sticky -top-6 -m-6 bg-zinc-50 bg-opacity-80 backdrop-blur-sm p-4 items-center gap-4 border-b-[0.5px] ">
+      <motion.header variants={itemVariants} className="flex justify-right sticky -top-6 -m-6 bg-zinc-50 bg-opacity-80 backdrop-blur-sm p-4 items-center gap-4 ] ">
         <div className="bg-black opacity-75 rounded-xl p-2 flex justify-center items-center cursor-pointer hover:bg-zinc-800" onClick={showSingleProjectFct}>
           <div className="flex flex-row items-center gap-2">
             <X size={20} color="#ffffff" />
