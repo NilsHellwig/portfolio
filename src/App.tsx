@@ -23,7 +23,7 @@ const App: React.FC = () => {
   return (
     <div className="page-outer" style={{ fontFamily: "Inter" }}>
       <Router>
-        <div className="fixed w-screen bg-zinc-50 bg-opacity-90 backdrop-blur-sm pt-2 z-50">
+        <div className="fixed w-screen bg-zinc-50 bg-opacity-90 backdrop-blur-sm pt-2 z-20">
           <header className="max-w-[800px] w-[100%] mx-auto px-4 mt-0">
             <NavBar />
             <PageSelector />
