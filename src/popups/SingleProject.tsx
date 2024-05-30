@@ -69,9 +69,9 @@ const SingleProject: React.FC<SingleProjectProps> = ({ showSingleProjectFct, pro
     visible: {
       opacity: 1,
       transition: {
-        type: "spring",
+        type: "tween",
         stiffness: 100,
-        damping: 20,
+        damping: 10,
         mass: 1,
         staggerChildren: 0.1,
       },
@@ -86,7 +86,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ showSingleProjectFct, pro
       scale: 1,
       rotate: 0,
       transition: {
-        type: "spring",
+        type: "tween",
         stiffness: 100,
         damping: 20,
       },
