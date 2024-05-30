@@ -10,7 +10,7 @@ const PageSelector: React.FC = () => {
   };
 
   return (
-    <motion.div className="flex font-bold gap-3 text-sm mb-4 overflow-scroll no-scrollbar" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.2 }}>
+    <motion.div className="flex font-bold gap-3 text-sm mb-4 overflow-scroll no-scrollbar" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}>
       <motion.span className={getTextColor("/portfolio")} whileHover={{ color: "#555555" }} transition={{ duration: 0.1 }}>
         <Link to="/portfolio">Home</Link>
       </motion.span>

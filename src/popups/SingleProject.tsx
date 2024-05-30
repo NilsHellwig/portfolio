@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowRight, Link, X } from "phosphor-react";
+import { ArrowLeft, ArrowRight, Link, X} from "phosphor-react";
 import React, { MouseEventHandler, useEffect, useState } from "react";
 import { PROJECTS } from "../data/projects";
 import { PROGRAMMING_LANGUAGES, ProgrammingLanguage } from "../data/programming-languages";
@@ -110,10 +110,13 @@ const SingleProject: React.FC<SingleProjectProps> = ({ showSingleProjectFct, pro
           screenshotUrl={require("../img/screenshots-projects/" + project?.galleryImages[galleryIndex])}
         />
       )}
-      <motion.header variants={itemVariants} className="flex justify-end fixed">
-        <div className="bg-black opacity-75 rounded-full h-8 w-8 flex justify-center items-center cursor-pointer hover:bg-zinc-700" onClick={showSingleProjectFct}>
-          <X size={20} color="#ffffff" />
+      <motion.header variants={itemVariants} className="flex justify-right sticky -top-6 -m-6 bg-zinc-50 bg-opacity-80 backdrop-blur-sm p-4 items-center gap-4 border-b-[0.5px] ">
+        <div className="bg-black opacity-75 rounded-xl p-2 flex justify-center items-center cursor-pointer hover:bg-zinc-800" onClick={showSingleProjectFct}>
+          <div className="flex flex-row items-center gap-2">
+            <X size={20} color="#ffffff" />
+          </div>
         </div>
+        <div></div>
       </motion.header>
       <motion.div variants={itemVariants} className="inner-content flex flex-col gap-6">
         <div className="flex sm:flex-row gap-4 my-8 items-center flex-col justify-center sm:justify-normal mt-16">
