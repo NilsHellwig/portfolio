@@ -116,7 +116,6 @@ const StandardUI: React.FC<{ children: ReactNode }> = ({ children }) => {
 };
 
 const BlogUI: React.FC<{ children: ReactNode }> = ({ children }) => {
-  document.body.style.backgroundColor = "rgb(0, 0, 0)";
   return <div className="">{children}</div>;
 };
 
