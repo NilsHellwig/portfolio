@@ -1,29 +1,17 @@
-# Introduction to React
+# Lorem Ipsum - What is it?
 
-## What is React?
+## Origin
 
-React is a JavaScript library for building user interfaces. It was developed by Facebook and is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile applications.
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
-## Key Features of React
+## Purpose
 
-### 1. Component-Based
+It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
 
-React allows you to build encapsulated components that manage their own state, then compose them to make complex UIs. Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state out of the DOM.
+## Usage
 
-### 2. Declarative
+There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words, etc.
 
-React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes. Declarative views make your code more predictable and easier to debug.
-
-### 3. Learn Once, Write Anywhere
-
-You can develop new features in React without rewriting existing code. React can also render on the server using Node and power mobile apps using React Native.
-
-## Getting Started with React
-
-To get started with React, you can use Create React App, a comfortable environment for learning React and a way to start building a new single-page application.
-
-```bash
-npx create-react-app my-app
-cd my-app
-npm start
+```javascript
+console.log("Hallo Welt!")
 ```

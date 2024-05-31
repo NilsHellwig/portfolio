@@ -1,24 +1,14 @@
 export const BLOGS = [
   {
-    id: "1",
+    id: "0",
     url: "example-entry",
-    category: "Web-Development",
+    category: "Dummies",
     author: "Nils Hellwig",
-    term: "14/06/2024",
-    title: "Web-Development with React Native",
-    textColor: "#fefce8",
-    bgColor: "#4c1d95",
-  },
-  {
-    id: "2",
-    url: "example-entry-2",
-    category: "Web-Development",
-    author: "Nils Hellwig",
-    term: "14/06/2024",
-    title: "Web-Development with React Native",
+    term: "01/06/2024",
+    title: "Example for a Blog Entry",
     textColor: "#fefce8",
     bgColor: "#134e4a",
-  },
+  }
 ];
 
 export const convertMonth = {
