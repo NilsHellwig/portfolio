@@ -7,6 +7,8 @@ export const BLOGS = [
     term: "14/06/2024",
     iconPath: require("../img/icons/lectures/web-dev-23.svg").default,
     title: "Web-Development with React Native",
+    textColor: "#1E3C4A",
+    bgColor: "#F6C8F1",
   },
 ];
 
