@@ -1,0 +1,28 @@
+h1 {
+  font-size: 4rem !important;
+  font-family: "Inter" !important;
+  font-weight: bolder !important;
+}
+
+h2 {
+  font-size: 2rem !important;
+  font-family: "Inter" !important;
+  font-weight: bolder !important;
+}
+
+h3 {
+  font-size: 1rem !important;
+  font-family: "Inter" !important;
+  font-weight: bolder !important;
+}
+
+h2,
+h3, p, pre {
+  margin-top: 1rem !important;
+}
+
+pre {
+  padding: 1rem !important;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+}
