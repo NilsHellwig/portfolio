@@ -12,7 +12,7 @@ const Home: React.FC = () => {
       <motion.h2 className="mt-6 text-4xl font-bold" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 1 }}>
         Hi, I'm Nils Hellwig!
       </motion.h2>
-      <motion.h3 className="font-light text-zinc-700 text-xl" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 1.5 }}>
+      <motion.h3 className="font-light text-zinc-700 text-xl text-center" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 1.5 }}>
         I love software development and data science.
       </motion.h3>
       <Link to="/portfolio/about">
