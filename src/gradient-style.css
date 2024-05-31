@@ -1,11 +1,14 @@
+/* Source: https://medium.com/@alaintai.pro_86554/tips-to-create-a-modern-animated-gradient-background-website-with-react-next-js-13-very-easy-984bb375e7dd*/
+
 :root {
   /**/
   /*other default setting ...*/
   /**/
-  --secondary-glow: conic-gradient(from 10deg at 50% 50%, #eb7494 0deg, #ae77b2 55deg, #97b5da 120deg, #0099ca 160deg, transparent 360deg);
+  --secondary-glow: conic-gradient(from 10deg at 50% 50%, #00c9ff 0deg, #92fe9d 55deg, #00f0ff 120deg, #0be7f5 160deg, transparent 360deg);
 
-  --third-glow: conic-gradient(from 90deg at 50% 50%, #ff8b7e 0deg, #e24e6b 160deg, #7ed2da 120deg, #8bdce0 55deg, transparent 360deg);
+  --third-glow: conic-gradient(from 90deg at 50% 50%, #a1c4fd 0deg, #c2e9fb 55deg, #b1f3f5 120deg, #d7d7d7 160deg, transparent 360deg);
 }
+
 
 .gradient-bg::before,
 .gradient-bg::after {
@@ -21,7 +24,7 @@
   width: 50vw;
   height: 50vw;
   margin-left: -200px;
-  filter: blur(90px);
+  filter: blur(70px);
   top: calc(50vh - 50vw / 2);
   left: calc(50vw);
 }
@@ -31,7 +34,7 @@
   border-radius: 50%;
   width: 500px;
   height: 700px;
-  filter: blur(90px);
+  filter: blur(70px);
   top: calc(50vh - 50vw / 2);
   left: calc(50vw - 50vw / 2);
 }
