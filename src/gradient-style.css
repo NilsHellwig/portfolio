@@ -4,10 +4,12 @@
   /**/
   /*other default setting ...*/
   /**/
-  --secondary-glow: conic-gradient(from 10deg at 50% 50%, #00c9ff 0deg, #92fe9d 55deg, #00f0ff 120deg, #0be7f5 160deg, transparent 360deg);
+  --secondary-glow: conic-gradient(from 10deg at 50% 50%, #ffcc33 0deg, #ff6666 55deg, #ff3399 120deg, #cc33ff 160deg, transparent 360deg);
 
-  --third-glow: conic-gradient(from 90deg at 50% 50%, #a1c4fd 0deg, #c2e9fb 55deg, #b1f3f5 120deg, #d7d7d7 160deg, transparent 360deg);
+  --third-glow: conic-gradient(from 90deg at 50% 50%, #ff9966 0deg, #ff5e62 55deg, #ff758c 120deg, #ff7eb3 160deg, transparent 360deg);
 }
+
+
 
 
 .gradient-bg::before,
@@ -24,7 +26,7 @@
   width: 50vw;
   height: 50vw;
   margin-left: -200px;
-  filter: blur(70px);
+  filter: blur(80px);
   top: calc(50vh - 50vw / 2);
   left: calc(50vw);
 }
@@ -34,7 +36,7 @@
   border-radius: 50%;
   width: 500px;
   height: 700px;
-  filter: blur(70px);
+  filter: blur(80px);
   top: calc(50vh - 50vw / 2);
   left: calc(50vw - 50vw / 2);
 }
@@ -65,10 +67,10 @@
 
 .gradient-bg::before {
   /*...previous props*/
-  animation: animateBefore 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+  animation: animateBefore 3s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
 }
 
 .gradient-bg::after {
   /*...previous props*/
-  animation: animateAfter 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+  animation: animateAfter 3s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
 }
