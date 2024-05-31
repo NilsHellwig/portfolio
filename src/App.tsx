@@ -27,7 +27,7 @@ const App: React.FC = () => {
           <Route
             path="portfolio/"
             element={
-              <StandardUI>
+              <StandardUI transparentBackground={true}>
                 <Home />
               </StandardUI>
             }
@@ -35,7 +35,7 @@ const App: React.FC = () => {
           <Route
             path="portfolio/about"
             element={
-              <StandardUI>
+              <StandardUI transparentBackground={false}>
                 <About />
               </StandardUI>
             }
@@ -51,7 +51,7 @@ const App: React.FC = () => {
           <Route
             path="portfolio/lectures"
             element={
-              <StandardUI>
+              <StandardUI transparentBackground={false}>
                 <Lectures />
               </StandardUI>
             }
@@ -59,7 +59,7 @@ const App: React.FC = () => {
           <Route
             path="portfolio/projects/:projectName?"
             element={
-              <StandardUI>
+              <StandardUI transparentBackground={false}>
                 <Projects showOverlay={showOverlay} setShowOverlay={setShowOverlay} />
               </StandardUI>
             }
@@ -67,7 +67,7 @@ const App: React.FC = () => {
           <Route
             path="portfolio/publications"
             element={
-              <StandardUI>
+              <StandardUI transparentBackground={false}>
                 <Publications />
               </StandardUI>
             }
@@ -75,7 +75,7 @@ const App: React.FC = () => {
           <Route
             path="portfolio/skills"
             element={
-              <StandardUI>
+              <StandardUI transparentBackground={false}>
                 <Skills />
               </StandardUI>
             }
@@ -99,11 +99,11 @@ const App: React.FC = () => {
   );
 };
 
-const StandardUI: React.FC<{ children: ReactNode }> = ({ children }) => {
+const StandardUI: React.FC<{ children: ReactNode; transparentBackground: boolean }> = ({ children, transparentBackground }) => {
   return (
     <div className="page-outer" style={{ fontFamily: "Inter" }}>
       <div>
-        <div className="fixed w-screen bg-zinc-50 bg-opacity-90 backdrop-blur-sm pt-2 z-20">
+        <div className={`fixed w-screen ${!transparentBackground ? "bg-zinc-50" : ""} bg-opacity-90 backdrop-blur-sm pt-2 z-20`}>
           <header className="max-w-[800px] w-[100%] mx-auto px-4 mt-0">
             <NavBar />
             <PageSelector />
