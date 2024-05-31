@@ -106,7 +106,7 @@ const StandardUI: React.FC<{ children: ReactNode; transparentBackground: boolean
         <div className={`fixed w-screen ${!transparentBackground ? "bg-zinc-50" : ""} bg-opacity-90 backdrop-blur-sm pt-2 z-20`}>
           <header className="max-w-[800px] w-[100%] mx-auto px-4 mt-0">
             <NavBar />
-            <PageSelector />
+            <PageSelector transparentBackground={transparentBackground} />
           </header>
         </div>
         <div className="page-inner max-w-[800px] w-[100%] mx-auto p-4 py-40">{children}</div>
