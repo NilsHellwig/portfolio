@@ -13,7 +13,7 @@ const Home: React.FC = () => {
         Hi, I'm Nils Hellwig!
       </motion.h2>
       <motion.h3 className="font-light text-zinc-700 text-xl text-center" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 1.5 }}>
-        I love software development and data science.
+        I love software development and data science. Welcome to my portfolio!
       </motion.h3>
       <Link to="/portfolio/about">
         <motion.div
