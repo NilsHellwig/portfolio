@@ -12,7 +12,7 @@ const Home: React.FC = () => {
         Hi, I'm Nils Hellwig!
       </motion.h2>
       <motion.h3 className="font-light text-zinc-500 text-xl" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 1.5 }}>
-        Software Development. Data Science.
+        I love software development and data science.
       </motion.h3>
       <Link to="/portfolio/about">
         <motion.div
@@ -24,7 +24,7 @@ const Home: React.FC = () => {
         >
           <span className="text-white">
             <motion.span initial={{ y: 0 }} animate={{ y: [-5, 0, -5, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
-              About me
+              More about me
             </motion.span>
           </span>
           <ArrowCircleRight size={24} color="#ffffff" weight="thin" />

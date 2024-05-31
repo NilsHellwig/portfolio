@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { ReactNode, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 // Pages
 import Home from "./pages/Home";
@@ -21,25 +21,66 @@ const App: React.FC = () => {
   const [showOverlay, setShowOverlay] = useState(false);
 
   return (
-    <div className="page-outer" style={{ fontFamily: "Inter" }}>
+    <div>
       <Router>
-        <div className="fixed w-screen bg-zinc-50 bg-opacity-90 backdrop-blur-sm pt-2 z-20">
-          <header className="max-w-[800px] w-[100%] mx-auto px-4 mt-0">
-            <NavBar />
-            <PageSelector />
-          </header>
-        </div>
-        <div className="page-inner max-w-[800px] w-[100%] mx-auto p-4 py-40">
-          <Routes>
-            <Route path="portfolio/" element={<Home />} />
-            <Route path="portfolio/about" element={<About />} />
-            <Route path="portfolio/blog" element={<Blog />} />
-            <Route path="portfolio/lectures" element={<Lectures />} />
-            <Route path="portfolio/projects/:projectName?" element={<Projects showOverlay={showOverlay} setShowOverlay={setShowOverlay} />} />
-            <Route path="portfolio/publications" element={<Publications />} />
-            <Route path="portfolio/skills" element={<Skills />} />
-          </Routes>
-        </div>
+        <Routes>
+          <Route
+            path="portfolio/"
+            element={
+              <StandardUI>
+                <Home />
+              </StandardUI>
+            }
+          />
+          <Route
+            path="portfolio/about"
+            element={
+              <StandardUI>
+                <About />
+              </StandardUI>
+            }
+          />
+          <Route
+            path="portfolio/blog/*"
+            element={
+              <BlogUI>
+                <Blog />
+              </BlogUI>
+            }
+          />
+          <Route
+            path="portfolio/lectures"
+            element={
+              <StandardUI>
+                <Lectures />
+              </StandardUI>
+            }
+          />
+          <Route
+            path="portfolio/projects/:projectName?"
+            element={
+              <StandardUI>
+                <Projects showOverlay={showOverlay} setShowOverlay={setShowOverlay} />
+              </StandardUI>
+            }
+          />
+          <Route
+            path="portfolio/publications"
+            element={
+              <StandardUI>
+                <Publications />
+              </StandardUI>
+            }
+          />
+          <Route
+            path="portfolio/skills"
+            element={
+              <StandardUI>
+                <Skills />
+              </StandardUI>
+            }
+          />
+        </Routes>
       </Router>
       {showOverlay && (
         <div
@@ -56,6 +97,27 @@ const App: React.FC = () => {
       )}
     </div>
   );
+};
+
+const StandardUI: React.FC<{ children: ReactNode }> = ({ children }) => {
+  return (
+    <div className="page-outer" style={{ fontFamily: "Inter" }}>
+      <div>
+        <div className="fixed w-screen bg-zinc-50 bg-opacity-90 backdrop-blur-sm pt-2 z-20">
+          <header className="max-w-[800px] w-[100%] mx-auto px-4 mt-0">
+            <NavBar />
+            <PageSelector />
+          </header>
+        </div>
+        <div className="page-inner max-w-[800px] w-[100%] mx-auto p-4 py-40">{children}</div>
+      </div>
+    </div>
+  );
+};
+
+const BlogUI: React.FC<{ children: ReactNode }> = ({ children }) => {
+  document.body.style.backgroundColor = "rgb(0, 0, 0)";
+  return <div className="">{children}</div>;
 };
 
 export default App;
