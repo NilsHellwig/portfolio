@@ -9,7 +9,8 @@ interface BlogType {
   category: string;
   author: string;
   term: string;
-  iconPath: string;
+  textColor: string;
+  bgColor: string;
   title: string;
 }
 

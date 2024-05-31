@@ -5,10 +5,19 @@ export const BLOGS = [
     category: "Web-Development",
     author: "Nils Hellwig",
     term: "14/06/2024",
-    iconPath: require("../img/icons/lectures/web-dev-23.svg").default,
     title: "Web-Development with React Native",
-    textColor: "#1E3C4A",
-    bgColor: "#E6E8B1",
+    textColor: "#fefce8",
+    bgColor: "#4c1d95",
+  },
+  {
+    id: "2",
+    url: "example-entry-2",
+    category: "Web-Development",
+    author: "Nils Hellwig",
+    term: "14/06/2024",
+    title: "Web-Development with React Native",
+    textColor: "#fefce8",
+    bgColor: "#134e4a",
   },
 ];
 
