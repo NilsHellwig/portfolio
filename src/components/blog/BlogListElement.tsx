@@ -22,7 +22,7 @@ const BlogListElement: React.FC<BlogListElementProps> = ({ blog }) => {
     <Link to={`/portfolio/blog/${blog.url}`}>
       <motion.div whileHover={{ scale: 1.03 }} className="w-screen h-screen border-b-[1.5px] flex flex-col justify-between cursor-pointer" style={{ textDecoration: "none" }}>
         <div></div>
-        <div style={{ fontFamily: "RedditMono" }} className="flex text-4xl justify-center">
+        <div style={{ fontFamily: "RedditMono" }} className="flex text-4xl justify-center p-4">
           <span>{blog.title}</span>
         </div>
         <div className="flex flex-row gap-8 p-8">
