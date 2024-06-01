@@ -13,12 +13,12 @@ const Home: React.FC = () => {
       <motion.h2 className="mt-6 text-4xl font-bold" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 1 }}>
         Hi, I'm Nils Hellwig!
       </motion.h2>
-      <motion.h3 className="font-light text-zinc-700 text-xl text-center" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 1.5 }}>
+      <motion.h3 className="font-light text-zinc-700 text-xl text-center mb-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 1.5 }}>
         I love software development and data science. Welcome to my portfolio!
       </motion.h3>
       <Link to="/portfolio/about">
         <motion.div
-          className="flex gap-2 mt-6 cursor-pointer duration-300 shadow-button-black px-4 py-2 text-white rounded-lg focus:outline-none"
+          className="flex gap-2 cursor-pointer duration-300 shadow-button-black px-4 py-2 text-white rounded-lg focus:outline-none"
           whileHover={{ scale: 1.05 }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
