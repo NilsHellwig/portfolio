@@ -14,7 +14,7 @@ const PageSelector: React.FC<{ transparentBackground: boolean }> = ({ transparen
 
   return (
     <motion.div className="flex font-bold gap-3 text-sm mb-4 overflow-scroll no-scrollbar" initial={{ opacity: 0, x: 0 }} animate={{ opacity: 1, x: 0 }}>
-      <motion.span className={getTextColor("/portfolio")} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3, delay: 0.00 }}>
+      <motion.span className={getTextColor("/portfolio")} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3, delay: 0.0 }}>
         <Link to="/portfolio">Home</Link>
       </motion.span>
       <motion.span className={getTextColor("/portfolio/about")} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3, delay: 0.05 }}>

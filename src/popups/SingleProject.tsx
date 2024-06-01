@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowRight, Link, X} from "phosphor-react";
+import { ArrowLeft, ArrowRight, Link, X } from "phosphor-react";
 import React, { MouseEventHandler, useEffect, useState } from "react";
 import { PROJECTS } from "../data/projects";
 import { PROGRAMMING_LANGUAGES, ProgrammingLanguage } from "../data/programming-languages";
@@ -95,7 +95,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ showSingleProjectFct, pro
 
   return (
     <motion.div
-      className={`fixed top-0 left-0 right-0 bottom-0 max-w-[800px] w-[100%] xmd:my-auto xmd:h-3/4 my-auto xmd:mx-auto z-50 bg-white xmd:rounded-xl p-6 pb-12 ${
+      className={`white-case fixed top-0 left-0 right-0 bottom-0 max-w-[800px] w-[100%] xmd:my-auto xmd:h-3/4 my-auto xmd:mx-auto z-50 bg-white xmd:rounded-xl p-6 pb-12 ${
         galleryFullView ? "overflow-hidden" : "overflow-scroll scroll-smooth no-scrollbar"
       }`}
       initial="hidden"
@@ -111,7 +111,7 @@ const SingleProject: React.FC<SingleProjectProps> = ({ showSingleProjectFct, pro
         />
       )}
       <motion.header variants={itemVariants} className="flex justify-right sticky -top-6 -m-6 bg-zinc-50 bg-opacity-80 backdrop-blur-sm p-4 items-center gap-4 ] ">
-        <div className="bg-black opacity-75 rounded-xl p-2 flex justify-center items-center cursor-pointer hover:bg-zinc-800" onClick={showSingleProjectFct}>
+        <div className="bg-black shadow-button-black  opacity-75 rounded-xl p-2 flex justify-center items-center cursor-pointer hover:bg-zinc-800" onClick={showSingleProjectFct}>
           <div className="flex flex-row items-center gap-2">
             <X size={20} color="#ffffff" />
           </div>

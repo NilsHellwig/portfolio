@@ -4,6 +4,7 @@ import { motion } from "framer-motion"; // Import der framer-motion-Bibliothek
 import imageNilsHi from "../img/start-page/nils-hi.png";
 import { ArrowCircleRight } from "phosphor-react";
 import "../gradient-style.css";
+import "../shadowbutton.css";
 
 const Home: React.FC = () => {
   return (
@@ -17,7 +18,7 @@ const Home: React.FC = () => {
       </motion.h3>
       <Link to="/portfolio/about">
         <motion.div
-          className="bg-black px-4 py-2 rounded-xl flex gap-2 mt-6 cursor-pointer hover:bg-white duration-300 hover:text-black text-white"
+          className="flex gap-2 mt-6 cursor-pointer duration-300 shadow-button-black px-4 py-2 text-white rounded-lg focus:outline-none"
           whileHover={{ scale: 1.05 }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
