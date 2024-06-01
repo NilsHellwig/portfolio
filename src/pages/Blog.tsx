@@ -17,7 +17,7 @@ const Blog: React.FC = () => {
         </motion.div>
         <motion.div initial={{ scale: 0.8 }} animate={{ scale: 1 }} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
           <Tooltip text="Portfolio" position="left">
-            <Link to="/portfolio" className="p-1 px-2 bg-black rounded-xl font-bold hover:bg-zinc-700 cursor-pointer flex flex-row items-center gap-1 text-white bg-opacity-80 backdrop-blur">
+            <Link to="/portfolio" className="p-1 px-2 shadow-button-black bg-black rounded-xl font-bold hover:bg-zinc-700 cursor-pointer flex flex-row items-center gap-1 text-white bg-opacity-80 backdrop-blur">
               <AddressBook />
             </Link>
           </Tooltip>
