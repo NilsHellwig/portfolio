@@ -1,11 +1,11 @@
 export const BLOGS = [
   {
-    id: "0",
-    url: "example-entry",
-    category: "Dummies",
+    id: "1",
+    url: "master-thesis",
+    category: "NLP",
     author: "Nils Hellwig",
-    term: "01/06/2024",
-    title: "Example for a Blog Entry",
+    term: "12/06/2024",
+    title: "Master Thesis: Data Augmentation with Large Language Models for Aspect-Based Sentiment Analysis in Low-Resource Scenarios",
     textColor: "#fefce8",
     bgColor: "#134e4a",
   }
