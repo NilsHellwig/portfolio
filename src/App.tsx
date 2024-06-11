@@ -25,7 +25,7 @@ const App: React.FC = () => {
       <Router>
         <Routes>
           <Route
-            path="portfolio/"
+            path="portfolio"
             element={
               <StandardUI transparentBackground={true}>
                 <Home />
