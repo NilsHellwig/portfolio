@@ -247,7 +247,7 @@ export const PROJECTS: Project[] = [
     type: "Website",
     programmingLanguages: ["TypeScript"],
     technologies: ["HTML", "CSS", "Framer Motion", "Tailwind", "Radix", "React"],
-    iconPath: require("../img/icons/projects/nils-portfolio.png").default,
+    iconPath: require("../img/icons/projects/portfolio.png"),
     galleryImages: ["portfolio/portfolio-1.png", "portfolio/portfolio-2.png", "portfolio/portfolio-3.png", "portfolio/portfolio-4.png"],
     links: [{ name: "GitHub Repository: Portfolio", url: "https://github.com/NilsHellwig/portfolio" }],
   },
