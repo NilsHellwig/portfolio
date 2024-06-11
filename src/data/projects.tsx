@@ -239,4 +239,16 @@ export const PROJECTS: Project[] = [
     galleryImages: ["flight-delay-prediction/flight-delay-prediction-1.png", "flight-delay-prediction/flight-delay-prediction-2.png"],
     links: [{ name: "GitHub Repository: Flight Delay Prediction", url: "https://github.com/NilsHellwig/Abschlussprojekt-Web-Data-Science" }],
   },
+  {
+    id: "portfolio",
+    title: "portfolio",
+    subtitle: "Nils' porfolio from June 2024",
+    description: "I aimed to create a unique portfolio to showcase my projects, skills, publications, and courses. The design was developed entirely from scratch, without using any pre-made templates.",
+    type: "Website",
+    programmingLanguages: ["TypeScript"],
+    technologies: ["HTML", "CSS", "Framer Motion", "Tailwind", "Radix", "React"],
+    iconPath: require("../img/icons/projects/nils-portfolio.png").default,
+    galleryImages: ["portfolio/portfolio-1.png", "portfolio/portfolio-2.png", "portfolio/portfolio-3.png", "portfolio/portfolio-4.png"],
+    links: [{ name: "GitHub Repository: Portfolio", url: "https://github.com/NilsHellwig/portfolio" }],
+  },
 ];
