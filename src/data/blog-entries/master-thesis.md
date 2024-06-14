@@ -1,4 +1,4 @@
-# Master Thesis: Large Language Models (LLMs) for ABSA Augmentation
+# Master Thesis: Large Language Models for ABSA Augmentation
 
 ## Background
 
