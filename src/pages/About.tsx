@@ -30,8 +30,8 @@ const About: React.FC = () => {
           I am a 24-year-old developer based in Regensburg, Germany. During my studies in media informatics at the University of Regensburg, I specialized in developing web and mobile applications.
         </motion.p>
         <motion.p variants={itemVariants}>
-          As a software developer, I am passionate about both frontend and backend development. I find creating intuitive and visually appealing user interfaces just as exciting as developing
-          efficient and robust backend solutions.
+          I am passionate about both frontend and backend development. For me, creating intuitive and visually appealing user interfaces is just as exciting as developing
+          efficient and robust backend solutions. Projects from the past are presented in the projects subpage.
         </motion.p>
         <motion.p variants={itemVariants}>
           Additionally, I have gained substantial expertise in the field of natural language processing. I have extensive knowledge and hands-on experience with transformer-based language models,
