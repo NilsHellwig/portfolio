@@ -107,7 +107,7 @@ const BlogPost: React.FC = () => {
               p: ({ children }) => <p style={{ marginTop: "1rem" }}>{children}</p>,
               pre: ({ children }) => <pre style={{ padding: "1rem", backgroundColor: "rgba(255, 255, 255, 0.2)", borderRadius: "1rem", marginTop: "1rem" }}>{children}</pre>,
               a: ({ href, children }) => (
-                <a target="_blank" href={href} style={{ padding: "0.3rem", backgroundColor: "rgba(255, 255, 255, 0.2)", borderRadius: "1rem" }}>
+                <a target="_blank" rel="noreferrer" href={href} style={{ padding: "0.3rem", backgroundColor: "rgba(255, 255, 255, 0.2)", borderRadius: "1rem" }}>
                   {children}
                 </a>
               ),
