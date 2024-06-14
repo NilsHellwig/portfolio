@@ -21,7 +21,7 @@ interface BlogListElementProps {
 const BlogListElement: React.FC<BlogListElementProps> = ({ blog }) => {
   return (
     <Link to={`/portfolio/blog/${blog.url}`}>
-      <motion.div whileHover={{ scale: 1.03 }} className="w-screen h-screen border-b-[1.5px] flex flex-col justify-between cursor-pointer" style={{ textDecoration: "none" }}>
+      <motion.div whileHover={{ scale: 1.01 }} className="w-screen h-screen border-b-[1.5px] flex flex-col justify-between cursor-pointer" style={{ textDecoration: "none" }}>
         <div></div>
         <div style={{ fontFamily: "RedditMono" }} className="flex flex-col text-3xl justify-center p-4 items-center">
           <span className="text-8xl">#{blog?.id}</span>
