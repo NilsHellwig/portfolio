@@ -5,14 +5,13 @@
   /*other default setting ...*/
   /**/
   --secondary-glow: conic-gradient(from 10deg at 50% 50%, #ffcc33 0deg, #ff6666 55deg, #ff3399 120deg, #cc33ff 160deg, transparent 360deg);
-
   --third-glow: conic-gradient(from 90deg at 50% 50%, #ff9966 0deg, #ff5e62 55deg, #ff758c 120deg, #ff7eb3 160deg, transparent 360deg);
 }
 
 .gradient-bg::before,
 .gradient-bg::after {
   content: "";
-  position: absolute;
+  position: fixed;
   z-index: -1;
   opacity: 0.8;
 }

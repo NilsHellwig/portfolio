@@ -101,7 +101,7 @@ const App: React.FC = () => {
 
 const StandardUI: React.FC<{ children: ReactNode; transparentBackground: boolean }> = ({ children, transparentBackground }) => {
   return (
-    <div className="page-outer" style={{ fontFamily: "Inter" }}>
+    <div className={`page-outer ${transparentBackground ? "gradient-bg" : ""}`} style={{ fontFamily: "Inter" }}>
       <div>
         <div className={`fixed w-screen ${!transparentBackground ? "bg-zinc-50" : ""} bg-opacity-90 backdrop-blur-sm pt-2 z-20`}>
           <header className="max-w-[800px] w-[100%] mx-auto px-4 mt-0">

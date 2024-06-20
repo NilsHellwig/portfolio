@@ -8,7 +8,7 @@ import "../shadowbutton.css";
 
 const Home: React.FC = () => {
   return (
-    <motion.div className="gradient-bg mt-20 flex justify-center flex-col items-center" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
+    <motion.div className="mt-20 flex justify-center flex-col items-center" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
       <motion.img src={imageNilsHi} alt="Nils saying hi" width="200px" initial={{ y: -100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.5 }} />
       <motion.h2 className="mt-6 text-4xl font-bold" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 1 }}>
         Hi, I'm Nils Hellwig!
