@@ -66,6 +66,22 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
+    id: "byles",
+    title: "ByLes",
+    subtitle: "XDEV Software GMBH x Uni Regensburg: Screening system used throughout Bavaria to measure pupils' reading ability",
+    description:
+      "ByLes is a state-funded project aimed at assessing the reading skills of students across Bavaria. The system provides a standardized, digital screening procedure used in schools to evaluate students' reading abilities at different educational stages. The collected data of about 200,000 pupils supports teachers and educational authorities in identifying students who may require additional support, enabling targeted interventions to promote literacy development throughout the region.",
+    type: "Web-App",
+    programmingLanguages: ["TypeScript", "Java"],
+    technologies: ["Next.js", "Tailwind", "HTML", "CSS", "Swagger UI", "Quarkus", "Hibernate ORM", "Flyway", "Maven"],
+    iconPath: require("../img/icons/projects/byles.png"),
+    galleryImages: [],
+    links: [
+      { name: "ByCs: Byles", url: "https://www.bycs.de/hilfe-und-tutorials/eddipuls/byles-bayerisches-lesescreening/index.html" },
+      { name: "Süddeutsche Zeitung: ByLes", url: "https://www.sueddeutsche.de/sonderthemen/bayern/anna-stolz-schluessel-pisa-offensive-neues-bayerisches-lesescreening-grundschulen-freistaat-menschen-230431" },
+    ],
+  },
+  {
     id: "bird-id",
     title: "BirdID",
     subtitle: "App for Bird species identification",

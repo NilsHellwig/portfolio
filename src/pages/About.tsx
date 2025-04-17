@@ -27,7 +27,7 @@ const About: React.FC = () => {
       <h2 className="text-2xl font-bold">About</h2>
       <motion.div className="text-zinc-500 flex flex-col gap-4 mt-8 font-light" initial="hidden" animate="visible" variants={containerVariants}>
         <motion.p variants={itemVariants}>
-          I am a 24-year-old developer based in Regensburg, Germany. During my studies in media informatics at the University of Regensburg, I specialized in developing web and mobile applications.
+          I am a {new Date().getFullYear() - 2000 - (new Date().getMonth() > 5 || (new Date().getMonth() === 5 && new Date().getDate() >= 6) ? 0 : 1)}-year-old developer based in Regensburg, Germany. During my studies in media informatics at the University of Regensburg, I specialized in developing web and mobile applications.
         </motion.p>
         <motion.p variants={itemVariants}>
           I am passionate about both frontend and backend development. For me, creating intuitive and visually appealing user interfaces is just as exciting as developing
@@ -35,7 +35,7 @@ const About: React.FC = () => {
         </motion.p>
         <motion.p variants={itemVariants}>
           Additionally, I have gained substantial expertise in the field of natural language processing. I have extensive knowledge and hands-on experience with transformer-based language models,
-          utilizing them for tasks such as classification (BERT models), token classification, and phrase generation (e.g., T5 or LLMs). My work also includes contributions to
+          utilizing them for tasks such as classification (BERT models), token classification, and text generation (e.g., T5 or LLMs). My work also includes contributions to
           conferences related to Sentiment Analysis.
         </motion.p>
       </motion.div>
