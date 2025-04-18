@@ -29,7 +29,7 @@ const Projects: React.FC<ProjectsProps> = ({ showOverlay, setShowOverlay }) => {
       showSingleProjectFct();
     }
     // eslint-disable-next-line
-  }, []); // eslint-disable-next-line
+  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -56,7 +56,12 @@ const Projects: React.FC<ProjectsProps> = ({ showOverlay, setShowOverlay }) => {
       <h2 className="text-2xl font-bold">Projects</h2>
       <section className="pt-8">
         <h3 className="font-bold text-md mt-6">Operating Systems</h3>
-        <motion.div className="mt-6 grid grid-cols-1 vsm:grid-cols-2 sm:grid-cols-2 gap-6" initial="hidden" animate="visible" variants={containerVariants}>
+        <motion.div
+          className="mt-6 grid grid-cols-1 vsm:grid-cols-2 sm:grid-cols-2 gap-6"
+          initial="hidden"
+          animate="visible"
+          variants={containerVariants}
+        >
           {PROJECTS.map((project, index) => (
             <motion.div
               key={index}
@@ -73,7 +78,11 @@ const Projects: React.FC<ProjectsProps> = ({ showOverlay, setShowOverlay }) => {
                 </div>
               </div>
               <div className="flex justify-center">
-                <div className="w-20 h-20 rounded-xl bg-white shadow-sm p-3">{project.iconPath && <img src={project.iconPath} alt={`${project.title} icon`} className="mr-2" />}</div>
+                <div className="w-20 h-20 rounded-xl bg-white shadow-sm p-3">
+                  {project.iconPath && (
+                    <img src={project.iconPath} alt={`${project.title} icon`} className="mr-2" />
+                  )}
+                </div>
               </div>
               <div className="flex flex-col">
                 <span className="font-regular text-sm font-bold">{project.title}</span>
@@ -82,12 +91,18 @@ const Projects: React.FC<ProjectsProps> = ({ showOverlay, setShowOverlay }) => {
             </motion.div>
           ))}
         </motion.div>
+
         <AnimatePresence>
-          {showOverlay && (
-            <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }} transition={{ duration: 0.3 }}>
+          {showOverlay ? (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.3 }}
+            >
               <SingleProject showSingleProjectFct={showSingleProjectFct} projectId={projectId} />
             </motion.div>
-          )}
+          ) : null}
         </AnimatePresence>
       </section>
     </div>
