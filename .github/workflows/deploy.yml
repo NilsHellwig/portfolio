@@ -15,9 +15,9 @@ jobs:
       id-token: write
     steps:
       - name: checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4         # optional but recommended
       - name: setup node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4       # optional but recommended
         with:
           node-version: 18.x
       - name: install dependencies
@@ -27,9 +27,9 @@ jobs:
         env:
           PUBLIC_URL: /portfolio
       - name: upload artifact
-        uses: actions/upload-pages-artifact@v2   # <-- here updated to v2
+        uses: actions/upload-pages-artifact@v2   # ✅ uses upload-artifact@v4 internally
         with:
           path: ./build
       - name: deploy to github pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v2            # ✅ important: now uses v4 under the hood
