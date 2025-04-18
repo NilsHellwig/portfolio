@@ -14,27 +14,22 @@ jobs:
       pages: write
       id-token: write
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: setup node
+        uses: actions/setup-node@v3
         with:
           node-version: 18.x
-
-      - name: Install dependencies
+      - name: install dependencies
         run: npm ci
-
-      - name: Build app
+      - name: build app
         run: npm run build && npm run gh-pages:404
         env:
           PUBLIC_URL: /portfolio
-
-      - name: Upload GitHub Pages artifact
-        uses: actions/upload-pages-artifact@v2
+      - name: upload artifact
+        uses: actions/upload-pages-artifact@v2   # <-- here updated to v2
         with:
           path: ./build
-
-      - name: Deploy to GitHub Pages
+      - name: deploy to github pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v1
