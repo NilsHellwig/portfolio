@@ -67,8 +67,8 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "byles",
-    title: "ByLes",
-    subtitle: "XDEV Software GMBH x Uni Regensburg: Screening system used throughout Bavaria to measure pupils' reading ability",
+    title: "ByLes: Bayerisches Lesescreening",
+    subtitle: "XDEV Software GMBH x Uni Regensburg",
     description:
       "ByLes is a state-funded project aimed at assessing the reading skills of students across Bavaria. The system provides a standardized, digital screening procedure used in schools to evaluate students' reading abilities at different educational stages. The collected data of about 200,000 pupils supports teachers and educational authorities in identifying students who may require additional support, enabling targeted interventions to promote literacy development throughout the region.",
     type: "Web-App",
