@@ -27,16 +27,13 @@ const About: React.FC = () => {
       <h2 className="text-2xl font-bold">About</h2>
       <motion.div className="text-zinc-500 flex flex-col gap-4 mt-8 font-light" initial="hidden" animate="visible" variants={containerVariants}>
         <motion.p variants={itemVariants}>
-          I am a {new Date().getFullYear() - 2000 - (new Date().getMonth() > 5 || (new Date().getMonth() === 5 && new Date().getDate() >= 6) ? 0 : 1)}-year-old developer based in Regensburg, Germany. During my studies in media informatics at the University of Regensburg, I specialized in developing web and mobile applications.
+          I am a {new Date().getFullYear() - 2000 - (new Date().getMonth() > 5 || (new Date().getMonth() === 5 && new Date().getDate() >= 6) ? 0 : 1)}-year-old PhD candidate and software engineer based in Regensburg, Germany. I am currently pursuing my doctoral degree at the Faculty of Computer Science at the University of Regensburg, where I specialize in Natural Language Processing and computational linguistics.
         </motion.p>
         <motion.p variants={itemVariants}>
-          I am passionate about both frontend and backend development. For me, creating intuitive and visually appealing user interfaces is just as exciting as developing
-          efficient and robust backend solutions. Projects from the past are presented in the projects subpage.
+          My research focuses on advancing LLM-based approaches to tackle aspect-based sentiment analysis in low-resource scenarios. I have published multiple papers in conferences and journals, exploring topics such as synthetic training data generation, transformer-based sentiment analysis, and the application of LLMs for complex NLP tasks.
         </motion.p>
         <motion.p variants={itemVariants}>
-          Additionally, I have gained substantial expertise in the field of natural language processing. I have extensive knowledge and hands-on experience with transformer-based language models,
-          utilizing them for tasks such as classification (BERT models), token classification, and text generation (e.g., T5 or LLMs). My work also includes contributions to
-          conferences related to Sentiment Analysis.
+          Beyond my academic work in NLP, I am passionate about full-stack software engineering. I develop modern web applications using technologies like Next.js, React, TypeScript, and MongoDB for various projects. I enjoy building scalable, user-friendly solutions that bridge the gap between cutting-edge research and practical applications.
         </motion.p>
       </motion.div>
     </div>

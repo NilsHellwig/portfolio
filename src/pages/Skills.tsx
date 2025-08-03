@@ -47,7 +47,7 @@ const Skills: React.FC = () => {
 
   return (
     <div className="pb-8">
-      <h2 className="text-2xl font-bold">Skills</h2>
+      <h2 className="text-2xl font-bold">Software Engineering</h2>
       <motion.section className="pt-8" initial="hidden" animate="visible" variants={containerVariants2}>
         <motion.h3 variants={itemVariants} className="font-bold text-md mt-6">
           Programming Languages

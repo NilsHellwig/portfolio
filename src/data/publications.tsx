@@ -1,8 +1,18 @@
 export const PUBLICATIONS = [
   {
+    name: "Do we still need Human Annotators? Prompting Large Language Models for Aspect Sentiment Quad Prediction",
+    authors: "Hellwig, Nils Constantin, Fehle, Jakob, Kruschwitz, Udo, & Wolff, Christian",
+    conference: "Proceedings of the 1st Joint Workshop on Large Language Models and Structure Modeling (XLLM 2025)",
+    pages: "153–172",
+    year: 2025,
+    publisher: "Association for Computational Linguistics",
+    url: "https://aclanthology.org/2025.xllm-1.15/",
+    tooltipUrl: "aclanthology.org",
+  },
+  {
     name: "Exploring large language models for the generation of synthetic training samples for aspect-based sentiment analysis in low resource settings",
     authors: "Hellwig, Nils Constantin, Fehle, Jakob, & Wolff, Christian.",
-    journal: "Expert Systems with Applications",
+    conference: "Expert Systems with Applications",
     pages: "125514",
     year: 2024,
     publisher: "Elsevier",
@@ -21,7 +31,7 @@ export const PUBLICATIONS = [
   {
     name: "Exploring Twitter discourse with BERTopic: topic modeling of tweets related to the major German parties during the 2021 German federal election",
     authors: "Hellwig, Nils Constantin, Fehle, Jakob, Bink, Markus, Schmidt, Thomas, & Wolff, Christian.",
-    journal: "International Journal of Speech Technology",
+    conference: "International Journal of Speech Technology",
     pages: "1–21",
     year: 2024,
     publisher: "Springer",

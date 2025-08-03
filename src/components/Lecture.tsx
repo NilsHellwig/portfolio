@@ -18,8 +18,8 @@ const Lecture: React.FC<LectureProps> = ({ lecture }) => {
   const [showDetails, setShowDetails] = useState(false);
 
   const handleDownload = (filePath: string) => {
-    console.log("../downloadable-files/lectures/web-dev-2023/" + filePath);
-    const totalFilePath = require("../downloadable-files/lectures/web-dev-2023/" + filePath);
+    console.log("Downloading file:", filePath);
+    const totalFilePath = "/lectures/" + filePath;
     console.log(totalFilePath);
     const link = document.createElement("a");
     link.href = totalFilePath;
