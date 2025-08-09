@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { DownloadSimple, FilePdf, Minus, Plus } from "phosphor-react";
+import { lectureFiles } from "../downloadable-files/lectures/lectureFiles";
 
 type LectureProps = {
   lecture: {
@@ -18,13 +19,26 @@ const Lecture: React.FC<LectureProps> = ({ lecture }) => {
   const [showDetails, setShowDetails] = useState(false);
 
   const handleDownload = (filePath: string) => {
-    console.log("Downloading file:", filePath);
-    const totalFilePath = "/lectures/" + filePath;
-    console.log(totalFilePath);
-    const link = document.createElement("a");
-    link.href = totalFilePath;
-    link.download = filePath;
-    link.click();
+    try {
+      console.log("Downloading file:", filePath);
+      // Hole die PDF-URL aus der statischen Import-Map
+      const pdfUrl = lectureFiles[filePath];
+      
+      if (!pdfUrl) {
+        console.error("File not found:", filePath);
+        alert("Datei nicht gefunden. Bitte versuchen Sie es später erneut.");
+        return;
+      }
+      
+      const link = document.createElement("a");
+      link.href = pdfUrl;
+      link.download = filePath.split('/').pop() || 'document.pdf'; // Nur der Dateiname
+      link.target = '_blank'; // Öffnet in neuem Tab als Fallback
+      link.click();
+    } catch (error) {
+      console.error("Error downloading file:", error);
+      alert("Fehler beim Herunterladen der Datei. Bitte versuchen Sie es später erneut.");
+    }
   };
 
   return (
