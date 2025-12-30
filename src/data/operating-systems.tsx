@@ -8,7 +8,7 @@ export const OPERATING_SYSTEMS = [
     iconPath: require("../img/icons/operating-systems/windows.svg").default,
   },
   {
-    name: "Linux Servers",
+    name: "Linux",
     iconPath: require("../img/icons/operating-systems/linux.svg").default,
   },
 ];

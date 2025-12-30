@@ -13,6 +13,21 @@ type Project = {
 
 export const PROJECTS: Project[] = [
   {
+    id: "annoabsa",
+    title: "AnnoABSA",
+    subtitle: "AI-assisted (RAG) annotation tool for Aspect-Based Sentiment Analysis",
+    description:
+      "AnnoABSA is a modern annotation tool for Aspect-Based Sentiment Analysis, enabling researchers to efficiently label text data for NLP tasks. The application features an intuitive React-based interface with smart phrase selection, visual color-coded annotations, and optional AI-powered prediction assistance using LLMs (OS models via ollama or commercial models via OpenAI API). It supports multilingual datasets with translation display, provides comprehensive analytics including timing metrics, and handles both CSV and JSON formats. The tool offers flexible configuration through a CLI, supports custom sentiment elements and categories, and includes features like automatic phrase cleaning, dark mode, and embedded PDF annotation guidelines for maintaining consistent annotation standards.",
+    type: "Web-App",
+    programmingLanguages: ["TypeScript", "Python"],
+    technologies: ["React", "Vite", "Tailwind", "FastAPI", "Ollama", "OpenAI API", "BM25"],
+    iconPath: require("../img/icons/projects/annoabsa.png"),
+    galleryImages: ["annoabsa/annoabsa-1.png"],
+    links: [
+      { name: "GitHub Repository: ABSA Annotation Tool", url: "https://github.com/NilsHellwig/ABSA-annotation-tool" },
+    ],
+  },
+  {
     id: "basisdokument",
     title: "Das Basisdokument",
     subtitle: "Digital structuring for civil proceedings.",

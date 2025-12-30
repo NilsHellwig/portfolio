@@ -1,7 +1,7 @@
 export const TECHNOLOGIES = [
   {
     name: "Web Technologies (Frontend)",
-    technologies: ["HTML", "CSS", "Tailwind", "JavaScript", "jQuery", "React (+Next.js)", "Vue.js (+Nuxt.js)", "Angular"],
+    technologies: ["HTML", "CSS", "Tailwind", "shadCN", "JavaScript", "jQuery", "React (+Next.js)", "Vue.js (+Nuxt.js)", "Angular"],
   },
   {
     name: "Web Technologies (Backend)",
@@ -12,20 +12,20 @@ export const TECHNOLOGIES = [
     technologies: ["React Native (Expo)", "Native Android development", "Framework7"],
   },
   {
-    name: "Data Science",
-    technologies: ["pandas", "NumPy", "NLTK"],
+    name: "Data Analysis",
+    technologies: ["pandas", "NumPy", "NLTK", "SpaCy", "Matplotlib", "Seaborn", "Plotly"],
   },
   {
     name: "Machine Learning",
-    technologies: ["Scikit-learn", "Tensorflow / Keras", "Huggingface Transformer"],
+    technologies: ["Scikit-learn", "Tensorflow / Keras", "Huggingface Transformer", "unsloth", "vLLM", "ollama", "LangChain/LangGraph"],
   },
   {
     name: "Databases",
-    technologies: ["Firebase", "mySQL", "MangoDB", "ElasticSearch"],
+    technologies: ["Firebase", "mySQL", "MangoDB", "ElasticSearch", "Redis", "SQLite"],
   },
   {
     name: "CI/CD",
-    technologies: ["GitHub Actions", "GitLab CI/CD", "Docker"],
+    technologies: ["GitHub Actions", "GitLab CI/CD", "Docker", "nginx", "Vercel", "Netlify"],
   },
   {
     name: "Versioning (git)",
