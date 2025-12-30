@@ -8,19 +8,40 @@ import { Tooltip } from "../components/Tooltip";
 
 const Blog: React.FC = () => {
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }} className="relative">
-      <div className="flex justify-between bg-zinc-200 p-2 fixed top-0 w-screen bg-opacity-80 backdrop-blur-sm z-20 items-center gap-2">
-        <motion.div initial={{ scale: 0.8 }} animate={{ scale: 1 }} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.9 }} className="flex items-center">
-          <Link to="/portfolio/blog" className="text-xl text-black font-bold hover:bg-zinc-300 p-2 rounded-md" style={{ fontFamily: "RedditMono" }}>
-            /blog/nilshellwig
+    <motion.div 
+      initial={{ opacity: 0 }} 
+      animate={{ opacity: 1 }} 
+      exit={{ opacity: 0 }} 
+      transition={{ duration: 0.5 }} 
+      className="relative min-h-screen bg-white"
+    >
+      <div className="flex justify-between fixed top-0 w-screen z-20 items-center gap-2 px-6 py-4 bg-white border-b border-zinc-200">
+        <motion.div 
+          initial={{ opacity: 0 }} 
+          animate={{ opacity: 1 }} 
+          transition={{ delay: 0.1 }}
+          className="flex items-center"
+        >
+          <Link 
+            to="/portfolio/blog" 
+            className="text-xl font-semibold text-zinc-900 hover:text-zinc-600 transition-colors" 
+            style={{ fontFamily: "Inter" }}
+          >
+            Nils Hellwig
           </Link>
         </motion.div>
-        <motion.div initial={{ scale: 0.8 }} animate={{ scale: 1 }} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-          <Tooltip text="Portfolio" position="left">
-            <Link to="/portfolio" className="p-1 px-2 shadow-button-black bg-black rounded-xl font-bold hover:bg-zinc-700 cursor-pointer flex flex-row items-center gap-1 text-white bg-opacity-80 backdrop-blur">
-              <AddressBook />
-            </Link>
-          </Tooltip>
+        <motion.div 
+          initial={{ opacity: 0 }} 
+          animate={{ opacity: 1 }} 
+          transition={{ delay: 0.2 }}
+        >
+          <Link 
+            to="/portfolio" 
+            className="px-4 py-2 rounded-lg font-medium text-sm text-zinc-700 hover:bg-zinc-100 transition-colors flex items-center gap-2"
+          >
+            <AddressBook size={18} />
+            <span>Portfolio</span>
+          </Link>
         </motion.div>
       </div>
       <Routes>

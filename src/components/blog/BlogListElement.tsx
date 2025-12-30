@@ -20,27 +20,27 @@ interface BlogListElementProps {
 
 const BlogListElement: React.FC<BlogListElementProps> = ({ blog }) => {
   return (
-    <Link to={`/portfolio/blog/${blog.url}`}>
-      <motion.div whileHover={{ scale: 1.01 }} className="w-screen h-screen border-b-[1.5px] flex flex-col justify-between cursor-pointer" style={{ textDecoration: "none" }}>
-        <div></div>
-        <div style={{ fontFamily: "RedditMono" }} className="flex flex-col text-3xl justify-center p-4 items-center">
-          <span className="text-8xl">#{blog?.id}</span>
-          <span className="text-center">{blog.title}</span>
-        </div>
-        <div className="flex flex-row gap-8 p-8">
-          <div className="flex flex-col">
-            <span className="font-regular">Post #{blog.id}</span>
-            <span className="text-zinc-400 text-light">{blog.category}</span>
+    <Link to={`/portfolio/blog/${blog.url}`} className="block group">
+      <motion.div 
+        whileHover={{ x: 4 }} 
+        transition={{ duration: 0.2 }}
+        className="py-8 border-b border-zinc-200 cursor-pointer"
+        style={{ textDecoration: "none" }}
+      >
+        <div className="flex flex-col gap-3">
+          <div className="flex items-center gap-3 text-sm text-zinc-500">
+            <span>{convertMonth[parseInt(blog.term.split("/")[1])]} {blog.term.split("/")[0]}, {blog.term.split("/")[2]}</span>
+            <span>•</span>
+            <span>{blog.category}</span>
           </div>
-          <div className="flex flex-col">
-            <span className="font-regular">{blog.author}</span>
-            <span className="text-zinc-400 text-light">Author</span>
-          </div>
-          <div className="flex flex-col">
-            <span className="font-regular">
-              {convertMonth[parseInt(blog.term.split("/")[1])]} {blog.term.split("/")[0]}
-            </span>
-            <span className="text-zinc-400 text-light">{blog.term.split("/")[2]}</span>
+          
+          <h2 className="text-2xl font-semibold text-zinc-900 group-hover:text-zinc-600 transition-colors">
+            {blog.title}
+          </h2>
+          
+          <div className="flex items-center text-sm text-zinc-500">
+            <span>By {blog.author}</span>
+            <span className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity">Read more →</span>
           </div>
         </div>
       </motion.div>
