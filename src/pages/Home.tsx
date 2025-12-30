@@ -14,7 +14,7 @@ const Home: React.FC = () => {
         Hi, I'm Nils Hellwig!
       </motion.h2>
       <motion.h3 className="font-light text-zinc-700 text-xl text-center mb-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 1.5 }}>
-        I'm passionate about NLP and software engineering. Welcome to my portfolio!
+       I am an AI researcher at University of Regensburg, where I work on Structured Sentiment Analysis. Welcome to my portfolio!
       </motion.h3>
       <Link to="/portfolio/about">
         <motion.div
