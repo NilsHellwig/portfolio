@@ -25,7 +25,7 @@ const BlogPost: React.FC = () => {
   // Generate color scheme based on date
   const getColorScheme = (term: string | undefined) => {
     if (!term) return { primary: "#3b82f6", secondary: "#8b5cf6", accent: "#ec4899" };
-    const [day, month, year] = term.split("/").map(Number);
+    const [, month, year] = term.split("/").map(Number);
     const seed = month + year;
     const schemes = [
       { primary: "#3b82f6", secondary: "#8b5cf6", accent: "#ec4899" }, // Blue-Purple-Pink

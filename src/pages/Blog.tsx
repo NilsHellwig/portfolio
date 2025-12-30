@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import BlogIndex from "../components/blog/BlogIndex";
 import BlogPost from "../components/blog/BlogPost";
 import { AddressBook } from "phosphor-react";
-import { Tooltip } from "../components/Tooltip";
 
 const Blog: React.FC = () => {
   return (
