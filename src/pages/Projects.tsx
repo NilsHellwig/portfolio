@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { PROJECTS } from "../data/projects";
 import { useParams } from "react-router";
 import SingleProject from "../popups/SingleProject";
-import { GithubLogo } from "@phosphor-icons/react";
+import { GithubLogo, Funnel } from "@phosphor-icons/react";
 
 interface ProjectsProps {
   showOverlay: boolean;
@@ -12,8 +12,32 @@ interface ProjectsProps {
 
 const Projects: React.FC<ProjectsProps> = ({ showOverlay, setShowOverlay }) => {
   const [projectId, setProjectId] = useState("");
+  const [activeFilter, setActiveFilter] = useState<string>("All");
   const { projectName } = useParams();
   console.log(projectName);
+
+  // Extract unique types sorted by project count
+  const categories = useMemo(() => {
+    const uniqueTypes = Array.from(new Set(PROJECTS.map(p => p.type)));
+    const sortedTypes = uniqueTypes.sort((a, b) => {
+      const countA = PROJECTS.filter(p => p.type === a).length;
+      const countB = PROJECTS.filter(p => p.type === b).length;
+      return countB - countA; // Sort descending by count
+    });
+    return ["All", ...sortedTypes];
+  }, []);
+
+  // Get project count per type
+  const getCategoryCount = (category: string) => {
+    if (category === "All") return PROJECTS.length;
+    return PROJECTS.filter(p => p.type === category).length;
+  };
+
+  // Filter projects
+  const filteredProjects = useMemo(() => {
+    if (activeFilter === "All") return PROJECTS;
+    return PROJECTS.filter(p => p.type === activeFilter);
+  }, [activeFilter]);
 
   function showSingleProjectFct() {
     // Toggle body overflow
@@ -81,14 +105,61 @@ const Projects: React.FC<ProjectsProps> = ({ showOverlay, setShowOverlay }) => {
       </div>
 
       <section className="pt-8">
-        <h3 className="font-bold text-md mt-6 dark:text-white">Selected Software Engineering Projects</h3>
-        <motion.div
-          className="mt-6 grid grid-cols-1 vsm:grid-cols-2 sm:grid-cols-2 gap-6"
-          initial="hidden"
-          animate="visible"
-          variants={containerVariants}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+          <h3 className="font-bold text-md dark:text-white">Selected Projects</h3>
+          <div className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400">
+            <Funnel size={16} weight="fill" />
+            <span>{filteredProjects.length} {filteredProjects.length === 1 ? 'Projekt' : 'Projekte'}</span>
+          </div>
+        </div>
+
+        {/* Filter Pills */}
+        <motion.div 
+          className="flex flex-wrap gap-2 mb-6"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
         >
-          {PROJECTS.map((project, index) => (
+          {categories.map((category) => (
+            <motion.button
+              key={category}
+              onClick={() => setActiveFilter(category)}
+              className={`
+                px-4 py-2 rounded-full text-sm font-medium transition-all duration-200
+                border-[0.5px] flex items-center gap-2
+                ${activeFilter === category 
+                  ? 'bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 border-zinc-900 dark:border-zinc-100 shadow-md' 
+                  : 'bg-white dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border-zinc-300 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-600 hover:shadow-sm'
+                }
+              `}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            >
+              <span>{category}</span>
+              <span className={`
+                text-xs px-2 py-0.5 rounded-full
+                ${activeFilter === category 
+                  ? 'bg-white/20 dark:bg-zinc-900/20' 
+                  : 'bg-zinc-100 dark:bg-zinc-700'
+                }
+              `}>
+                {getCategoryCount(category)}
+              </span>
+            </motion.button>
+          ))}
+        </motion.div>
+
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeFilter}
+            className="grid grid-cols-1 vsm:grid-cols-2 sm:grid-cols-2 gap-6"
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            variants={containerVariants}
+          >
+            {filteredProjects.map((project, index) => (
             <motion.div
               key={index}
               className="border-[0.5px] border-zinc-300 dark:border-zinc-700 rounded-xl flex p-5 flex-col gap-4 bg-white dark:bg-zinc-800 cursor-pointer hover:border-zinc-400 dark:hover:border-zinc-600 hover:shadow-md dark:hover:shadow-zinc-900/50 transition-all duration-150 ease-out"
@@ -119,7 +190,8 @@ const Projects: React.FC<ProjectsProps> = ({ showOverlay, setShowOverlay }) => {
               </div>
             </motion.div>
           ))}
-        </motion.div>
+          </motion.div>
+        </AnimatePresence>
 
         <AnimatePresence>
           {showOverlay ? (
