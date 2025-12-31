@@ -5,6 +5,7 @@ import { PROGRAMMING_LANGUAGES } from "../data/programming-languages";
 import { IDES } from "../data/ides";
 import { OPERATING_SYSTEMS } from "../data/operating-systems";
 import { TECHNOLOGIES } from "../data/technologies";
+import Footer from "../components/Footer";
 
 const Skills: React.FC = () => {
   const [languages] = useState(PROGRAMMING_LANGUAGES);
@@ -135,6 +136,7 @@ const Skills: React.FC = () => {
           </motion.section>
         );
       })}
+      <Footer />
     </div>
   );
 };

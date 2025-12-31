@@ -3,6 +3,7 @@ import { PUBLICATIONS } from "../data/publications";
 import { Link } from "phosphor-react";
 import { openLinkInNewTab } from "../helper";
 import { motion } from "framer-motion";
+import Footer from "../components/Footer";
 
 const Publications: React.FC = () => {
   const containerVariants = {
@@ -65,6 +66,7 @@ const Publications: React.FC = () => {
           );
         })}
       </motion.div>
+      <Footer />
     </div>
   );
 };

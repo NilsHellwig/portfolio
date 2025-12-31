@@ -1,11 +1,12 @@
 import { BLOGS } from "../../data/blogs";
 import { motion } from "framer-motion";
 import BlogListElement from "./BlogListElement";
+import Footer from "../Footer";
 
 const BlogIndex: React.FC = () => {
   return (
     <div style={{ fontFamily: "Inter" }} className="min-h-screen bg-white dark:bg-zinc-900">
-      <div className="max-w-6xl mx-auto px-6 pt-32 pb-16">
+      <div className="max-w-5xl mx-auto px-6 pt-32 pb-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -35,6 +36,7 @@ const BlogIndex: React.FC = () => {
             </motion.div>
           ))}
         </div>
+        <Footer />
       </div>
     </div>
   );

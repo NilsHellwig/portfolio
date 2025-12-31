@@ -1,45 +1,130 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { motion } from "framer-motion";
-import { ArrowSquareOut } from "phosphor-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { 
+  ArrowSquareOut, 
+  House, 
+  User, 
+  Code, 
+  Briefcase, 
+  BookOpen, 
+  Chalkboard,
+  Article,
+  List,
+  X
+} from "phosphor-react";
 
 const PageSelector: React.FC<{ transparentBackground: boolean }> = ({ transparentBackground }) => {
   const location = useLocation();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const getTextColor = (path: string) => {
-    if (location.pathname === "/portfolio" || location.pathname === "/portfolio/") {
-      return location.pathname === path ? "text-black dark:text-white cursor-pointer duration-300 hover:text-zinc-600 dark:hover:text-zinc-400" : "text-zinc-500 dark:text-zinc-400 hover:text-zinc-400 dark:hover:text-zinc-300 cursor-pointer duration-300";
+  const navigationItems = [
+    { path: "/portfolio", label: "Home", icon: House },
+    { path: "/portfolio/about", label: "About", icon: User },
+    { path: "/portfolio/skills", label: "Skills", icon: Code },
+    { path: "/portfolio/projects", label: "Projects", icon: Briefcase },
+    { path: "/portfolio/publications", label: "Publications", icon: BookOpen },
+    { path: "/portfolio/lectures", label: "Lectures", icon: Chalkboard },
+    { path: "/portfolio/blog", label: "Blog", icon: Article, external: true },
+  ];
+
+  const isActive = (path: string) => {
+    if (path === "/portfolio") {
+      return location.pathname === path || location.pathname === "/portfolio/";
     }
-    return location.pathname === path ? "text-black dark:text-white text-bold cursor-pointer duration-300" : "text-zinc-400 dark:text-zinc-500 hover:text-zinc-300 dark:hover:text-zinc-400 cursor-pointer duration-300";
+    return location.pathname.startsWith(path);
   };
 
   return (
-    <motion.div className="flex font-bold gap-3 text-sm mb-4 overflow-scroll no-scrollbar" initial={{ opacity: 0, x: 0 }} animate={{ opacity: 1, x: 0 }}>
-      <motion.span className={getTextColor("/portfolio")} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3, delay: 0.0 }}>
-        <Link to="/portfolio">home</Link>
-      </motion.span>
-      <motion.span className={getTextColor("/portfolio/about")} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3, delay: 0.05 }}>
-        <Link to="/portfolio/about">about</Link>
-      </motion.span>
-      <motion.span className={getTextColor("/portfolio/skills")} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3, delay: 0.1 }}>
-        <Link to="/portfolio/skills">dev</Link>
-      </motion.span>
-      <motion.span className={getTextColor("/portfolio/projects")} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3, delay: 0.15 }}>
-        <Link to="/portfolio/projects">dev.projects</Link>
-      </motion.span>
-      <motion.span className={getTextColor("/portfolio/publications")} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3, delay: 0.2 }}>
-        <Link to="/portfolio/publications">publications</Link>
-      </motion.span>
-      <motion.span className={getTextColor("/portfolio/lectures")} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3, delay: 0.25 }}>
-        <Link to="/portfolio/lectures">lectures</Link>
-      </motion.span>
-      <motion.span className={`${getTextColor("/portfolio/blog")} relative`} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3, delay: 0.3 }}>
-        <Link to="/portfolio/blog" className="flex items-center gap-1">
-          <span>blog</span>
-          <ArrowSquareOut size={14} weight="bold" className="opacity-60" />
-        </Link>
-      </motion.span>
-    </motion.div>
+    <>
+      {/* Desktop Navigation */}
+      <motion.nav 
+        className="hidden md:flex items-center gap-1.5 mb-4 overflow-x-auto no-scrollbar" 
+        initial={{ opacity: 0 }} 
+        animate={{ opacity: 1 }}
+      >
+        {navigationItems.map((item, index) => {
+          const Icon = item.icon;
+          const active = isActive(item.path);
+          
+          return (
+            <motion.div
+              key={item.path}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: index * 0.05 }}
+            >
+              <Link
+                to={item.path}
+                className={`
+                  flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200
+                  ${active 
+                    ? 'bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 shadow-md' 
+                    : 'text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-zinc-100'
+                  }
+                `}
+              >
+                <Icon size={16} weight={active ? "fill" : "regular"} />
+                <span>{item.label}</span>
+                {item.external && <ArrowSquareOut size={12} weight="bold" className="opacity-60" />}
+              </Link>
+            </motion.div>
+          );
+        })}
+      </motion.nav>
+
+      {/* Mobile Navigation */}
+      <div className="md:hidden mb-4">
+        <motion.button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 font-medium text-sm w-full justify-between"
+          whileTap={{ scale: 0.98 }}
+        >
+          <div className="flex items-center gap-2">
+            {navigationItems.find(item => isActive(item.path))?.icon && (
+              React.createElement(navigationItems.find(item => isActive(item.path))!.icon, { size: 16, weight: "fill" })
+            )}
+            <span>{navigationItems.find(item => isActive(item.path))?.label || "Menu"}</span>
+          </div>
+          {mobileMenuOpen ? <X size={16} weight="bold" /> : <List size={16} weight="bold" />}
+        </motion.button>
+
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="mt-2 bg-white dark:bg-zinc-800 rounded-lg border border-zinc-200 dark:border-zinc-700 overflow-hidden shadow-lg"
+            >
+              {navigationItems.map((item) => {
+                const Icon = item.icon;
+                const active = isActive(item.path);
+                
+                return (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`
+                      flex items-center gap-3 px-4 py-3 transition-colors border-b border-zinc-100 dark:border-zinc-700 last:border-b-0
+                      ${active 
+                        ? 'bg-zinc-50 dark:bg-zinc-700 text-zinc-900 dark:text-zinc-100 font-semibold' 
+                        : 'text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-700'
+                      }
+                    `}
+                  >
+                    <Icon size={18} weight={active ? "fill" : "regular"} />
+                    <span className="text-sm">{item.label}</span>
+                    {item.external && <ArrowSquareOut size={12} weight="bold" className="opacity-60 ml-auto" />}
+                  </Link>
+                );
+              })}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </>
   );
 };
 

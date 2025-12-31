@@ -4,6 +4,7 @@ import { PROJECTS } from "../data/projects";
 import { useParams } from "react-router";
 import SingleProject from "../popups/SingleProject";
 import { GithubLogo, Funnel } from "@phosphor-icons/react";
+import Footer from "../components/Footer";
 
 interface ProjectsProps {
   showOverlay: boolean;
@@ -205,6 +206,8 @@ const Projects: React.FC<ProjectsProps> = ({ showOverlay, setShowOverlay }) => {
             </motion.div>
           ) : null}
         </AnimatePresence>
+
+        <Footer />
       </section>
     </div>
   );

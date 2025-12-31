@@ -1,5 +1,3 @@
-# Guided Decoding for NER: Enabling Batch Inference with Text-Specific Constraints in vLLM
-
 When working with named entity recognition (NER) and structured extraction tasks using large language models, ensuring that the model outputs valid, structured data is critical. vLLM is a fast and memory-efficient inference engine for LLMs that stands out as the only framework combining high-throughput batch processing with guided decoding capabilities through regex patterns and context-free grammars. Under the hood, vLLM leverages PagedAttention to manage key-value caches efficiently and continuous batching to maximize GPU utilization by dynamically scheduling requests.
 
 However, a fundamental limitation emerges when processing multiple texts in a batch: vLLM's guided decoding applies a single regex pattern or grammar to all examples. Each text in NER tasks requires its own unique constraints based on the entities and phrases it contains. I modified vLLM to support per-example structured outputs, enabling both accuracy and speed through batch inference with text-specific constraints.

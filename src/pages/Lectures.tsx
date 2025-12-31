@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { LECTURES } from "../data/lectures";
 import Lecture from "../components/Lecture";
+import Footer from "../components/Footer";
 
 const Lectures: React.FC = () => {
   const containerVariants = {
@@ -41,6 +42,7 @@ const Lectures: React.FC = () => {
           );
         })}
       </motion.div>
+      <Footer />
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { GraduationCap, Code, MapPin, Calendar, Sparkle } from "phosphor-react";
+import Footer from "../components/Footer";
 
 const About: React.FC = () => {
   const containerVariants = {
@@ -169,6 +170,7 @@ const About: React.FC = () => {
           ))}
         </div>
       </motion.div>
+      <Footer />
     </div>
   );
 };
