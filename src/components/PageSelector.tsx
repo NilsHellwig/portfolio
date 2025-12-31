@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
+import { ArrowSquareOut } from "phosphor-react";
 
 const PageSelector: React.FC<{ transparentBackground: boolean }> = ({ transparentBackground }) => {
   const location = useLocation();
@@ -26,14 +27,17 @@ const PageSelector: React.FC<{ transparentBackground: boolean }> = ({ transparen
       <motion.span className={getTextColor("/portfolio/projects")} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3, delay: 0.15 }}>
         <Link to="/portfolio/projects">dev.projects</Link>
       </motion.span>
-      <motion.span className={getTextColor("/portfolio/blog")} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3, delay: 0.2 }}>
-        <Link to="/portfolio/blog">blog</Link>
-      </motion.span>
-      <motion.span className={getTextColor("/portfolio/publications")} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3, delay: 0.25 }}>
+      <motion.span className={getTextColor("/portfolio/publications")} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3, delay: 0.2 }}>
         <Link to="/portfolio/publications">publications</Link>
       </motion.span>
-      <motion.span className={getTextColor("/portfolio/lectures")} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3, delay: 0.3 }}>
+      <motion.span className={getTextColor("/portfolio/lectures")} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3, delay: 0.25 }}>
         <Link to="/portfolio/lectures">lectures</Link>
+      </motion.span>
+      <motion.span className={`${getTextColor("/portfolio/blog")} relative`} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3, delay: 0.3 }}>
+        <Link to="/portfolio/blog" className="flex items-center gap-1">
+          <span>blog</span>
+          <ArrowSquareOut size={14} weight="bold" className="opacity-60" />
+        </Link>
       </motion.span>
     </motion.div>
   );
