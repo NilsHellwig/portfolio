@@ -1,5 +1,25 @@
 export const BLOGS = [
   {
+    id: "3",
+    url: "vllm-guided-decoding",
+    category: "NLP",
+    author: "Nils Hellwig",
+    term: "24/10/2025",
+    title: "Guided Decoding for NER: Enabling Batch Inference with Text-Specific Constraints in vLLM",
+    textColor: "#fefce8",
+    bgColor: "#134e4a",
+  },
+  {
+    id: "2",
+    url: "acl2025",
+    category: "NLP",
+    author: "Nils Hellwig",
+    term: "01/07/2025",
+    title: "ACL 2025: My Journey to Vienna",
+    textColor: "#fefce8",
+    bgColor: "#134e4a",
+  },
+  {
     id: "1",
     url: "master-thesis",
     category: "NLP",

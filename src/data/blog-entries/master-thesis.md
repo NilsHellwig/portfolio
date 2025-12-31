@@ -1,5 +1,3 @@
-# Master Thesis: Large Language Models for ABSA Augmentation
-
 ## Background
 
 Aspect-Based Sentiment Analysis (ABSA) has emerged as a subfield of sentiment analysis (SA), aiming to provide more nuanced and detailed insights into opinions expressed in textual data. Unlike traditional sentiment analysis, which classifies an entire document or sentence as positive, negative, or neutral, ABSA focuses on identifying sentiments associated with specific aspects or features of a product, service, or entity. This granular approach allows for a deeper understanding of people's opinions, enabling more precise insights.

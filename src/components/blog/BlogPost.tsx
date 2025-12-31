@@ -179,7 +179,7 @@ const BlogPost: React.FC = () => {
               h1: ({ children }) => <h1 className="text-4xl font-semibold text-zinc-900 mt-12 mb-6">{children}</h1>,
               h2: ({ children }) => <h2 className="text-3xl font-semibold text-zinc-900 mt-10 mb-4">{children}</h2>,
               h3: ({ children }) => <h3 className="text-2xl font-semibold text-zinc-900 mt-8 mb-3">{children}</h3>,
-              p: ({ children }) => <p className="text-lg text-zinc-700 leading-relaxed my-6">{children}</p>,
+              p: ({ children }) => <p className="text-lg text-zinc-700 leading-relaxed my-6 text-justify">{children}</p>,
               pre: ({ children }) => <pre className="p-6 bg-zinc-100 rounded-lg my-6 overflow-x-auto">{children}</pre>,
               code: ({ children }) => <code className="px-2 py-1 bg-zinc-100 rounded text-sm font-mono">{children}</code>,
               a: ({ href, children }) => (
@@ -190,6 +190,11 @@ const BlogPost: React.FC = () => {
               ul: ({ children }) => <ul className="my-6 space-y-3">{children}</ul>,
               ol: ({ children }) => <ol className="my-6 space-y-3 list-decimal list-inside">{children}</ol>,
               li: ({ children }) => <li className="text-lg text-zinc-700">{children}</li>,
+              img: ({ src, alt }) => (
+                <div className="my-8 flex justify-center">
+                  <img src={src} alt={alt} className="w-1/2 rounded-lg shadow-md" />
+                </div>
+              ),
             }}
           >
             {markdownContent}
