@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { BLOGS, convertMonth } from "../../data/blogs";
-import { ArrowLeft, Share } from "phosphor-react";
+import { ArrowLeft, Share, Copy, Check } from "phosphor-react";
 import { motion } from "framer-motion";
 
 interface BlogType {
@@ -21,6 +23,58 @@ const BlogPost: React.FC = () => {
   const [markdownContent, setMarkdownContent] = useState<string>("");
   const [blog, setBlog] = useState<BlogType | null>(null);
   const [copiedToClipboard, setCopiedToClipboard] = useState<boolean>(false);
+  const [copiedCode, setCopiedCode] = useState<{ [key: string]: boolean }>({});
+
+  // Code Block Component with Copy Button
+  const CodeBlock = ({ language, children }: { language: string; children: string }) => {
+    const codeString = String(children).replace(/\n$/, "");
+    const codeId = `${language}-${codeString.substring(0, 20)}`;
+
+    const handleCopy = async () => {
+      await navigator.clipboard.writeText(codeString);
+      setCopiedCode({ ...copiedCode, [codeId]: true });
+      setTimeout(() => {
+        setCopiedCode({ ...copiedCode, [codeId]: false });
+      }, 2000);
+    };
+
+    return (
+      <div className="relative group my-6">
+        <div className="absolute right-3 top-3 z-10">
+          <button
+            onClick={handleCopy}
+            className="flex items-center gap-2 px-3 py-1.5 bg-zinc-700/80 hover:bg-zinc-600/80 text-zinc-100 rounded-lg text-xs font-medium transition-all backdrop-blur-sm border border-zinc-600/50 shadow-lg hover:shadow-xl"
+          >
+            {copiedCode[codeId] ? (
+              <>
+                <Check size={14} weight="bold" />
+                <span>Copied!</span>
+              </>
+            ) : (
+              <>
+                <Copy size={14} weight="bold" />
+                <span>Copy</span>
+              </>
+            )}
+          </button>
+        </div>
+        <SyntaxHighlighter
+          style={oneDark}
+          language={language}
+          PreTag="div"
+          className="rounded-2xl text-sm shadow-xl border border-zinc-800"
+          showLineNumbers={true}
+          customStyle={{
+            margin: 0,
+            padding: "1.5rem",
+            borderRadius: "1rem",
+          }}
+        >
+          {codeString}
+        </SyntaxHighlighter>
+      </div>
+    );
+  };
 
   // Generate color scheme based on date
   const getColorScheme = (term: string | undefined) => {
@@ -180,8 +234,18 @@ const BlogPost: React.FC = () => {
               h2: ({ children }) => <h2 className="text-3xl font-semibold text-zinc-900 mt-10 mb-4">{children}</h2>,
               h3: ({ children }) => <h3 className="text-2xl font-semibold text-zinc-900 mt-8 mb-3">{children}</h3>,
               p: ({ children }) => <p className="text-lg text-zinc-700 leading-relaxed my-6 text-justify">{children}</p>,
-              pre: ({ children }) => <pre className="p-6 bg-zinc-100 rounded-lg my-6 overflow-x-auto">{children}</pre>,
-              code: ({ children }) => <code className="px-2 py-1 bg-zinc-100 rounded text-sm font-mono">{children}</code>,
+              code({ node, inline, className, children, ...props }: any) {
+                const match = /language-(\w+)/.exec(className || "");
+                return !inline && match ? (
+                  <CodeBlock language={match[1]}>
+                    {String(children)}
+                  </CodeBlock>
+                ) : (
+                  <code className="px-2 py-1 bg-zinc-100 rounded text-sm font-mono text-zinc-800" {...props}>
+                    {children}
+                  </code>
+                );
+              },
               a: ({ href, children }) => (
                 <a target="_blank" rel="noreferrer" href={href} className="text-blue-600 hover:text-blue-800 underline">
                   {children}
