@@ -84,7 +84,7 @@ const App: React.FC = () => {
       </Router>
       {showOverlay && (
         <div
-          className="bg-gray-200 fixed flex w-screen h-screen top-0 bg-opacity-70 backdrop-blur-sm z-20"
+          className="bg-gray-200 dark:bg-zinc-900 fixed flex w-screen h-screen top-0 bg-opacity-70 dark:bg-opacity-80 backdrop-blur-sm z-20"
           onClick={() => {
             setShowOverlay(false);
             if (document.body.style.overflow !== "hidden") {
@@ -101,9 +101,9 @@ const App: React.FC = () => {
 
 const StandardUI: React.FC<{ children: ReactNode; transparentBackground: boolean }> = ({ children, transparentBackground }) => {
   return (
-    <div className={`page-outer ${transparentBackground ? "gradient-bg" : ""}`} style={{ fontFamily: "Inter" }}>
+    <div className={`page-outer ${transparentBackground ? "gradient-bg" : "bg-zinc-50 dark:bg-zinc-900"}`} style={{ fontFamily: "Inter" }}>
       <div>
-        <div className={`fixed w-screen ${!transparentBackground ? "bg-zinc-50" : ""} bg-opacity-90 backdrop-blur-sm pt-2 z-20`}>
+        <div className={`fixed w-screen ${!transparentBackground ? "bg-zinc-50 dark:bg-zinc-900" : ""} bg-opacity-90 backdrop-blur-sm pt-2 z-20`}>
           <header className="max-w-[800px] w-[100%] mx-auto px-4 mt-0">
             <NavBar />
             <PageSelector transparentBackground={transparentBackground} />

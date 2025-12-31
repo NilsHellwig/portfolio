@@ -2,7 +2,6 @@ import React from "react";
 import { PUBLICATIONS } from "../data/publications";
 import { Link } from "phosphor-react";
 import { openLinkInNewTab } from "../helper";
-import { Tooltip } from "../components/Tooltip";
 import { motion } from "framer-motion";
 
 const Publications: React.FC = () => {
@@ -27,27 +26,41 @@ const Publications: React.FC = () => {
   };
 
   return (
-    <div>
-      <h2 className="text-2xl font-bold">Publications</h2>
-      <motion.div className="text-zinc-500 flex flex-col gap-4 mt-8" initial="hidden" animate="visible" variants={containerVariants}>
+    <div className="pb-8">
+      <h2 className="text-2xl font-bold dark:text-white">Publications</h2>
+      <p className="text-zinc-500 dark:text-zinc-400 mt-4 mb-8">
+        Research contributions in Natural Language Processing, Computational Linguistics, and Sentiment Analysis
+      </p>
+      <motion.div className="grid grid-cols-1 gap-4 mt-8" initial="hidden" animate="visible" variants={containerVariants}>
         {PUBLICATIONS.map((publication, index) => {
           return (
             <motion.div
               key={index}
-              className="bg-zinc-100 border border-zinc-200 rounded-xl p-4 text-sm flex flex-col xsm:flex-row items-center gap-4"
+              onClick={() => openLinkInNewTab(publication.url)}
+              className="border-[0.5px] border-zinc-300 dark:border-zinc-700 rounded-xl flex p-5 flex-col gap-3 bg-white dark:bg-zinc-800 cursor-pointer hover:border-zinc-400 dark:hover:border-zinc-600 hover:shadow-md dark:hover:shadow-zinc-900/50 transition-all duration-150 ease-out"
               variants={itemVariants}
-              whileHover={{ scale: 1.0 }}
+              whileHover={{ y: -4, scale: 1.005 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: "spring", stiffness: 400, damping: 25 }}
             >
-              <div>
-                <p className="font-bold text-black">{publication.name}</p>
-                <p className="text-zinc-400">{publication.authors}</p>
-                <p className="text-zinc-400">{publication.conference}</p>
+              <div className="flex items-start justify-between gap-4">
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-zinc-100 dark:bg-zinc-900 border-[0.5px] border-zinc-300 dark:border-zinc-600 text-zinc-700 dark:text-zinc-300">
+                      {publication.conference}
+                    </span>
+                  </div>
+                  <h3 className="font-bold text-base text-zinc-900 dark:text-white mb-1">
+                    {publication.name}
+                  </h3>
+                  <p className="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
+                    {publication.authors}
+                  </p>
+                </div>
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-zinc-100 dark:bg-zinc-900 border-[0.5px] border-zinc-300 dark:border-zinc-600 flex-shrink-0 shadow-sm">
+                  <Link size={20} className="text-zinc-700 dark:text-zinc-300" weight="bold" />
+                </div>
               </div>
-              <Tooltip text={"More on\n " + publication.tooltipUrl} position="left">
-                <motion.div className="bg-zinc-200 p-1 rounded-xl hover:bg-zinc-300 cursor-pointer" onClick={() => openLinkInNewTab(publication.url)} whileHover={{ scale: 1.05, rotate: 10 }}>
-                  <Link size={36} color="#1a1a1a" />
-                </motion.div>
-              </Tooltip>
             </motion.div>
           );
         })}

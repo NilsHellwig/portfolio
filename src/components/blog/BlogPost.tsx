@@ -142,12 +142,12 @@ const BlogPost: React.FC = () => {
       animate={{ opacity: 1 }} 
       exit={{ opacity: 0 }} 
       transition={{ duration: 0.5 }} 
-      className="min-h-screen bg-white"
+      className="min-h-screen bg-white dark:bg-zinc-900"
     >
       {/* Hero Header with Dynamic Gradient Blobs */}
-      <div className="relative w-full min-h-[400px] overflow-hidden bg-white pb-8">
+      <div className="relative w-full min-h-[400px] overflow-hidden bg-white dark:bg-zinc-900 pb-8">
         {/* Soft background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-zinc-50/50 via-zinc-50/30 to-white" />
+        <div className="absolute inset-0 bg-gradient-to-b from-zinc-50/50 via-zinc-50/30 to-white dark:from-zinc-800/50 dark:via-zinc-800/30 dark:to-zinc-900" />
         
         {/* Animated Gradient Blobs */}
         <motion.div
@@ -173,7 +173,7 @@ const BlogPost: React.FC = () => {
         />
         
         {/* Soft bottom fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-white" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-white dark:to-zinc-900" />
         
         {/* Content Container */}
         <div className="relative z-10 max-w-5xl mx-auto px-6 pt-0">
@@ -189,7 +189,7 @@ const BlogPost: React.FC = () => {
               className="group inline-flex items-center gap-2 px-5 py-2.5 bg-zinc-900 hover:bg-zinc-800 text-white rounded-xl transition-all shadow-lg hover:shadow-xl hover:scale-105"
             >
               <ArrowLeft size={18} weight="bold" className="group-hover:-translate-x-1 transition-transform" />
-              <span className="font-semibold">All posts</span>
+              <span className="font-semibold">All blog posts</span>
             </Link>
             
             <button
@@ -207,13 +207,13 @@ const BlogPost: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <div className="flex items-center gap-3 text-sm text-zinc-600 mb-4">
+            <div className="flex items-center gap-3 text-sm text-zinc-600 dark:text-zinc-400 mb-4">
               <span>{blog?.term && convertMonth[parseInt(blog.term.split("/")[1])] + " " + blog.term.split("/")[0] + ", " + blog.term.split("/")[2]}</span>
               <span>•</span>
               <span>By {blog?.author}</span>
             </div>
             
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-zinc-900 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-zinc-900 dark:text-zinc-100 leading-tight">
               {blog?.title}
             </h1>
           </motion.div>
@@ -230,10 +230,10 @@ const BlogPost: React.FC = () => {
         >
           <ReactMarkdown
             components={{
-              h1: ({ children }) => <h1 className="text-4xl font-semibold text-zinc-900 mt-12 mb-6">{children}</h1>,
-              h2: ({ children }) => <h2 className="text-3xl font-semibold text-zinc-900 mt-10 mb-4">{children}</h2>,
-              h3: ({ children }) => <h3 className="text-2xl font-semibold text-zinc-900 mt-8 mb-3">{children}</h3>,
-              p: ({ children }) => <p className="text-lg text-zinc-700 leading-relaxed my-6 text-justify">{children}</p>,
+              h1: ({ children }) => <h1 className="text-4xl font-semibold text-zinc-900 dark:text-zinc-100 mt-12 mb-6">{children}</h1>,
+              h2: ({ children }) => <h2 className="text-3xl font-semibold text-zinc-900 dark:text-zinc-100 mt-10 mb-4">{children}</h2>,
+              h3: ({ children }) => <h3 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mt-8 mb-3">{children}</h3>,
+              p: ({ children }) => <p className="text-lg text-zinc-700 dark:text-zinc-300 leading-relaxed my-6 text-justify">{children}</p>,
               code({ node, inline, className, children, ...props }: any) {
                 const match = /language-(\w+)/.exec(className || "");
                 return !inline && match ? (
@@ -241,19 +241,19 @@ const BlogPost: React.FC = () => {
                     {String(children)}
                   </CodeBlock>
                 ) : (
-                  <code className="px-2 py-1 bg-zinc-100 rounded text-sm font-mono text-zinc-800" {...props}>
+                  <code className="px-2 py-1 bg-zinc-100 dark:bg-zinc-800 rounded text-sm font-mono text-zinc-800 dark:text-zinc-200" {...props}>
                     {children}
                   </code>
                 );
               },
               a: ({ href, children }) => (
-                <a target="_blank" rel="noreferrer" href={href} className="text-blue-600 hover:text-blue-800 underline">
+                <a target="_blank" rel="noreferrer" href={href} className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline">
                   {children}
                 </a>
               ),
               ul: ({ children }) => <ul className="my-6 space-y-3">{children}</ul>,
               ol: ({ children }) => <ol className="my-6 space-y-3 list-decimal list-inside">{children}</ol>,
-              li: ({ children }) => <li className="text-lg text-zinc-700">{children}</li>,
+              li: ({ children }) => <li className="text-lg text-zinc-700 dark:text-zinc-300">{children}</li>,
               img: ({ src, alt }) => (
                 <div className="my-8 flex justify-center">
                   <img src={src} alt={alt} className="w-1/2 rounded-lg shadow-md" />

@@ -24,8 +24,8 @@ const About: React.FC = () => {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold">About</h2>
-      <motion.div className="text-zinc-500 flex flex-col gap-4 mt-8 font-light" initial="hidden" animate="visible" variants={containerVariants}>
+      <h2 className="text-2xl font-bold dark:text-white">About</h2>
+      <motion.div className="text-zinc-500 dark:text-zinc-400 flex flex-col gap-4 mt-8 font-light" initial="hidden" animate="visible" variants={containerVariants}>
         <motion.p variants={itemVariants}>
           I am a {new Date().getFullYear() - 2000 - (new Date().getMonth() > 5 || (new Date().getMonth() === 5 && new Date().getDate() >= 6) ? 0 : 1)}-year-old PhD candidate and software engineer based in Regensburg, Germany. I am currently pursuing my doctoral degree at the Faculty of Informatics and Data Science at the University of Regensburg, where I specialize in Natural Language Processing and Computational Linguistics.
         </motion.p>

@@ -1,6 +1,6 @@
 export const IDES = [
   {
-    name: "VSC (❤️)",
+    name: "VSCode",
     iconPath: require("../img/icons/ides/vsc.svg").default,
   },
   {

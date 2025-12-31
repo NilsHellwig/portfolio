@@ -54,13 +54,13 @@ const Projects: React.FC<ProjectsProps> = ({ showOverlay, setShowOverlay }) => {
 
   return (
     <div className="pb-8">
-      <h2 className="text-2xl font-bold">Projects</h2>
+      <h2 className="text-2xl font-bold dark:text-white">Projects</h2>
       <div className="mt-4">
         <a
           href="https://github.com/NilsHellwig"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-4 py-2 bg-zinc-900 hover:bg-zinc-800 text-white rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
+          className="inline-flex items-center gap-2 px-4 py-2 bg-zinc-900 hover:bg-zinc-800 dark:bg-zinc-700 dark:hover:bg-zinc-600 text-white rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
         >
           <GithubLogo size={20} weight="fill" />
           <span className="font-medium text-sm">github/NilsHellwig</span>
@@ -68,20 +68,20 @@ const Projects: React.FC<ProjectsProps> = ({ showOverlay, setShowOverlay }) => {
       </div>
 
       <div className="mt-8 space-y-4">
-        <div className="border-[0.5px] border-zinc-300 rounded-xl p-6 bg-zinc-50">
-          <h3 className="font-bold text-md mb-4">GitHub Activity</h3>
+        <div className="border-[0.5px] border-zinc-300 dark:border-zinc-700 rounded-xl p-6 bg-zinc-50 dark:bg-zinc-800">
+          <h3 className="font-bold text-md mb-4 dark:text-white">GitHub Activity</h3>
           <div className="flex flex-col gap-4">
             <img 
               src="https://ghchart.rshah.org/16a34a/NilsHellwig" 
               alt="GitHub Contribution Chart"
-              className="w-full"
+              className="w-full dark:invert dark:hue-rotate-180"
             />
           </div>
         </div>
       </div>
 
       <section className="pt-8">
-        <h3 className="font-bold text-md mt-6">Selected Software Engineering Projects</h3>
+        <h3 className="font-bold text-md mt-6 dark:text-white">Selected Software Engineering Projects</h3>
         <motion.div
           className="mt-6 grid grid-cols-1 vsm:grid-cols-2 sm:grid-cols-2 gap-6"
           initial="hidden"
@@ -91,28 +91,31 @@ const Projects: React.FC<ProjectsProps> = ({ showOverlay, setShowOverlay }) => {
           {PROJECTS.map((project, index) => (
             <motion.div
               key={index}
-              className="border-[0.5px] border-zinc-300 rounded-xl flex p-4 flex-col gap-4 bg-zinc-100 cursor-pointer hover:bg-hover-gray"
+              className="border-[0.5px] border-zinc-300 dark:border-zinc-700 rounded-xl flex p-5 flex-col gap-4 bg-white dark:bg-zinc-800 cursor-pointer hover:border-zinc-400 dark:hover:border-zinc-600 hover:shadow-md dark:hover:shadow-zinc-900/50 transition-all duration-150 ease-out"
               onClick={() => {
                 setProjectId(project.id!);
                 showSingleProjectFct();
               }}
               variants={itemVariants}
+              whileHover={{ y: -4, scale: 1.005 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: "spring", stiffness: 400, damping: 25 }}
             >
               <div className="flex justify-end">
-                <div className="flex bg-white rounded-full border-[0.5px] border-zinc-300 items-center px-2 py-1">
-                  <span className="text-xs font-bold">{project.type}</span>
+                <div className="flex bg-zinc-100 dark:bg-zinc-900 rounded-full border-[0.5px] border-zinc-300 dark:border-zinc-600 items-center px-2.5 py-1">
+                  <span className="text-xs font-bold text-zinc-700 dark:text-zinc-300">{project.type}</span>
                 </div>
               </div>
               <div className="flex justify-center">
-                <div className="w-20 h-20 rounded-xl bg-white shadow-sm p-3">
+                <div className="w-20 h-20 rounded-xl bg-zinc-100 dark:bg-zinc-900 shadow-sm border-[0.5px] border-zinc-200 dark:border-zinc-700 p-3">
                   {project.iconPath && (
                     <img src={project.iconPath} alt={`${project.title} icon`} className="mr-2" />
                   )}
                 </div>
               </div>
               <div className="flex flex-col">
-                <span className="font-regular text-sm font-bold">{project.title}</span>
-                <span className="text-xs text-zinc-400 p-0 m-0">{project.subtitle}</span>
+                <span className="font-regular text-sm font-bold dark:text-white">{project.title}</span>
+                <span className="text-xs text-zinc-400 dark:text-zinc-500 p-0 m-0">{project.subtitle}</span>
               </div>
             </motion.div>
           ))}

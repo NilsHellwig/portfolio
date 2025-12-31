@@ -24,21 +24,21 @@ const BlogListElement: React.FC<BlogListElementProps> = ({ blog }) => {
       <motion.div 
         whileHover={{ x: 4 }} 
         transition={{ duration: 0.2 }}
-        className="py-8 border-b border-zinc-200 cursor-pointer"
+        className="py-8 border-b border-zinc-200 dark:border-zinc-700 cursor-pointer"
         style={{ textDecoration: "none" }}
       >
         <div className="flex flex-col gap-3">
-          <div className="flex items-center gap-3 text-sm text-zinc-500">
+          <div className="flex items-center gap-3 text-sm text-zinc-500 dark:text-zinc-400">
             <span>{convertMonth[parseInt(blog.term.split("/")[1])]} {blog.term.split("/")[0]}, {blog.term.split("/")[2]}</span>
             <span>•</span>
             <span>{blog.category}</span>
           </div>
           
-          <h2 className="text-2xl font-semibold text-zinc-900 group-hover:text-zinc-600 transition-colors">
+          <h2 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-100 group-hover:text-zinc-600 dark:group-hover:text-zinc-400 transition-colors">
             {blog.title}
           </h2>
           
-          <div className="flex items-center text-sm text-zinc-500">
+          <div className="flex items-center text-sm text-zinc-500 dark:text-zinc-400">
             <span>By {blog.author}</span>
             <span className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity">Read more →</span>
           </div>

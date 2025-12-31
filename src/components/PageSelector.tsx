@@ -7,9 +7,9 @@ const PageSelector: React.FC<{ transparentBackground: boolean }> = ({ transparen
 
   const getTextColor = (path: string) => {
     if (location.pathname === "/portfolio" || location.pathname === "/portfolio/") {
-      return location.pathname === path ? "text-black cursor-pointer duration-300 hover:text-zinc-600" : "text-zinc-500 hover:text-zinc-400 cursor-pointer duration-300";
+      return location.pathname === path ? "text-black dark:text-white cursor-pointer duration-300 hover:text-zinc-600 dark:hover:text-zinc-400" : "text-zinc-500 dark:text-zinc-400 hover:text-zinc-400 dark:hover:text-zinc-300 cursor-pointer duration-300";
     }
-    return location.pathname === path ? "text-black text-bold cursor-pointer duration-300" : "text-zinc-400 hover:text-zinc-300 cursor-pointer duration-300";
+    return location.pathname === path ? "text-black dark:text-white text-bold cursor-pointer duration-300" : "text-zinc-400 dark:text-zinc-500 hover:text-zinc-300 dark:hover:text-zinc-400 cursor-pointer duration-300";
   };
 
   return (
