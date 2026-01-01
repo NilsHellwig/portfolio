@@ -14,6 +14,19 @@ import {
   X
 } from "phosphor-react";
 
+const iconVariants = {
+  hover: { 
+    scale: 1.3, 
+    rotate: [0, -10, 10, 0], 
+    transition: { 
+      duration: 0.5, 
+      type: "spring", 
+      stiffness: 400,
+      rotate: { duration: 0.3, ease: "easeInOut" }
+    } 
+  },
+};
+
 const PageSelector: React.FC<{ transparentBackground: boolean }> = ({ transparentBackground }) => {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -64,7 +77,9 @@ const PageSelector: React.FC<{ transparentBackground: boolean }> = ({ transparen
                   }
                 `}
               >
-                <Icon size={16} weight={active ? "fill" : "regular"} />
+                <motion.div whileHover={iconVariants.hover}>
+                  <Icon size={16} weight={active ? "fill" : "regular"} />
+                </motion.div>
                 <span>{item.label}</span>
                 {item.external && <ArrowSquareOut size={12} weight="bold" className="opacity-60" />}
               </Link>
@@ -114,7 +129,9 @@ const PageSelector: React.FC<{ transparentBackground: boolean }> = ({ transparen
                       }
                     `}
                   >
-                    <Icon size={18} weight={active ? "fill" : "regular"} />
+                    <motion.div whileHover={iconVariants.hover}>
+                      <Icon size={18} weight={active ? "fill" : "regular"} />
+                    </motion.div>
                     <span className="text-sm">{item.label}</span>
                     {item.external && <ArrowSquareOut size={12} weight="bold" className="opacity-60 ml-auto" />}
                   </Link>
