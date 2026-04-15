@@ -80,6 +80,6 @@ Take the popular **Llama-3.1-8B-Instruct** model on a single **NVIDIA RTX 4090 (
 - Without TurboQuant (FP16 KV cache) → at 128k context, the KV cache alone eats ~16 GB.
 - With **4-bit TurboQuant** → the same 128k context drops to just **~2.7 GB** for the KV cache (6× smaller).
 
-That means you can comfortably run 128k–200k+ context lengths while still having plenty of headroom for the model weights and maybe (prefix) batching 😉. Notably, TurboQuant is not yet widely available in production engines, e.g., teams of vLLM and Ollama/llama.cpp are still working on integrating it.
+That means you can comfortably employ prompts with 128k–200k+ context lengths while still having plenty of headroom for the model weights and maybe (prefix) batching 😉. Notably, TurboQuant is not yet widely available in production engines, e.g., teams of vLLM and Ollama/llama.cpp are still working on integrating it.
 
-Transparency note: I used Claude Sonnet 4 for formulating this blog post, but all the techniques and insights are based on my own research and experience.
+_Transparency note:_ I used Claude Sonnet 4 for formulating this blog post, but all the techniques and insights are based on my own research and experience.
