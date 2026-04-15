@@ -41,9 +41,9 @@ For LLMs with a vocabulary of more than 128,000 tokens, however, the following a
 
 ### How xGrammar employs two key techniques to achieve this:
 
-- **Static Masking:** Most tokens are pre-classified as "always valid" or "always invalid" for specific states. E.g., imagine generating a JSON object. After generating the opening curly brace `{`, the next token must be a `"` to start a key. So all tokens except those starting with `"` can be statically masked out for that state. Of course, if the key starts with a common prefix (e.g., `"name"`, `"age"`, etc.), xGrammar can further optimize by only allowing tokens that match those prefixes since tokens like `"name` could potentially exist in the vocabulary.
+**Static Masking:** Most tokens are pre-classified as "always valid" or "always invalid" for specific states. E.g., imagine generating a JSON object. After generating the opening curly brace `{`, the next token must be a `"` to start a key. So all tokens except those starting with `"` can be statically masked out for that state. Of course, if the key starts with a common prefix (e.g., `"name"`, `"age"`, etc.), xGrammar can further optimize by only allowing tokens that match those prefixes since tokens like `"name` could potentially exist in the vocabulary.
 
-- **State Machine Compilation:** It converts complex GBNF grammars or JSON schemas into a **Deterministic Finite Automaton (DFA)**. This reduces the "logic" of the grammar to a simple lookup table: "If I am in State A and see Token X, move to State B."
+**State Machine Compilation:** It converts complex GBNF grammars or JSON schemas into a **Deterministic Finite Automaton (DFA)**. This reduces the "logic" of the grammar to a simple lookup table: "If I am in State A and see Token X, move to State B."
 
 xGrammar reduces the CPU overhead of structured generation by up to **10x to 100x**, making the latency cost of following a complex schema virtually indistinguishable from unconstrained text generation!
 
