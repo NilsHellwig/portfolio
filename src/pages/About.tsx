@@ -33,8 +33,8 @@ const About: React.FC = () => {
   ];
 
   const expertise = [
-    { area: "Natural Language Processing", topics: ["Aspect-Based Sentiment Analysis", "LLM Fine-tuning & Evaluation", "Guided Decoding Techniques"] },
-    { area: "Software Engineering", topics: ["Full-Stack Development", "React & TypeScript", "Python & Machine Learning"] },
+    { area: "Natural Language Processing", topics: ["Aspect-Based Sentiment Analysis", "Structured Learning", "Agents"] },
+    { area: "Software Engineering", topics: ["Full-Stack Development", "React & TypeScript"] },
     { area: "Research", topics: ["Low-Resource NLP", "Synthetic Data Generation", "Structured Text Generation"] },
   ];
 
@@ -99,8 +99,7 @@ const About: React.FC = () => {
           </div>
           <div className="text-zinc-600 dark:text-zinc-300 flex flex-col gap-4 leading-relaxed">
             <p>
-              I'm a {currentAge}-year-old PhD candidate and software engineer based in Regensburg, Germany. Currently, I'm pursuing my doctoral degree at the Faculty of Informatics and Data Science at
-              the University of Regensburg, specializing in Natural Language Processing and Computational Linguistics.
+              I'm a {currentAge}-year-old PhD candidate at the University of Regensburg, Germany. Currently, I'm pursuing my doctoral degree at the Faculty of Informatics and Data Science, specializing in Natural Language Processing and Computational Linguistics.
             </p>
             <p>
               My research focuses on advancing LLM-based approaches to tackle aspect-based sentiment analysis in low-resource scenarios. I've published multiple papers in conferences and journals,
