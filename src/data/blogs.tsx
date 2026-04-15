@@ -5,7 +5,7 @@ export const BLOGS = [
     category: "NLP",
     author: "Nils Hellwig",
     term: "17/04/2026",
-    title: "Prompting isn't just prompt enginnering: Some advices I wish I had when I started with prompting",
+    title: "Beyond Basic Prompting: Advanced Techniques for Efficient LLM Inference",
     textColor: "#fefce8",
     bgColor: "#134e4a",
   },
