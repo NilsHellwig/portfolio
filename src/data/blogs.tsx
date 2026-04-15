@@ -1,16 +1,16 @@
 export const BLOGS = [
   {
-    id: "3",
-    url: "vllm-guided-decoding",
+    id: "2",
+    url: "prompting",
     category: "NLP",
     author: "Nils Hellwig",
-    term: "24/10/2025",
-    title: "Guided Decoding for NER: Enabling Batch Inference with Text-Specific Constraints in vLLM",
+    term: "17/04/2026",
+    title: "Prompting isn't just prompt enginnering: Some advices I wish I had when I started with prompting",
     textColor: "#fefce8",
     bgColor: "#134e4a",
   },
   {
-    id: "2",
+    id: "1",
     url: "acl2025",
     category: "NLP",
     author: "Nils Hellwig",
@@ -20,7 +20,7 @@ export const BLOGS = [
     bgColor: "#134e4a",
   },
   {
-    id: "1",
+    id: "0",
     url: "master-thesis",
     category: "NLP",
     author: "Nils Hellwig",
@@ -28,7 +28,7 @@ export const BLOGS = [
     title: "Master Thesis: Data Augmentation with Large Language Models for Aspect-Based Sentiment Analysis in Low-Resource Scenarios",
     textColor: "#fefce8",
     bgColor: "#134e4a",
-  }
+  },
 ];
 
 export const convertMonth = {
