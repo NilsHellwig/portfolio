@@ -251,7 +251,7 @@ const BlogPost: React.FC = () => {
                   {children}
                 </a>
               ),
-              ul: ({ children }) => <ul className="my-6 space-y-3">{children}</ul>,
+              ul: ({ children }) => <ul className="my-6 space-y-3 list-disc list-inside">{children}</ul>,
               ol: ({ children }) => <ol className="my-6 space-y-3 list-decimal list-inside">{children}</ol>,
               li: ({ children }) => <li className="text-lg text-zinc-700 dark:text-zinc-300">{children}</li>,
               img: ({ src, alt }) => (

@@ -37,9 +37,7 @@ So the idea is simple: we want the LLM to strictly follow a **rule** or **gramma
 
 We can define such rules using finite-state machines (or pushdown automata). At every token step, the system checks the current state and masks out any tokens that would violate the rule.
 
-With vocabularies of 128k+ tokens, however, naively checking if for every possible token if it violates the rule at the current step creates heavy computational overhead.
-
-**xGrammar** solves this elegantly and efficiently. It uses a **byte-level pushdown automaton** with smart caching: most tokens are precomputed once during grammar compilation, while only a small subset needs runtime checking via a persistent stack. This brings the overhead close to zero and delivers massive speedups.
+With vocabularies of 128k+ tokens, however, naively checking if for every possible token if it violates the rule at the current step creates heavy computational overhead. **xGrammar** solves this elegantly and efficiently. It uses a **byte-level pushdown automaton** with smart caching: most tokens are precomputed once during grammar compilation, while only a small subset needs runtime checking via a persistent stack. This brings the overhead close to zero and delivers massive speedups.
 
 Thanks to this approach, you can reliably enforce many complex output formats. vLLM and ollama/llama.cpp for example support:
 
@@ -62,11 +60,11 @@ However, the last few months have brought some truly exciting developments that 
 
 ### Speculative Decoding
 
-Instead of generating one token at a time, a small, fast **draft model** quickly proposes several future tokens. The large target model then verifies them in parallel. If most guesses are correct, you get **1.5–3× faster inference** (sometimes more) with mathematically identical output distribution. Modern variants like EAGLE-3 or self-speculative decoding make it even more practical — no extra model needed in some cases.
+Instead of generating one token at a time, a small, fast **draft model** quickly proposes several future tokens. The large target model then verifies them in parallel. If most guesses are correct, you get **1.5–3× faster inference** (sometimes more) with mathematically identical output distribution.
 
 ### TurboQuant (from Google Research)
 
-One of the hottest recent advances: **TurboQuant** dramatically compresses the Key-Value (KV) cache — the part of the model that remembers previous tokens.
+One of the biggest recent advances: **TurboQuant** dramatically compresses the Key-Value (KV) cache — the part of the model that remembers previous tokens. So we not only compress the model weights (as in traditional quantization), but also the KV cache, which is crucial for long-context inference.
 
 It works with **most modern LLMs** because it’s training-free and data-oblivious — no model-specific fine-tuning required.
 
