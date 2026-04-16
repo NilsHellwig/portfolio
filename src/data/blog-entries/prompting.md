@@ -2,7 +2,7 @@
 
 Over the past three years, my research has also involved extensive exploration of the effective use of large language models (LLMs). We probably all heard of standard techniques like prompt design, hyperparameters, and model selection. However, there are many other techniques that, whether in academic studies or industrial applications, deliver significant performance/efficiency gains, yet have received far less attention than they deserve.
 
-## 1. Prefix Batching: How can a multi-billion parameter Large Language Model generate thousands of outputs per second on a consumer GPU?
+## 1. Prefix Batching: "How can a multi-billion parameter Large Language Model generate thousands of outputs per second on a consumer GPU?"
 
 In nearly every study I’m involved in, we quickly run into the same challenge: testing dozens of conditions and prompts generates an enormous number of requests to the LLM. And don't forget about the "quick" ablation studies 😅.
 
@@ -27,7 +27,7 @@ The result:
 
 Several modern LLM inference engines offer excellent support for prefix batching / prefix caching, including: [vLLM](https://docs.vllm.ai/en/stable/features/automatic_prefix_caching/), [Hugging Face Text Generation Inference (TGI)](https://huggingface.co/docs/text-generation-inference/en/conceptual/chunking), [SGLang](https://lmsys.org/blog/2024-01-17-sglang/), [TensorRT-LLM (NVIDIA)](https://nvidia.github.io/TensorRT-LLM/advanced/kv-cache-reuse.html), and [LMDeploy](https://lmdeploy.readthedocs.io/en/latest/inference/turbomind_config.html). Sadly, Ollama/llama.cpp do not yet support it.
 
-## 2. Guided Decoding: I added a huge list of constraints to my prompt, but the model still generates outputs that violate them. What can I do?
+## 2. Guided Decoding: "I added a huge list of constraints to my prompt, but the model still generates outputs that violate them. What can I do?"
 
 Especially in tasks with strict output requirements (e.g., structured data generation), it’s common to add long constraint lists to the prompt. Yet even detailed instructions often fail; the model still produces invalid JSON, broken schemas, or violated rules.
 
@@ -41,7 +41,7 @@ For LLMs with a vocabulary of more than 128,000 tokens, however, the following a
 
 ### How xGrammar employs two key techniques to achieve this:
 
-**Static Masking:** Most tokens are pre-classified as "always valid" or "always invalid" for specific states. E.g., imagine generating a JSON object. After generating the opening curly brace `{`, the next token must be a `"` to start a key. So all tokens except those starting with `"` can be statically masked out for that state. Of course, if the key starts with a common prefix (e.g., `"name"`, `"age"`, etc.), xGrammar can further optimize by only allowing tokens that match those prefixes since tokens like `"name` could potentially exist in the vocabulary.
+**Static Masking:** Most tokens are pre-classified as "always valid" or "always invalid" for specific states. E.g., imagine generating a JSON object. After generating the opening curly brace `{`, the next token must be a `"` to start a key. So all tokens except those starting with `"` can be statically masked out for that state. Of course, if the key must be a certain literal (e.g., `"name"`, `"age"`, etc.), xGrammar can further ensure correctness by only allowing tokens that match those since tokens like `"name` could potentially exist in the vocabulary (some LLM tokenizers have really weird vocabularies!).
 
 **State Machine Compilation:** It converts complex GBNF grammars or JSON schemas into a **Deterministic Finite Automaton (DFA)**. This reduces the "logic" of the grammar to a simple lookup table: "If I am in State A and see Token X, move to State B."
 
