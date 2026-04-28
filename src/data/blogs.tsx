@@ -5,7 +5,7 @@ export const BLOGS = [
     category: "NLP",
     author: "Nils Hellwig",
     term: "17/04/2026",
-    title: "Beyond Basic Prompting: Advanced Techniques for Efficient LLM Inference",
+    title: "Beyond Prompting: Advanced Techniques for Efficient LLM Inference",
     textColor: "#fefce8",
     bgColor: "#134e4a",
   },
