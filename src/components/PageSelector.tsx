@@ -52,7 +52,7 @@ const PageSelector: React.FC<{ transparentBackground: boolean }> = ({ transparen
     <>
       {/* Desktop Navigation */}
       <motion.nav 
-        className="hidden md:flex items-center gap-1.5 mb-4 overflow-x-auto no-scrollbar" 
+        className="hidden md:flex items-center gap-1.5 mb-4 py-2 overflow-visible" 
         initial={{ opacity: 0 }} 
         animate={{ opacity: 1 }}
       >
@@ -70,10 +70,10 @@ const PageSelector: React.FC<{ transparentBackground: boolean }> = ({ transparen
               <Link
                 to={item.path}
                 className={`
-                  flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200
+                  flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300
                   ${active 
-                    ? 'bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 shadow-md' 
-                    : 'text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-zinc-100'
+                    ? 'bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 shadow-md scale-105' 
+                    : 'text-zinc-600 dark:text-zinc-400 hover:bg-white/40 dark:hover:bg-white/10 hover:backdrop-blur-md hover:text-zinc-900 dark:hover:text-zinc-100 hover:scale-110 hover:shadow-lg border border-transparent hover:border-white/20 dark:hover:border-white/10'
                   }
                 `}
               >

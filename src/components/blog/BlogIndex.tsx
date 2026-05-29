@@ -21,7 +21,7 @@ const BlogIndex: React.FC = () => {
           </p>
         </motion.div>
         
-        <div className="space-y-12">
+        <div className="space-y-12 mb-16">
           {BLOGS.map((blog, index) => (
             <motion.div 
               key={blog.id} 
@@ -36,7 +36,9 @@ const BlogIndex: React.FC = () => {
             </motion.div>
           ))}
         </div>
-        <Footer />
+        <div className="max-w-5xl">
+          <Footer />
+        </div>
       </div>
     </div>
   );

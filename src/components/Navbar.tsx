@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Student, TwitterLogo, At, GithubLogo, LinkedinLogo } from "phosphor-react";
+import { Student, TwitterLogo, At, GithubLogo, LinkedinLogo, GlobeHemisphereWest } from "phosphor-react";
 import { Link } from "react-router-dom";
 import { openLinkInNewTab } from "../helper";
 import { Tooltip } from "./Tooltip";
@@ -38,10 +38,10 @@ const NavBar: React.FC = () => {
           Nils Hellwig
         </motion.h1>
       </Link>
-      <div className="flex flex-row gap-3 items-center">
-        <Tooltip text="Twitter" position="bottom">
+      <div className="flex flex-row gap-1 xsm:gap-3 items-center">
+        <Tooltip text="Twitter" position="bottom" asChild>
           <motion.div
-            className="p-1 hover:bg-zinc-200 dark:hover:bg-zinc-700 rounded-lg cursor-pointer duration-300"
+            className="p-1 px-1.5 hover:bg-white/40 dark:hover:bg-white/10 hover:backdrop-blur-md rounded-lg cursor-pointer duration-300 hover:scale-110 hover:shadow-lg border border-transparent hover:border-white/20 dark:hover:border-white/10"
             onClick={() => openLinkInNewTab("https://twitter.com/nchllwg")}
             whileHover={iconVariants.hover}
           >
@@ -49,40 +49,49 @@ const NavBar: React.FC = () => {
           </motion.div>
         </Tooltip>
 
-        <Tooltip text="GitHub" position="bottom">
+        <Tooltip text="GitHub" position="bottom" asChild>
           <motion.div
-            className="p-1 hover:bg-zinc-200 dark:hover:bg-zinc-700 rounded-lg cursor-pointer duration-300"
+            className="p-1 px-1.5 hover:bg-white/40 dark:hover:bg-white/10 hover:backdrop-blur-md rounded-lg cursor-pointer duration-300 hover:scale-110 hover:shadow-lg border border-transparent hover:border-white/20 dark:hover:border-white/10"
             onClick={() => openLinkInNewTab("https://github.com/NilsHellwig")}
             whileHover={iconVariants.hover}
           >
             <GithubLogo size={24} className="text-zinc-900 dark:text-zinc-100" weight="regular" />
           </motion.div>
         </Tooltip>
-        <Tooltip text="Google Scholar" position="bottom">
+        <Tooltip text="Google Scholar" position="bottom" asChild>
           <motion.div
-            className="p-1 hover:bg-zinc-200 dark:hover:bg-zinc-700 rounded-lg cursor-pointer duration-300"
+            className="p-1 px-1.5 hover:bg-white/40 dark:hover:bg-white/10 hover:backdrop-blur-md rounded-lg cursor-pointer duration-300 hover:scale-110 hover:shadow-lg border border-transparent hover:border-white/20 dark:hover:border-white/10"
             onClick={() => openLinkInNewTab("https://scholar.google.com/citations?user=VzUTKcwAAAAJ")}
             whileHover={iconVariants.hover}
           >
             <Student size={24} className="text-zinc-900 dark:text-zinc-100" weight="regular" />
           </motion.div>
         </Tooltip>
-        <Tooltip text="LinkedIn" position="bottom">
+        <Tooltip text="LinkedIn" position="bottom" asChild>
           <motion.div
-            className="p-1 hover:bg-zinc-200 dark:hover:bg-zinc-700 rounded-lg cursor-pointer duration-300"
+            className="p-1 px-1.5 hover:bg-white/40 dark:hover:bg-white/10 hover:backdrop-blur-md rounded-lg cursor-pointer duration-300 hover:scale-110 hover:shadow-lg border border-transparent hover:border-white/20 dark:hover:border-white/10"
             onClick={() => openLinkInNewTab("https://www.linkedin.com/in/nils-h-748711229")}
             whileHover={iconVariants.hover}
           >
             <LinkedinLogo size={24} className="text-zinc-900 dark:text-zinc-100" weight="regular" />
           </motion.div>
         </Tooltip>
-        <Tooltip text="Mail" position="bottom">
+        <Tooltip text="Mail" position="bottom" asChild>
           <motion.div
-            className="p-1 hover:bg-zinc-200 dark:hover:bg-zinc-700 rounded-lg cursor-pointer duration-300"
+            className="p-1 px-1.5 hover:bg-white/40 dark:hover:bg-white/10 hover:backdrop-blur-md rounded-lg cursor-pointer duration-300 hover:scale-110 hover:shadow-lg border border-transparent hover:border-white/20 dark:hover:border-white/10"
             onClick={() => openLinkInNewTab("mailto:Nils-Constantin.Hellwig@stud.uni-regensburg.de")}
             whileHover={iconVariants.hover}
           >
             <At size={24} className="text-zinc-900 dark:text-zinc-100" weight="regular" />
+          </motion.div>
+        </Tooltip>
+        <Tooltip text="ORCID" position="bottom" asChild>
+          <motion.div
+            className="p-1 px-1.5 hover:bg-white/40 dark:hover:bg-white/10 hover:backdrop-blur-md rounded-lg cursor-pointer duration-300 hover:scale-110 hover:shadow-lg border border-transparent hover:border-white/20 dark:hover:border-white/10"
+            onClick={() => openLinkInNewTab("https://orcid.org/0009-0000-7305-8797")}
+            whileHover={iconVariants.hover}
+          >
+            <GlobeHemisphereWest size={24} className="text-zinc-900 dark:text-zinc-100" weight="regular" />
           </motion.div>
         </Tooltip>
         <ThemeToggle />

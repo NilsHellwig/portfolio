@@ -64,7 +64,7 @@ const Blog: React.FC = () => {
                       initial={{ scale: 0.8, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-                      className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-sm"
+                      className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-zinc-800 dark:bg-zinc-200 text-white dark:text-zinc-900 shadow-sm"
                     >
                       <Article size={12} weight="fill" />
                       <span className="text-xs font-bold">Blog</span>

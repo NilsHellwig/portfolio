@@ -56,29 +56,19 @@ const About: React.FC = () => {
       {/* Quick Info Cards */}
       <motion.div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8" initial="hidden" animate="visible" variants={containerVariants}>
         {highlights.map((item, index) => {
-          const gradients = [
-            "from-blue-50 to-blue-100/50 dark:from-blue-950/30 dark:to-blue-900/20",
-            "from-violet-50 to-violet-100/50 dark:from-violet-950/30 dark:to-violet-900/20",
-            "from-emerald-50 to-emerald-100/50 dark:from-emerald-950/30 dark:to-emerald-900/20"
-          ];
-          const iconColors = [
-            "text-blue-600 dark:text-blue-400",
-            "text-violet-600 dark:text-violet-400",
-            "text-emerald-600 dark:text-emerald-400"
-          ];
           return (
             <motion.div
               key={index}
               variants={itemVariants}
-              className={`relative overflow-hidden border-[0.5px] border-zinc-300 dark:border-zinc-700 rounded-xl p-5 bg-gradient-to-br ${gradients[index]}`}
+              className="relative overflow-hidden border-[0.5px] border-zinc-300 dark:border-zinc-700 rounded-xl p-5 bg-white dark:bg-zinc-800"
             >
               <div className="relative flex items-center gap-3">
                 <motion.div 
-                  className="flex items-center justify-center w-12 h-12 rounded-xl bg-white/80 dark:bg-zinc-900/80 border-[0.5px] border-zinc-300 dark:border-zinc-600 backdrop-blur-sm shadow-sm"
+                  className="flex items-center justify-center w-12 h-12 rounded-xl bg-zinc-50 dark:bg-zinc-900 border-[0.5px] border-zinc-300 dark:border-zinc-600 shadow-sm"
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <item.icon size={24} className={iconColors[index]} weight="bold" />
+                  <item.icon size={24} className="text-zinc-700 dark:text-zinc-300" weight="bold" />
                 </motion.div>
                 <div className="flex-1">
                   <p className="text-xs text-zinc-600 dark:text-zinc-400 font-semibold uppercase tracking-wide">{item.label}</p>
@@ -92,23 +82,42 @@ const About: React.FC = () => {
 
       {/* Introduction */}
       <motion.div className="mt-8" initial="hidden" animate="visible" variants={containerVariants}>
-        <motion.div variants={itemVariants} className="border-[0.5px] border-zinc-300 dark:border-zinc-700 rounded-xl p-6 bg-white dark:bg-zinc-800">
-          <div className="flex items-center gap-2 mb-4">
-            <Sparkle size={20} className="text-zinc-700 dark:text-zinc-300" weight="fill" />
-            <h3 className="text-lg font-bold dark:text-white">Introduction</h3>
-          </div>
-          <div className="text-zinc-600 dark:text-zinc-300 flex flex-col gap-4 leading-relaxed">
-            <p>
-              I'm a {currentAge}-year-old PhD candidate at the University of Regensburg, Germany. Currently, I'm pursuing my doctoral degree at the Faculty of Informatics and Data Science, specializing in Natural Language Processing and Computational Linguistics.
-            </p>
-            <p>
-              My research focuses on advancing LLM-based approaches to tackle aspect-based sentiment analysis in low-resource scenarios. I've published multiple papers in conferences and journals,
-              exploring topics such as synthetic training data generation, structured language generation with guided decoding, and the application of LLMs for complex NLP tasks.
-            </p>
-            <p>
-              Beyond my academic work, I'm passionate about full-stack software engineering. I enjoy building scalable, user-friendly solutions that bridge the gap between cutting-edge research and
-              practical applications.
-            </p>
+        <motion.div variants={itemVariants} className="overflow-hidden border-[0.5px] border-zinc-200 dark:border-zinc-700 rounded-2xl bg-white dark:bg-zinc-800 shadow-sm relative">
+          {/* Suble decorative element */}
+          <div className="absolute top-0 left-0 w-1.5 h-full bg-zinc-900 dark:bg-zinc-100 hidden md:block" />
+          
+          <div className="flex flex-col md:flex-row gap-10 items-center md:items-start p-8 md:p-10">
+            <div className="flex-1 order-2 md:order-1 space-y-6">
+              <div className="space-y-4">
+                <h3 className="text-3xl md:text-4xl font-black text-zinc-900 dark:text-white leading-tight">
+                  Introduction
+                </h3>
+              </div>
+              
+              <div className="text-zinc-600 dark:text-zinc-300 flex flex-col gap-5 text-sm md:text-base leading-relaxed font-normal">
+                <p>
+                  I'm a {currentAge}-year-old PhD candidate at the <span className="font-bold text-zinc-900 dark:text-zinc-100">University of Regensburg</span>, Germany. Currently, I'm pursuing my doctoral degree at the <span className="font-bold text-zinc-900 dark:text-zinc-100">Faculty of Informatics and Data Science</span>, specializing in <span className="font-bold text-zinc-900 dark:text-zinc-100">Natural Language Processing</span> and <span className="font-bold text-zinc-900 dark:text-zinc-100">Computational Linguistics</span>.
+                </p>
+                <p>
+                  My research focuses on advancing LLM-based approaches to tackle <span className="font-bold text-zinc-900 dark:text-zinc-100">aspect-based sentiment analysis</span> in low-resource scenarios. I've published my work in high-impact journals such as <span className="font-bold text-zinc-900 dark:text-zinc-100">Knowledge-Based Systems</span> and <span className="font-bold text-zinc-900 dark:text-zinc-100">Expert Systems with Applications</span>, as well as international conferences like <span className="font-bold text-zinc-900 dark:text-zinc-100">LREC</span> and <span className="font-bold text-zinc-900 dark:text-zinc-100">KONVENS</span>.
+                </p>
+                <p>
+                  I have deep expertise in improving <span className="font-bold text-zinc-900 dark:text-zinc-100">LLM efficiency</span>, implementing <span className="font-bold text-zinc-900 dark:text-zinc-100">structured outputs</span>, and exploring <span className="font-bold text-zinc-900 dark:text-zinc-100">synthetic training data generation</span>. Beyond my academic work, I'm a passionate <span className="font-bold text-zinc-900 dark:text-zinc-100">Full-Stack Engineer</span> dedicated to building scalable, user-friendly solutions that bridge the gap between cutting-edge research and practical applications.
+                </p>
+              </div>
+            </div>
+            
+            <div className="w-64 md:w-72 flex-shrink-0 order-1 md:order-2">
+              <div className="relative group">
+                {/* Visual accent behind image */}
+                <div className="absolute inset-0 bg-zinc-100 dark:bg-zinc-700 translate-x-3 translate-y-3 rounded-2xl -z-10 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform duration-500" />
+                <img 
+                  src="portrait.png" 
+                  alt="Nils Hellwig" 
+                  className="rounded-2xl border-[0.5px] border-zinc-200 dark:border-zinc-700 object-cover w-full aspect-[4/5] transition-all duration-700 ease-in-out"
+                />
+              </div>
+            </div>
           </div>
         </motion.div>
       </motion.div>
@@ -128,8 +137,8 @@ const About: React.FC = () => {
               <h4 className="font-bold text-zinc-900 dark:text-white mb-3">{item.area}</h4>
               <ul className="space-y-2">
                 {item.topics.map((topic, idx) => (
-                  <li key={idx} className="text-sm text-zinc-600 dark:text-zinc-400 flex items-start gap-2">
-                    <span className="text-zinc-400 dark:text-zinc-600 mt-1">•</span>
+                  <li key={idx} className="text-sm text-zinc-600 dark:text-zinc-400 flex items-center gap-2">
+                    <span className="text-zinc-400 dark:text-zinc-600 flex-shrink-0">•</span>
                     <span>{topic}</span>
                   </li>
                 ))}
