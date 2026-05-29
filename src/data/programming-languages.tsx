@@ -19,12 +19,14 @@ export const PROGRAMMING_LANGUAGES: ProgrammingLanguage[] = [
   },
   {
     name: "R",
-    description: "I employ R extensively for statistical analysis and data visualization in academic research. Its powerful statistical packages and visualization libraries make it an essential tool for conducting rigorous data analysis and creating publication-quality graphics.",
+    description:
+      "I employ R extensively for statistical analysis and data visualization in academic research. Its powerful statistical packages and visualization libraries make it an essential tool for conducting rigorous data analysis and creating publication-quality graphics.",
     iconPath: require("../img/icons/programming-languages/r.svg").default,
   },
   {
     name: "Java",
-    description: "I utilize Java for Android mobile development and enterprise applications. My experience includes building native Android apps and developing scalable backend services with Spring Boot, leveraging Java's robust ecosystem and performance characteristics.",
+    description:
+      "I utilize Java for Android mobile development and enterprise applications. My experience includes building native Android apps and developing scalable backend services with Spring Boot, leveraging Java's robust ecosystem and performance characteristics.",
     iconPath: require("../img/icons/programming-languages/java.svg").default,
   },
 ];

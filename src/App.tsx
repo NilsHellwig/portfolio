@@ -99,11 +99,19 @@ const App: React.FC = () => {
   );
 };
 
-const StandardUI: React.FC<{ children: ReactNode; transparentBackground: boolean }> = ({ children, transparentBackground }) => {
+const StandardUI: React.FC<{ children: ReactNode; transparentBackground: boolean }> = ({
+  children,
+  transparentBackground,
+}) => {
   return (
-    <div className={`page-outer min-h-screen flex flex-col ${transparentBackground ? "gradient-bg" : "bg-zinc-50 dark:bg-zinc-900"}`} style={{ fontFamily: "Inter" }}>
+    <div
+      className={`page-outer min-h-screen flex flex-col ${transparentBackground ? "gradient-bg" : "bg-zinc-50 dark:bg-zinc-900"}`}
+      style={{ fontFamily: "Inter" }}
+    >
       <div className="flex-1 flex flex-col">
-        <div className={`fixed w-screen ${!transparentBackground ? "bg-zinc-50 dark:bg-zinc-900" : ""} bg-opacity-90 backdrop-blur-sm pt-2 z-20`}>
+        <div
+          className={`fixed w-screen ${!transparentBackground ? "bg-zinc-50 dark:bg-zinc-900" : ""} bg-opacity-90 backdrop-blur-sm pt-2 z-20`}
+        >
           <header className="max-w-[800px] w-[100%] mx-auto px-4 mt-0">
             <NavBar />
             <PageSelector transparentBackground={transparentBackground} />

@@ -42,13 +42,20 @@ export const ModalContent: React.FC<ModalContentProps> = ({ onClose, screenshotU
   }, [screenshotUrl]);
 
   return (
-    <div className="fixed z-50 inset-0 overflow-auto bg-opacity-60 bg-black backdrop-blur-sm p-4" onClick={onClose}>
+    <div
+      className="fixed z-50 inset-0 overflow-auto bg-opacity-60 bg-black backdrop-blur-sm p-4"
+      onClick={onClose}
+    >
       <span className="absolute top-4 right-4 text-white cursor-pointer">
         <X size={24} weight="bold" />
       </span>
       <div className="flex items-center h-full justify-center">
         {/* Verwenden Sie die Bildabmessungen für die Gestaltung */}
-        <img src={screenshotUrl} alt="" className={`rounded-xl ${imageDimensions.width > imageDimensions.height ? "w-4/5" : "h-full"}`} />
+        <img
+          src={screenshotUrl}
+          alt=""
+          className={`rounded-xl ${imageDimensions.width > imageDimensions.height ? "w-4/5" : "h-full"}`}
+        />
       </div>
     </div>
   );

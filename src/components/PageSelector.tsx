@@ -1,29 +1,29 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  ArrowSquareOut, 
-  House, 
-  User, 
-  Code, 
-  Briefcase, 
-  BookOpen, 
+import {
+  ArrowSquareOut,
+  House,
+  User,
+  Code,
+  Briefcase,
+  BookOpen,
   Chalkboard,
   Article,
   List,
-  X
+  X,
 } from "phosphor-react";
 
 const iconVariants = {
-  hover: { 
-    scale: 1.3, 
-    rotate: [0, -10, 10, 0], 
-    transition: { 
-      duration: 0.5, 
-      type: "spring", 
+  hover: {
+    scale: 1.3,
+    rotate: [0, -10, 10, 0],
+    transition: {
+      duration: 0.5,
+      type: "spring",
       stiffness: 400,
-      rotate: { duration: 0.3, ease: "easeInOut" }
-    } 
+      rotate: { duration: 0.3, ease: "easeInOut" },
+    },
   },
 };
 
@@ -51,15 +51,15 @@ const PageSelector: React.FC<{ transparentBackground: boolean }> = ({ transparen
   return (
     <>
       {/* Desktop Navigation */}
-      <motion.nav 
-        className="hidden md:flex items-center gap-1.5 mb-4 py-2 overflow-visible" 
-        initial={{ opacity: 0 }} 
+      <motion.nav
+        className="hidden md:flex items-center gap-1.5 mb-4 py-2 overflow-visible"
+        initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
         {navigationItems.map((item, index) => {
           const Icon = item.icon;
           const active = isActive(item.path);
-          
+
           return (
             <motion.div
               key={item.path}
@@ -71,9 +71,10 @@ const PageSelector: React.FC<{ transparentBackground: boolean }> = ({ transparen
                 to={item.path}
                 className={`
                   flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300
-                  ${active 
-                    ? 'bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 shadow-md scale-105' 
-                    : 'text-zinc-600 dark:text-zinc-400 hover:bg-white/40 dark:hover:bg-white/10 hover:backdrop-blur-md hover:text-zinc-900 dark:hover:text-zinc-100 hover:scale-110 hover:shadow-lg border border-transparent hover:border-white/20 dark:hover:border-white/10'
+                  ${
+                    active
+                      ? "bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 shadow-md scale-105"
+                      : "text-zinc-600 dark:text-zinc-400 hover:bg-white/40 dark:hover:bg-white/10 hover:backdrop-blur-md hover:text-zinc-900 dark:hover:text-zinc-100 hover:scale-110 hover:shadow-lg border border-transparent hover:border-white/20 dark:hover:border-white/10"
                   }
                 `}
               >
@@ -96,10 +97,12 @@ const PageSelector: React.FC<{ transparentBackground: boolean }> = ({ transparen
           whileTap={{ scale: 0.98 }}
         >
           <div className="flex items-center gap-2">
-            {navigationItems.find(item => isActive(item.path))?.icon && (
-              React.createElement(navigationItems.find(item => isActive(item.path))!.icon, { size: 16, weight: "fill" })
-            )}
-            <span>{navigationItems.find(item => isActive(item.path))?.label || "Menu"}</span>
+            {navigationItems.find((item) => isActive(item.path))?.icon &&
+              React.createElement(navigationItems.find((item) => isActive(item.path))!.icon, {
+                size: 16,
+                weight: "fill",
+              })}
+            <span>{navigationItems.find((item) => isActive(item.path))?.label || "Menu"}</span>
           </div>
           {mobileMenuOpen ? <X size={16} weight="bold" /> : <List size={16} weight="bold" />}
         </motion.button>
@@ -115,7 +118,7 @@ const PageSelector: React.FC<{ transparentBackground: boolean }> = ({ transparen
               {navigationItems.map((item) => {
                 const Icon = item.icon;
                 const active = isActive(item.path);
-                
+
                 return (
                   <Link
                     key={item.path}
@@ -123,9 +126,10 @@ const PageSelector: React.FC<{ transparentBackground: boolean }> = ({ transparen
                     onClick={() => setMobileMenuOpen(false)}
                     className={`
                       flex items-center gap-3 px-4 py-3 transition-colors border-b border-zinc-100 dark:border-zinc-700 last:border-b-0
-                      ${active 
-                        ? 'bg-zinc-50 dark:bg-zinc-700 text-zinc-900 dark:text-zinc-100 font-semibold' 
-                        : 'text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-700'
+                      ${
+                        active
+                          ? "bg-zinc-50 dark:bg-zinc-700 text-zinc-900 dark:text-zinc-100 font-semibold"
+                          : "text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-700"
                       }
                     `}
                   >
@@ -133,7 +137,9 @@ const PageSelector: React.FC<{ transparentBackground: boolean }> = ({ transparen
                       <Icon size={18} weight={active ? "fill" : "regular"} />
                     </motion.div>
                     <span className="text-sm">{item.label}</span>
-                    {item.external && <ArrowSquareOut size={12} weight="bold" className="opacity-60 ml-auto" />}
+                    {item.external && (
+                      <ArrowSquareOut size={12} weight="bold" className="opacity-60 ml-auto" />
+                    )}
                   </Link>
                 );
               })}

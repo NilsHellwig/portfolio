@@ -25,7 +25,8 @@ export const BLOGS = [
     category: "NLP",
     author: "Nils Hellwig",
     term: "12/06/2024",
-    title: "Master Thesis: Data Augmentation with Large Language Models for Aspect-Based Sentiment Analysis in Low-Resource Scenarios",
+    title:
+      "Master Thesis: Data Augmentation with Large Language Models for Aspect-Based Sentiment Analysis in Low-Resource Scenarios",
     textColor: "#fefce8",
     bgColor: "#134e4a",
   },

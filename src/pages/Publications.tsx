@@ -30,9 +30,15 @@ const Publications: React.FC = () => {
     <div className="pb-8">
       <h2 className="text-2xl font-bold dark:text-white">Publications</h2>
       <p className="text-zinc-500 dark:text-zinc-400 mt-4 mb-8">
-        Research contributions in Natural Language Processing, Computational Linguistics, and Sentiment Analysis
+        Research contributions in Natural Language Processing, Computational Linguistics, and
+        Sentiment Analysis
       </p>
-      <motion.div className="grid grid-cols-1 gap-4 mt-8" initial="hidden" animate="visible" variants={containerVariants}>
+      <motion.div
+        className="grid grid-cols-1 gap-4 mt-8"
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+      >
         {PUBLICATIONS.map((publication, index) => {
           return (
             <motion.div

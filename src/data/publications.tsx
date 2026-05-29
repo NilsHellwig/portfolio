@@ -12,7 +12,8 @@ export const PUBLICATIONS = [
   {
     name: "LLM-as-an-Annotator: Training Lightweight Models with LLM-Annotated Examples for Aspect Sentiment Tuple Prediction",
     authors: "Hellwig, Nils Constantin, Fehle, Jakob, Kruschwitz, Udo, & Wolff, Christian",
-    conference: "Proceedings of the Fifteenth Language Resources and Evaluation Conference (LREC 2026)",
+    conference:
+      "Proceedings of the Fifteenth Language Resources and Evaluation Conference (LREC 2026)",
     pages: "7955–7972",
     year: 2026,
     publisher: "European Language Resources Association (ELRA)",
@@ -22,7 +23,8 @@ export const PUBLICATIONS = [
   {
     name: "AnnoABSA: A Web-Based Annotation Tool for Aspect-Based Sentiment Analysis with Retrieval-Augmented Suggestions",
     authors: "Hellwig, Nils Constantin, Fehle, Jakob, Kruschwitz, Udo, & Wolff, Christian",
-    conference: "Proceedings of the Fifteenth Language Resources and Evaluation Conference (LREC 2026)",
+    conference:
+      "Proceedings of the Fifteenth Language Resources and Evaluation Conference (LREC 2026)",
     pages: "7985–7998",
     year: 2026,
     publisher: "European Language Resources Association (ELRA)",
@@ -31,8 +33,10 @@ export const PUBLICATIONS = [
   },
   {
     name: "German Aspect-based Sentiment Analysis in the Wild: B2B Dataset Creation and Cross-Domain Evaluation",
-    authors: "Fehle, Jakob, Donhauser, Niklas, Kruschwitz, Udo, Hellwig, Nils Constantin, & Wolff, Christian",
-    conference: "Proceedings of the 21st Conference on Natural Language Processing (KONVENS 2025): Long and Short Papers",
+    authors:
+      "Fehle, Jakob, Donhauser, Niklas, Kruschwitz, Udo, Hellwig, Nils Constantin, & Wolff, Christian",
+    conference:
+      "Proceedings of the 21st Conference on Natural Language Processing (KONVENS 2025): Long and Short Papers",
     pages: "213–227",
     year: 2025,
     publisher: "HsH Applied Academics",
@@ -42,7 +46,8 @@ export const PUBLICATIONS = [
   {
     name: "Do we still need Human Annotators? Prompting Large Language Models for Aspect Sentiment Quad Prediction",
     authors: "Hellwig, Nils Constantin, Fehle, Jakob, Kruschwitz, Udo, & Wolff, Christian",
-    conference: "Proceedings of the 1st Joint Workshop on Large Language Models and Structure Modeling (XLLM 2025)",
+    conference:
+      "Proceedings of the 1st Joint Workshop on Large Language Models and Structure Modeling (XLLM 2025)",
     pages: "153–172",
     year: 2025,
     publisher: "Association for Computational Linguistics",
@@ -70,7 +75,8 @@ export const PUBLICATIONS = [
   },
   {
     name: "Exploring Twitter discourse with BERTopic: topic modeling of tweets related to the major German parties during the 2021 German federal election",
-    authors: "Hellwig, Nils Constantin, Fehle, Jakob, Bink, Markus, Schmidt, Thomas, & Wolff, Christian.",
+    authors:
+      "Hellwig, Nils Constantin, Fehle, Jakob, Bink, Markus, Schmidt, Thomas, & Wolff, Christian.",
     conference: "International Journal of Speech Technology",
     pages: "1–21",
     year: 2024,
@@ -81,15 +87,17 @@ export const PUBLICATIONS = [
   {
     name: "Transformer-Based Analysis of Sentiment Towards German Political Parties on Twitter During the 2021 Election Year",
     authors: "Hellwig, N. C., Bink, M., Schmidt, T., Fehle, J., & Wolff, C.",
-    conference: "Proceedings of the 6th International Conference on Natural Language and Speech Processing (ICNLSP 2023)",
+    conference:
+      "Proceedings of the 6th International Conference on Natural Language and Speech Processing (ICNLSP 2023)",
     url: "https://aclanthology.org/2023.icnlsp-1.9.pdf",
     tooltipUrl: "aclanthology.org",
   },
   {
     name: "Artificial Intelligence and Deep Learning for Advancing PET Image Reconstruction: State-of-the-Art and Future Directions",
-    authors: "Hellwig, D., Hellwig, N. C., Boehner, S., Fuchs, T., Fischer, R., & Schmidt, D. (2023).",
+    authors:
+      "Hellwig, D., Hellwig, N. C., Boehner, S., Fuchs, T., Fischer, R., & Schmidt, D. (2023).",
     conference: "Nuklearmedizin-NuclearMedicine, 62(06), 334-342.",
     url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10689088/",
     tooltipUrl: "ncbi.nlm.nih.gov",
-  }
+  },
 ];

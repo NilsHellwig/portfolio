@@ -26,7 +26,10 @@ export const PROJECTS: Project[] = [
     iconPath: require("../img/icons/projects/annoabsa.png"),
     galleryImages: ["annoabsa/annoabsa-1.png"],
     links: [
-      { name: "GitHub Repository: ABSA Annotation Tool", url: "https://github.com/NilsHellwig/ABSA-annotation-tool" },
+      {
+        name: "GitHub Repository: ABSA Annotation Tool",
+        url: "https://github.com/NilsHellwig/ABSA-annotation-tool",
+      },
     ],
   },
   {
@@ -48,9 +51,18 @@ export const PROJECTS: Project[] = [
       "basisdokument/basisdokument-5.png",
     ],
     links: [
-      { name: "Universität Regensburg: Basisdokument", url: "https://www.uni-regensburg.de/forschung/reallabor-parteivortrag-im-zivilprozess/startseite" },
-      { name: "Justizministerium Bayern: Reallabor Strukturvorgaben im Zivilprozess", url: "https://www.justiz.bayern.de/presse-und-medien/pressemitteilungen/archiv/2023/52.php" },
-      { name: "GitHub Repository: Das Basisdokument", url: "https://github.com/markusbink/basisdokument-implementierung" },
+      {
+        name: "Universität Regensburg: Basisdokument",
+        url: "https://www.uni-regensburg.de/forschung/reallabor-parteivortrag-im-zivilprozess/startseite",
+      },
+      {
+        name: "Justizministerium Bayern: Reallabor Strukturvorgaben im Zivilprozess",
+        url: "https://www.justiz.bayern.de/presse-und-medien/pressemitteilungen/archiv/2023/52.php",
+      },
+      {
+        name: "GitHub Repository: Das Basisdokument",
+        url: "https://github.com/markusbink/basisdokument-implementierung",
+      },
       { name: "Demo (without Backend)", url: "https://app.parteivortrag.de/" },
     ],
   },
@@ -65,8 +77,18 @@ export const PROJECTS: Project[] = [
     programmingLanguages: ["JavaScript", "Python"],
     technologies: ["FastApi", "Uvicorn", "Bcrypt", "PyTest", "SQLAlchemy", "Radix", "React.js"],
     iconPath: require("../img/icons/projects/ur-device-manager.svg").default,
-    galleryImages: ["device-manager/device-manager-1.png", "device-manager/device-manager-2.gif", "device-manager/device-manager-3.gif", "device-manager/device-manager-4.gif"],
-    links: [{ name: "GitLab Repository: Device Manager", url: "https://github.com/NilsHellwig/UR-Device-Manager" }],
+    galleryImages: [
+      "device-manager/device-manager-1.png",
+      "device-manager/device-manager-2.gif",
+      "device-manager/device-manager-3.gif",
+      "device-manager/device-manager-4.gif",
+    ],
+    links: [
+      {
+        name: "GitLab Repository: Device Manager",
+        url: "https://github.com/NilsHellwig/UR-Device-Manager",
+      },
+    ],
   },
   {
     id: "amadeus",
@@ -79,7 +101,12 @@ export const PROJECTS: Project[] = [
     programmingLanguages: ["Python"],
     technologies: ["Django", "HTML", "CSS", "numpy", "pandas", "matplotlib", "svglib", "seaborn"],
     iconPath: require("../img/icons/projects/amadeus.png"),
-    galleryImages: ["amadeus/amadeus-1.png", "amadeus/amadeus-2.png", "amadeus/amadeus-3.png", "amadeus/amadeus-4.png"],
+    galleryImages: [
+      "amadeus/amadeus-1.png",
+      "amadeus/amadeus-2.png",
+      "amadeus/amadeus-3.png",
+      "amadeus/amadeus-4.png",
+    ],
     links: [
       { name: "AMADEUS App", url: "https://amadeus.falko-pv.de/" },
       { name: "GitHub Repository: AMADEUS", url: "https://github.com/FALKO-PV/amadeus" },
@@ -94,12 +121,28 @@ export const PROJECTS: Project[] = [
     type: "Web-App",
     category: "Software Development",
     programmingLanguages: ["TypeScript", "Java"],
-    technologies: ["Next.js", "Tailwind", "HTML", "CSS", "Swagger UI", "Quarkus", "Hibernate ORM", "Flyway", "Maven"],
+    technologies: [
+      "Next.js",
+      "Tailwind",
+      "HTML",
+      "CSS",
+      "Swagger UI",
+      "Quarkus",
+      "Hibernate ORM",
+      "Flyway",
+      "Maven",
+    ],
     iconPath: require("../img/icons/projects/byles.png"),
     galleryImages: [],
     links: [
-      { name: "ByCs: Byles", url: "https://www.bycs.de/hilfe-und-tutorials/eddipuls/byles-bayerisches-lesescreening/index.html" },
-      { name: "Süddeutsche Zeitung: ByLes", url: "https://www.sueddeutsche.de/sonderthemen/bayern/anna-stolz-schluessel-pisa-offensive-neues-bayerisches-lesescreening-grundschulen-freistaat-menschen-230431" },
+      {
+        name: "ByCs: Byles",
+        url: "https://www.bycs.de/hilfe-und-tutorials/eddipuls/byles-bayerisches-lesescreening/index.html",
+      },
+      {
+        name: "Süddeutsche Zeitung: ByLes",
+        url: "https://www.sueddeutsche.de/sonderthemen/bayern/anna-stolz-schluessel-pisa-offensive-neues-bayerisches-lesescreening-grundschulen-freistaat-menschen-230431",
+      },
     ],
   },
   {
@@ -111,7 +154,18 @@ export const PROJECTS: Project[] = [
     type: "App",
     category: "AI & Mobile Apps",
     programmingLanguages: ["Python", "JavaScript"],
-    technologies: ["React Native", "Expo", "Redux", "Flask", "Tensorflow", "sklearn", "pandas", "numpy", "SQLite", "AdobeXD"],
+    technologies: [
+      "React Native",
+      "Expo",
+      "Redux",
+      "Flask",
+      "Tensorflow",
+      "sklearn",
+      "pandas",
+      "numpy",
+      "SQLite",
+      "AdobeXD",
+    ],
     iconPath: require("../img/icons/projects/bird-id.png"),
     galleryImages: ["bird-id/bird-id-1.png", "bird-id/bird-id-2.png", "bird-id/bird-id-3.png"],
     links: [{ name: "GitHub Repository: BirdID", url: "https://github.com/NilsHellwig/birdid" }],
@@ -127,8 +181,18 @@ export const PROJECTS: Project[] = [
     programmingLanguages: ["JavaScript"],
     technologies: ["Angular", "HTML", "CSS", "Tailwind"],
     iconPath: require("../img/icons/projects/vall-music.svg").default,
-    galleryImages: ["vall-music/vall-music-1.png", "vall-music/vall-music-2.png", "vall-music/vall-music-3.png", "vall-music/vall-music-4.png"],
-    links: [{ name: "GitHub Repository: Artist Portfolio", url: "https://github.com/NilsHellwig/Artist-Portfolio" }],
+    galleryImages: [
+      "vall-music/vall-music-1.png",
+      "vall-music/vall-music-2.png",
+      "vall-music/vall-music-3.png",
+      "vall-music/vall-music-4.png",
+    ],
+    links: [
+      {
+        name: "GitHub Repository: Artist Portfolio",
+        url: "https://github.com/NilsHellwig/Artist-Portfolio",
+      },
+    ],
   },
   {
     id: "whistle-tube",
@@ -139,10 +203,30 @@ export const PROJECTS: Project[] = [
     type: "Web-App",
     category: "Web Development",
     programmingLanguages: ["JavaScript"],
-    technologies: ["Node.js", "MongoDB", "mongoose", "JWT", "Express.js", "Vue.js", "Tailwind", "HTML", "CSS", "AdobeXD"],
+    technologies: [
+      "Node.js",
+      "MongoDB",
+      "mongoose",
+      "JWT",
+      "Express.js",
+      "Vue.js",
+      "Tailwind",
+      "HTML",
+      "CSS",
+      "AdobeXD",
+    ],
     iconPath: require("../img/icons/projects/whistle-tube.svg").default,
-    galleryImages: ["whistle-tube/whistle-tube-1.png", "whistle-tube/whistle-tube-2.png", "whistle-tube/whistle-tube-3.png"],
-    links: [{ name: "GitHub Repository: WhistleTube", url: "https://github.com/NilsHellwig/WhistleTube-Front-end" }],
+    galleryImages: [
+      "whistle-tube/whistle-tube-1.png",
+      "whistle-tube/whistle-tube-2.png",
+      "whistle-tube/whistle-tube-3.png",
+    ],
+    links: [
+      {
+        name: "GitHub Repository: WhistleTube",
+        url: "https://github.com/NilsHellwig/WhistleTube-Front-end",
+      },
+    ],
   },
   {
     id: "discover-malta",
@@ -155,8 +239,18 @@ export const PROJECTS: Project[] = [
     programmingLanguages: ["JavaScript"],
     technologies: ["Docsify", "HTML", "CSS", "Markdown"],
     iconPath: require("../img/icons/projects/discover-malta.png"),
-    galleryImages: ["discover-malta/discover-malta-1.png", "discover-malta/discover-malta-2.png", "discover-malta/discover-malta-3.png", "discover-malta/discover-malta-4.png"],
-    links: [{ name: "GitHub Repository: DiscoverMalta", url: "https://github.com/NilsHellwig/DiscoverMalta" }],
+    galleryImages: [
+      "discover-malta/discover-malta-1.png",
+      "discover-malta/discover-malta-2.png",
+      "discover-malta/discover-malta-3.png",
+      "discover-malta/discover-malta-4.png",
+    ],
+    links: [
+      {
+        name: "GitHub Repository: DiscoverMalta",
+        url: "https://github.com/NilsHellwig/DiscoverMalta",
+      },
+    ],
   },
   {
     id: "game-hub",
@@ -169,7 +263,14 @@ export const PROJECTS: Project[] = [
     programmingLanguages: ["JavaScript"],
     technologies: ["Node.js", "framework7", "HTML", "CSS", "Firebase", "Cordova"],
     iconPath: require("../img/icons/projects/game-hub.svg").default,
-    galleryImages: ["game-hub/game-hub-1.png", "game-hub/game-hub-2.png", "game-hub/game-hub-3.png", "game-hub/game-hub-4.png", "game-hub/game-hub-5.gif", "game-hub/game-hub-6.gif"],
+    galleryImages: [
+      "game-hub/game-hub-1.png",
+      "game-hub/game-hub-2.png",
+      "game-hub/game-hub-3.png",
+      "game-hub/game-hub-4.png",
+      "game-hub/game-hub-5.gif",
+      "game-hub/game-hub-6.gif",
+    ],
     links: [{ name: "GitHub Repository: GameHub", url: "https://github.com/NilsHellwig/GameHub" }],
   },
   {
@@ -181,10 +282,28 @@ export const PROJECTS: Project[] = [
     type: "Python Application",
     category: "AI & NLP",
     programmingLanguages: ["Python", "JavaScript"],
-    technologies: ["HTML", "CSS", "geocoder", "geopy", "pywheatherbit", "xmltodict", "Lark", "sklearn", "flask", "spacy", "NLTK", "pandas"],
+    technologies: [
+      "HTML",
+      "CSS",
+      "geocoder",
+      "geopy",
+      "pywheatherbit",
+      "xmltodict",
+      "Lark",
+      "sklearn",
+      "flask",
+      "spacy",
+      "NLTK",
+      "pandas",
+    ],
     iconPath: require("../img/icons/projects/weather-assistant.svg").default,
     galleryImages: ["weather-assistant/weather-assistant-1.png"],
-    links: [{ name: "GitHub Repository: weather Assistant", url: "https://github.com/solaris-isbc/weather-assistant" }],
+    links: [
+      {
+        name: "GitHub Repository: weather Assistant",
+        url: "https://github.com/solaris-isbc/weather-assistant",
+      },
+    ],
   },
   {
     id: "uni-hub",
@@ -197,8 +316,19 @@ export const PROJECTS: Project[] = [
     programmingLanguages: ["Java"],
     technologies: ["XML", "Android", "Responsive Layout", "Fingerprint Authentication", "SQLite"],
     iconPath: require("../img/icons/projects/uni-hub.svg").default,
-    galleryImages: ["uni-hub/uni-hub-1.png", "uni-hub/uni-hub-2.png", "uni-hub/uni-hub-3.png", "uni-hub/uni-hub-4.png", "uni-hub/uni-hub-5.png"],
-    links: [{ name: "GitHub Repository: UniHub", url: "https://github.com/NilsHellwig/Document-Scanner-App" }],
+    galleryImages: [
+      "uni-hub/uni-hub-1.png",
+      "uni-hub/uni-hub-2.png",
+      "uni-hub/uni-hub-3.png",
+      "uni-hub/uni-hub-4.png",
+      "uni-hub/uni-hub-5.png",
+    ],
+    links: [
+      {
+        name: "GitHub Repository: UniHub",
+        url: "https://github.com/NilsHellwig/Document-Scanner-App",
+      },
+    ],
   },
   {
     id: "flickr-fetcher",
@@ -226,7 +356,12 @@ export const PROJECTS: Project[] = [
     technologies: ["Chromium", "Selenium"],
     iconPath: require("../img/icons/projects/image-fetcher.svg").default,
     galleryImages: ["image-fetcher/image-fetcher-1.png"],
-    links: [{ name: "GitHub Repository: TheFlickrFetcher", url: "https://github.com/NilsHellwig/TheFlickrFetcher" }],
+    links: [
+      {
+        name: "GitHub Repository: TheFlickrFetcher",
+        url: "https://github.com/NilsHellwig/TheFlickrFetcher",
+      },
+    ],
   },
   {
     id: "id3-algorithm",
@@ -240,7 +375,9 @@ export const PROJECTS: Project[] = [
     technologies: ["GraphViz", "Java PrintStream"],
     iconPath: require("../img/icons/projects/id3-algorithm.svg").default,
     galleryImages: ["id3-algorithm/id3-algorithm-1.png", "id3-algorithm/id3-algorithm-2.png"],
-    links: [{ name: "ID3 Algorithm", url: "https://github.com/NilsHellwig/Decision-Tree-Algorithm" }],
+    links: [
+      { name: "ID3 Algorithm", url: "https://github.com/NilsHellwig/Decision-Tree-Algorithm" },
+    ],
   },
   {
     id: "predestrian-rnn",
@@ -253,8 +390,17 @@ export const PROJECTS: Project[] = [
     programmingLanguages: ["Python"],
     technologies: ["Tensorflow", "Keras", "Sklearn", "Pandas", "Numpy", "matplotlib"],
     iconPath: require("../img/icons/projects/pedestrian-rnn.svg").default,
-    galleryImages: ["pedestrian-rnn/pedestrian-rnn-1.png", "pedestrian-rnn/pedestrian-rnn-2.png", "pedestrian-rnn/pedestrian-rnn-3.png"],
-    links: [{ name: "GitHub Repository: Pedestrian RNN", url: "https://github.com/NilsHellwig/RNN-for-pedestrian-movement-prediction" }],
+    galleryImages: [
+      "pedestrian-rnn/pedestrian-rnn-1.png",
+      "pedestrian-rnn/pedestrian-rnn-2.png",
+      "pedestrian-rnn/pedestrian-rnn-3.png",
+    ],
+    links: [
+      {
+        name: "GitHub Repository: Pedestrian RNN",
+        url: "https://github.com/NilsHellwig/RNN-for-pedestrian-movement-prediction",
+      },
+    ],
   },
   {
     id: "painting-colorizer",
@@ -273,7 +419,12 @@ export const PROJECTS: Project[] = [
       "painting-colorizer/painting-colorizer-3.png",
       "painting-colorizer/painting-colorizer-4.png",
     ],
-    links: [{ name: "GitHub Repository: Painting Colorizer", url: "https://github.com/NilsHellwig/Painting-Colorizer" }],
+    links: [
+      {
+        name: "GitHub Repository: Painting Colorizer",
+        url: "https://github.com/NilsHellwig/Painting-Colorizer",
+      },
+    ],
   },
   {
     id: "flight-delay-prediction",
@@ -286,20 +437,36 @@ export const PROJECTS: Project[] = [
     programmingLanguages: ["R"],
     technologies: ["ggplot", "tidyverse", "dplyr", "forcats", "caret", "e1071"],
     iconPath: require("../img/icons/projects/flight-delay-prediction.svg").default,
-    galleryImages: ["flight-delay-prediction/flight-delay-prediction-1.png", "flight-delay-prediction/flight-delay-prediction-2.png"],
-    links: [{ name: "GitHub Repository: Flight Delay Prediction", url: "https://github.com/NilsHellwig/Abschlussprojekt-Web-Data-Science" }],
+    galleryImages: [
+      "flight-delay-prediction/flight-delay-prediction-1.png",
+      "flight-delay-prediction/flight-delay-prediction-2.png",
+    ],
+    links: [
+      {
+        name: "GitHub Repository: Flight Delay Prediction",
+        url: "https://github.com/NilsHellwig/Abschlussprojekt-Web-Data-Science",
+      },
+    ],
   },
   {
     id: "portfolio",
     title: "portfolio",
     subtitle: "Nils' porfolio from June 2024",
-    description: "I aimed to create a unique portfolio to showcase my projects, skills, publications, and courses. The design was developed entirely from scratch, without using any pre-made templates.",
+    description:
+      "I aimed to create a unique portfolio to showcase my projects, skills, publications, and courses. The design was developed entirely from scratch, without using any pre-made templates.",
     type: "Website",
     category: "Web Development",
     programmingLanguages: ["TypeScript"],
     technologies: ["HTML", "CSS", "Framer Motion", "Tailwind", "Radix", "React"],
     iconPath: require("../img/icons/projects/portfolio.png"),
-    galleryImages: ["portfolio/portfolio-1.png", "portfolio/portfolio-2.png", "portfolio/portfolio-3.png", "portfolio/portfolio-4.png"],
-    links: [{ name: "GitHub Repository: Portfolio", url: "https://github.com/NilsHellwig/portfolio" }],
+    galleryImages: [
+      "portfolio/portfolio-1.png",
+      "portfolio/portfolio-2.png",
+      "portfolio/portfolio-3.png",
+      "portfolio/portfolio-4.png",
+    ],
+    links: [
+      { name: "GitHub Repository: Portfolio", url: "https://github.com/NilsHellwig/portfolio" },
+    ],
   },
 ];

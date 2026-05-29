@@ -19,10 +19,10 @@ const Projects: React.FC<ProjectsProps> = ({ showOverlay, setShowOverlay }) => {
 
   // Extract unique types sorted by project count
   const categories = useMemo(() => {
-    const uniqueTypes = Array.from(new Set(PROJECTS.map(p => p.type)));
+    const uniqueTypes = Array.from(new Set(PROJECTS.map((p) => p.type)));
     const sortedTypes = uniqueTypes.sort((a, b) => {
-      const countA = PROJECTS.filter(p => p.type === a).length;
-      const countB = PROJECTS.filter(p => p.type === b).length;
+      const countA = PROJECTS.filter((p) => p.type === a).length;
+      const countB = PROJECTS.filter((p) => p.type === b).length;
       return countB - countA; // Sort descending by count
     });
     return ["All", ...sortedTypes];
@@ -31,13 +31,13 @@ const Projects: React.FC<ProjectsProps> = ({ showOverlay, setShowOverlay }) => {
   // Get project count per type
   const getCategoryCount = (category: string) => {
     if (category === "All") return PROJECTS.length;
-    return PROJECTS.filter(p => p.type === category).length;
+    return PROJECTS.filter((p) => p.type === category).length;
   };
 
   // Filter projects
   const filteredProjects = useMemo(() => {
     if (activeFilter === "All") return PROJECTS;
-    return PROJECTS.filter(p => p.type === activeFilter);
+    return PROJECTS.filter((p) => p.type === activeFilter);
   }, [activeFilter]);
 
   function showSingleProjectFct() {
@@ -96,8 +96,8 @@ const Projects: React.FC<ProjectsProps> = ({ showOverlay, setShowOverlay }) => {
         <div className="border-[0.5px] border-zinc-300 dark:border-zinc-700 rounded-xl p-6 bg-zinc-50 dark:bg-zinc-800">
           <h3 className="font-bold text-md mb-4 dark:text-white">GitHub Activity</h3>
           <div className="flex flex-col gap-4">
-            <img 
-              src="https://ghchart.rshah.org/16a34a/NilsHellwig" 
+            <img
+              src="https://ghchart.rshah.org/16a34a/NilsHellwig"
               alt="GitHub Contribution Chart"
               className="w-full dark:invert dark:hue-rotate-180"
             />
@@ -110,12 +110,14 @@ const Projects: React.FC<ProjectsProps> = ({ showOverlay, setShowOverlay }) => {
           <h3 className="font-bold text-md dark:text-white">Selected Projects</h3>
           <div className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400">
             <Funnel size={16} weight="fill" />
-            <span>{filteredProjects.length} {filteredProjects.length === 1 ? 'Projekt' : 'Projekte'}</span>
+            <span>
+              {filteredProjects.length} {filteredProjects.length === 1 ? "Projekt" : "Projekte"}
+            </span>
           </div>
         </div>
 
         {/* Filter Pills */}
-        <motion.div 
+        <motion.div
           className="flex flex-wrap gap-2 mb-6"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -128,9 +130,10 @@ const Projects: React.FC<ProjectsProps> = ({ showOverlay, setShowOverlay }) => {
               className={`
                 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200
                 border-[0.5px] flex items-center gap-2
-                ${activeFilter === category 
-                  ? 'bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 border-zinc-900 dark:border-zinc-100 shadow-md' 
-                  : 'bg-white dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border-zinc-300 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-600 hover:shadow-sm'
+                ${
+                  activeFilter === category
+                    ? "bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 border-zinc-900 dark:border-zinc-100 shadow-md"
+                    : "bg-white dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border-zinc-300 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-600 hover:shadow-sm"
                 }
               `}
               whileHover={{ scale: 1.05 }}
@@ -138,13 +141,16 @@ const Projects: React.FC<ProjectsProps> = ({ showOverlay, setShowOverlay }) => {
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
             >
               <span>{category}</span>
-              <span className={`
+              <span
+                className={`
                 text-xs px-2 py-0.5 rounded-full
-                ${activeFilter === category 
-                  ? 'bg-white/20 dark:bg-zinc-900/20' 
-                  : 'bg-zinc-100 dark:bg-zinc-700'
+                ${
+                  activeFilter === category
+                    ? "bg-white/20 dark:bg-zinc-900/20"
+                    : "bg-zinc-100 dark:bg-zinc-700"
                 }
-              `}>
+              `}
+              >
                 {getCategoryCount(category)}
               </span>
             </motion.button>
@@ -161,36 +167,42 @@ const Projects: React.FC<ProjectsProps> = ({ showOverlay, setShowOverlay }) => {
             variants={containerVariants}
           >
             {filteredProjects.map((project, index) => (
-            <motion.div
-              key={index}
-              className="border-[0.5px] border-zinc-300 dark:border-zinc-700 rounded-xl flex p-5 flex-col gap-4 bg-white dark:bg-zinc-800 cursor-pointer hover:border-zinc-400 dark:hover:border-zinc-600 hover:shadow-md dark:hover:shadow-zinc-900/50 transition-all duration-150 ease-out"
-              onClick={() => {
-                setProjectId(project.id!);
-                showSingleProjectFct();
-              }}
-              variants={itemVariants}
-              whileHover={{ y: -4, scale: 1.005 }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ type: "spring", stiffness: 400, damping: 25 }}
-            >
-              <div className="flex justify-end">
-                <div className="flex bg-zinc-100 dark:bg-zinc-900 rounded-full border-[0.5px] border-zinc-300 dark:border-zinc-600 items-center px-2.5 py-1">
-                  <span className="text-xs font-bold text-zinc-700 dark:text-zinc-300">{project.type}</span>
+              <motion.div
+                key={index}
+                className="border-[0.5px] border-zinc-300 dark:border-zinc-700 rounded-xl flex p-5 flex-col gap-4 bg-white dark:bg-zinc-800 cursor-pointer hover:border-zinc-400 dark:hover:border-zinc-600 hover:shadow-md dark:hover:shadow-zinc-900/50 transition-all duration-150 ease-out"
+                onClick={() => {
+                  setProjectId(project.id!);
+                  showSingleProjectFct();
+                }}
+                variants={itemVariants}
+                whileHover={{ y: -4, scale: 1.005 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 400, damping: 25 }}
+              >
+                <div className="flex justify-end">
+                  <div className="flex bg-zinc-100 dark:bg-zinc-900 rounded-full border-[0.5px] border-zinc-300 dark:border-zinc-600 items-center px-2.5 py-1">
+                    <span className="text-xs font-bold text-zinc-700 dark:text-zinc-300">
+                      {project.type}
+                    </span>
+                  </div>
                 </div>
-              </div>
-              <div className="flex justify-center">
-                <div className="w-20 h-20 rounded-xl bg-zinc-100 dark:bg-zinc-900 shadow-sm border-[0.5px] border-zinc-200 dark:border-zinc-700 p-3">
-                  {project.iconPath && (
-                    <img src={project.iconPath} alt={`${project.title} icon`} className="mr-2" />
-                  )}
+                <div className="flex justify-center">
+                  <div className="w-20 h-20 rounded-xl bg-zinc-100 dark:bg-zinc-900 shadow-sm border-[0.5px] border-zinc-200 dark:border-zinc-700 p-3">
+                    {project.iconPath && (
+                      <img src={project.iconPath} alt={`${project.title} icon`} className="mr-2" />
+                    )}
+                  </div>
                 </div>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-regular text-sm font-bold dark:text-white">{project.title}</span>
-                <span className="text-xs text-zinc-400 dark:text-zinc-500 p-0 m-0">{project.subtitle}</span>
-              </div>
-            </motion.div>
-          ))}
+                <div className="flex flex-col">
+                  <span className="font-regular text-sm font-bold dark:text-white">
+                    {project.title}
+                  </span>
+                  <span className="text-xs text-zinc-400 dark:text-zinc-500 p-0 m-0">
+                    {project.subtitle}
+                  </span>
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
         </AnimatePresence>
 

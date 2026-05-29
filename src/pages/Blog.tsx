@@ -3,24 +3,25 @@ import { Link, Route, Routes, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import BlogIndex from "../components/blog/BlogIndex";
 import BlogPost from "../components/blog/BlogPost";
-import { 
-  ArrowLeft, 
-  House, 
-  User, 
-  Code, 
-  Briefcase, 
-  BookOpen, 
+import {
+  ArrowLeft,
+  House,
+  User,
+  Code,
+  Briefcase,
+  BookOpen,
   Chalkboard,
   Article,
   List,
-  X
+  X,
 } from "phosphor-react";
 import ThemeToggle from "../components/ThemeToggle";
 
 const Blog: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const isBlogPost = location.pathname !== "/portfolio/blog" && location.pathname !== "/portfolio/blog/";
+  const isBlogPost =
+    location.pathname !== "/portfolio/blog" && location.pathname !== "/portfolio/blog/";
 
   const navigationItems = [
     { path: "/portfolio", label: "Home", icon: House },
@@ -32,11 +33,11 @@ const Blog: React.FC = () => {
   ];
 
   return (
-    <motion.div 
-      initial={{ opacity: 0 }} 
-      animate={{ opacity: 1 }} 
-      exit={{ opacity: 0 }} 
-      transition={{ duration: 0.5 }} 
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
       className="relative min-h-screen bg-white dark:bg-zinc-900"
     >
       {/* Header */}
@@ -44,14 +45,14 @@ const Blog: React.FC = () => {
         <div className="max-w-5xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center gap-4">
             {/* Left Side: Logo & Navigation */}
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }} 
-              animate={{ opacity: 1, x: 0 }} 
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.1 }}
               className="flex items-center gap-4"
             >
-              <Link 
-                to="/portfolio/blog" 
+              <Link
+                to="/portfolio/blog"
                 className="flex items-center gap-3 group"
                 style={{ fontFamily: "Inter" }}
               >
@@ -75,7 +76,7 @@ const Blog: React.FC = () => {
 
               {/* Desktop Navigation - Left Side */}
               <div className="hidden md:flex items-center gap-2">
-                <Link 
+                <Link
                   to="/portfolio"
                   className="px-3 py-2 rounded-lg font-medium text-sm text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors flex items-center gap-2"
                 >
@@ -86,9 +87,9 @@ const Blog: React.FC = () => {
             </motion.div>
 
             {/* Right Side: Theme Toggle */}
-            <motion.div 
-              initial={{ opacity: 0, x: 20 }} 
-              animate={{ opacity: 1, x: 0 }} 
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
               className="hidden md:flex items-center gap-2"
             >
@@ -136,7 +137,9 @@ const Blog: React.FC = () => {
                   <span className="text-sm">Portfolio Home</span>
                 </Link>
                 <div className="px-4 py-2 bg-zinc-50 dark:bg-zinc-900">
-                  <p className="text-xs font-semibold text-zinc-500 dark:text-zinc-500 mb-2">Quick Navigation</p>
+                  <p className="text-xs font-semibold text-zinc-500 dark:text-zinc-500 mb-2">
+                    Quick Navigation
+                  </p>
                 </div>
                 {navigationItems.map((item) => {
                   const Icon = item.icon;

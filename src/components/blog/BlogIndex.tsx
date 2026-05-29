@@ -13,23 +13,21 @@ const BlogIndex: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <h1 className="text-5xl font-semibold text-zinc-900 dark:text-zinc-100 mb-4">
-            Blog
-          </h1>
+          <h1 className="text-5xl font-semibold text-zinc-900 dark:text-zinc-100 mb-4">Blog</h1>
           <p className="text-xl text-zinc-600 dark:text-zinc-400">
             Thoughts on my academic journey, software engineering, and innovation
           </p>
         </motion.div>
-        
+
         <div className="space-y-12 mb-16">
           {BLOGS.map((blog, index) => (
-            <motion.div 
-              key={blog.id} 
-              initial={{ opacity: 0, y: 20 }} 
-              animate={{ opacity: 1, y: 0 }} 
-              transition={{ 
-                duration: 0.5, 
-                delay: index * 0.1
+            <motion.div
+              key={blog.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
               }}
             >
               <BlogListElement blog={blog} />

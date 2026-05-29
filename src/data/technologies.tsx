@@ -1,7 +1,17 @@
 export const TECHNOLOGIES = [
   {
     name: "Web Technologies (Frontend)",
-    technologies: ["HTML", "CSS", "Tailwind", "shadCN", "JavaScript", "jQuery", "React (+Next.js)", "Vue.js (+Nuxt.js)", "Angular"],
+    technologies: [
+      "HTML",
+      "CSS",
+      "Tailwind",
+      "shadCN",
+      "JavaScript",
+      "jQuery",
+      "React (+Next.js)",
+      "Vue.js (+Nuxt.js)",
+      "Angular",
+    ],
   },
   {
     name: "Web Technologies (Backend)",
@@ -17,7 +27,15 @@ export const TECHNOLOGIES = [
   },
   {
     name: "Machine Learning",
-    technologies: ["Scikit-learn", "Tensorflow / Keras", "Huggingface Transformer", "unsloth", "vLLM", "ollama", "LangChain/LangGraph"],
+    technologies: [
+      "Scikit-learn",
+      "Tensorflow / Keras",
+      "Huggingface Transformer",
+      "unsloth",
+      "vLLM",
+      "ollama",
+      "LangChain/LangGraph",
+    ],
   },
   {
     name: "Databases",

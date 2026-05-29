@@ -2,10 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Tooltip } from "./Tooltip";
-import { 
-  GithubLogo, 
-  LinkedinLogo, 
-  At, 
+import {
+  GithubLogo,
+  LinkedinLogo,
+  At,
   Student,
   GlobeHemisphereWest,
   BookOpen,
@@ -13,48 +13,48 @@ import {
   User,
   Sparkle,
   Heart,
-  Code
+  Code,
 } from "@phosphor-icons/react";
 
 const Footer: React.FC = () => {
   const socialLinks = [
-    { 
-      icon: GithubLogo, 
-      url: "https://github.com/NilsHellwig", 
+    {
+      icon: GithubLogo,
+      url: "https://github.com/NilsHellwig",
       label: "GitHub",
-      color: "hover:text-zinc-900 dark:hover:text-zinc-100"
+      color: "hover:text-zinc-900 dark:hover:text-zinc-100",
     },
-    { 
-      icon: LinkedinLogo, 
-      url: "https://www.linkedin.com/in/nils-hellwig/", 
+    {
+      icon: LinkedinLogo,
+      url: "https://www.linkedin.com/in/nils-hellwig/",
       label: "LinkedIn",
-      color: "hover:text-blue-600 dark:hover:text-blue-400"
+      color: "hover:text-blue-600 dark:hover:text-blue-400",
     },
-    { 
-      icon: At, 
-      url: "mailto:nils.hellwig@ur.de", 
+    {
+      icon: At,
+      url: "mailto:nils.hellwig@ur.de",
       label: "Email",
-      color: "hover:text-emerald-600 dark:hover:text-emerald-400"
+      color: "hover:text-emerald-600 dark:hover:text-emerald-400",
     },
-    { 
-      icon: Student, 
-      url: "https://scholar.google.com/citations?user=VzUTKcwAAAAJ", 
+    {
+      icon: Student,
+      url: "https://scholar.google.com/citations?user=VzUTKcwAAAAJ",
       label: "Google Scholar",
-      color: "hover:text-indigo-600 dark:hover:text-indigo-400"
+      color: "hover:text-indigo-600 dark:hover:text-indigo-400",
     },
-    { 
-      icon: GlobeHemisphereWest, 
-      url: "https://orcid.org/0009-0000-7305-8797", 
+    {
+      icon: GlobeHemisphereWest,
+      url: "https://orcid.org/0009-0000-7305-8797",
       label: "ORCID",
-      color: "hover:text-lime-600 dark:hover:text-lime-400"
-    }
+      color: "hover:text-lime-600 dark:hover:text-lime-400",
+    },
   ];
 
   const navigationLinks = [
     { to: "/portfolio/about", icon: User, label: "About" },
     { to: "/portfolio/projects", icon: Briefcase, label: "Projects" },
     { to: "/portfolio/publications", icon: BookOpen, label: "Publications" },
-    { to: "/portfolio/blog", icon: BookOpen, label: "Blog" }
+    { to: "/portfolio/blog", icon: BookOpen, label: "Blog" },
   ];
 
   return (
@@ -67,7 +67,6 @@ const Footer: React.FC = () => {
       <div className="mx-auto px-4">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          
           {/* About Section */}
           <div className="space-y-3">
             <h3 className="font-bold text-zinc-900 dark:text-white flex items-center gap-2">
@@ -75,7 +74,8 @@ const Footer: React.FC = () => {
               Nils Hellwig
             </h3>
             <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-              PhD Candidate in AI & NLP at University of Regensburg. Passionate about building innovative solutions at the intersection of research and software engineering.
+              PhD Candidate in AI & NLP at University of Regensburg. Passionate about building
+              innovative solutions at the intersection of research and software engineering.
             </p>
           </div>
 
@@ -89,7 +89,10 @@ const Footer: React.FC = () => {
                   to={link.to}
                   className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors flex items-center gap-2 group"
                 >
-                  <link.icon size={14} className="text-zinc-400 group-hover:text-zinc-600 dark:group-hover:text-zinc-300 transition-colors" />
+                  <link.icon
+                    size={14}
+                    className="text-zinc-400 group-hover:text-zinc-600 dark:group-hover:text-zinc-300 transition-colors"
+                  />
                   {link.label}
                 </Link>
               ))}

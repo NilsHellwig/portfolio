@@ -32,7 +32,9 @@ const SingleProject: React.FC<SingleProjectProps> = ({ showSingleProjectFct, pro
   useEffect(() => {
     const loadImage = async () => {
       if (project && project.galleryImages && project.galleryImages[galleryIndex]) {
-        const imageUrl = require(`../img/screenshots-projects/${project.galleryImages[galleryIndex]}`);
+        const imageUrl = require(
+          `../img/screenshots-projects/${project.galleryImages[galleryIndex]}`,
+        );
         const image = new Image();
 
         image.onload = () => {
@@ -107,11 +109,19 @@ const SingleProject: React.FC<SingleProjectProps> = ({ showSingleProjectFct, pro
           onClose={() => {
             setGalleryFullView(false);
           }}
-          screenshotUrl={require("../img/screenshots-projects/" + project?.galleryImages[galleryIndex])}
+          screenshotUrl={require(
+            "../img/screenshots-projects/" + project?.galleryImages[galleryIndex],
+          )}
         />
       )}
-      <motion.header variants={itemVariants} className="flex justify-right sticky -top-6 -m-6 bg-zinc-50 dark:bg-zinc-800 bg-opacity-80 backdrop-blur-sm p-4 items-center gap-4 ] ">
-        <div className="bg-black shadow-button-black opacity-75 rounded-xl p-2 flex justify-center items-center cursor-pointer hover:bg-zinc-800" onClick={showSingleProjectFct}>
+      <motion.header
+        variants={itemVariants}
+        className="flex justify-right sticky -top-6 -m-6 bg-zinc-50 dark:bg-zinc-800 bg-opacity-80 backdrop-blur-sm p-4 items-center gap-4 ] "
+      >
+        <div
+          className="bg-black shadow-button-black opacity-75 rounded-xl p-2 flex justify-center items-center cursor-pointer hover:bg-zinc-800"
+          onClick={showSingleProjectFct}
+        >
           <div className="flex flex-row items-center gap-2">
             <X size={20} color="#ffffff" />
           </div>
@@ -137,15 +147,27 @@ const SingleProject: React.FC<SingleProjectProps> = ({ showSingleProjectFct, pro
             <div className="flex justify-center w-full h-full items-center">
               <div className="flex flex-row justify-between gap-4 w-full h-fit">
                 <div className="flex items-center justify-center">
-                  <div className={`px-1 py-2 rounded-md ${galleryIndex === 0 ? "bg-zinc-200 dark:bg-zinc-700 cursor-not-allowed" : "bg-zinc-200 dark:bg-zinc-700 hover:bg-zinc-300 dark:hover:bg-zinc-600 cursor-pointer"}`} onClick={lowerGalleryIndex}>
-                    <ArrowLeft size={24} className={galleryIndex === 0 ? "text-zinc-400 dark:text-zinc-600" : "text-zinc-700 dark:text-zinc-300"} />
+                  <div
+                    className={`px-1 py-2 rounded-md ${galleryIndex === 0 ? "bg-zinc-200 dark:bg-zinc-700 cursor-not-allowed" : "bg-zinc-200 dark:bg-zinc-700 hover:bg-zinc-300 dark:hover:bg-zinc-600 cursor-pointer"}`}
+                    onClick={lowerGalleryIndex}
+                  >
+                    <ArrowLeft
+                      size={24}
+                      className={
+                        galleryIndex === 0
+                          ? "text-zinc-400 dark:text-zinc-600"
+                          : "text-zinc-700 dark:text-zinc-300"
+                      }
+                    />
                   </div>
                 </div>
                 {project?.galleryImages?.[galleryIndex] && (
                   <Modal onOpen={toggleGalleryFullView} className="flex justify-center">
                     <img
                       className={`border border-zinc-300 dark:border-zinc-600 rounded-md ${imageDimensions.width > imageDimensions.height ? "w-4/5" : "h-[500px]"}`}
-                      src={require(`../img/screenshots-projects/${project?.galleryImages[galleryIndex]}`)}
+                      src={require(
+                        `../img/screenshots-projects/${project?.galleryImages[galleryIndex]}`,
+                      )}
                       alt={`${project?.title} icon`}
                     />
                   </Modal>
@@ -155,7 +177,14 @@ const SingleProject: React.FC<SingleProjectProps> = ({ showSingleProjectFct, pro
                     className={`px-1 py-2 rounded-md ${galleryIndex + 1 === project?.galleryImages?.length ? "bg-zinc-200 dark:bg-zinc-700 cursor-not-allowed" : "bg-zinc-200 dark:bg-zinc-700 hover:bg-zinc-300 dark:hover:bg-zinc-600 cursor-pointer"}`}
                     onClick={higherGalleryIndex}
                   >
-                    <ArrowRight size={24} className={galleryIndex + 1 === project?.galleryImages?.length ? "text-zinc-400 dark:text-zinc-600" : "text-zinc-700 dark:text-zinc-300"} />
+                    <ArrowRight
+                      size={24}
+                      className={
+                        galleryIndex + 1 === project?.galleryImages?.length
+                          ? "text-zinc-400 dark:text-zinc-600"
+                          : "text-zinc-700 dark:text-zinc-300"
+                      }
+                    />
                   </div>
                 </div>
               </div>
@@ -175,7 +204,13 @@ const SingleProject: React.FC<SingleProjectProps> = ({ showSingleProjectFct, pro
               <Tooltip key={index} text={language} position="bottom">
                 <div key={index}>
                   <div className="w-16 h-16 p-3 rounded-2xl border-zinc-200 dark:border-zinc-700 border bg-white dark:bg-zinc-800">
-                    {getLanguageData(language)?.iconPath && <img src={getLanguageData(language)?.iconPath} alt={`${getLanguageData(language)?.name} icon`} className="mr-2" />}
+                    {getLanguageData(language)?.iconPath && (
+                      <img
+                        src={getLanguageData(language)?.iconPath}
+                        alt={`${getLanguageData(language)?.name} icon`}
+                        className="mr-2"
+                      />
+                    )}
                   </div>
                 </div>
               </Tooltip>
@@ -184,15 +219,22 @@ const SingleProject: React.FC<SingleProjectProps> = ({ showSingleProjectFct, pro
         </div>
         <div>
           <h3 className="font-bold text-center dark:text-white">About</h3>
-          <p className="text-sm text-zinc-400 dark:text-zinc-400 mt-4 text-justify">{project?.description}</p>
+          <p className="text-sm text-zinc-400 dark:text-zinc-400 mt-4 text-justify">
+            {project?.description}
+          </p>
         </div>
         <div>
           <h3 className="font-bold text-center mb-4 dark:text-white">Technologies</h3>
           <div className="grid grid-cols sm:grid-cols-2 gap-4">
             {project?.technologies?.map((technology, index) => {
               return (
-                <div key={index} className="bg-zinc-100 dark:bg-zinc-800 p-3 border border-zinc-300 dark:border-zinc-700 rounded-xl">
-                  <span className="text-zinc-600 dark:text-zinc-300 text-sm font-bold">{technology}</span>
+                <div
+                  key={index}
+                  className="bg-zinc-100 dark:bg-zinc-800 p-3 border border-zinc-300 dark:border-zinc-700 rounded-xl"
+                >
+                  <span className="text-zinc-600 dark:text-zinc-300 text-sm font-bold">
+                    {technology}
+                  </span>
                 </div>
               );
             })}
@@ -210,7 +252,9 @@ const SingleProject: React.FC<SingleProjectProps> = ({ showSingleProjectFct, pro
                       openLinkInNewTab(link.url);
                     }}
                   >
-                    <span className="text-sm text-zinc-600 dark:text-zinc-300 font-bold text-left">{link.name}</span>
+                    <span className="text-sm text-zinc-600 dark:text-zinc-300 font-bold text-left">
+                      {link.name}
+                    </span>
                     <div>
                       <Link size={24} className="text-zinc-900 dark:text-zinc-100" />
                     </div>

@@ -6,14 +6,7 @@ export const LECTURES = [
     iconPath: require("../img/icons/lectures/web-dev-25.svg").default,
     description:
       "Participants will learn the fundamentals of web development both theoretically and practically in this course. Over 11 sessions, the course includes theoretical units with lecture slides as well as interactive live-coding sessions. Topics covered include basic web technologies such as HTML, CSS, and JavaScript, as well as advanced concepts and tools like React, Node.js, Docker, and MongoDB. The goal of the course is to develop interactive and user-friendly web applications. During the semester break, a practice-oriented workshop follows, serving as preparation for the final project (module grade). Here we focus on prototyping, ER diagrams, and user stories to create a solid foundation for implementing your project.",
-    competences: [
-      "Next.js",
-      "MongoDB",
-      "Docker",
-      "HTML",
-      "CSS",
-      "JavaScript",
-    ],
+    competences: ["Next.js", "MongoDB", "Docker", "HTML", "CSS", "JavaScript"],
     materials: [
       {
         name: "01 Git und GitHub",
