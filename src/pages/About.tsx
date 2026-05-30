@@ -205,7 +205,7 @@ const About: React.FC = () => {
             </div>
 
             <div className="w-64 md:w-72 flex-shrink-0 order-1 md:order-2">
-              <div className="relative group bg-white rounded-2xl shadow-sm p-4">
+              <div className="relative group bg-white rounded-2xl shadow-sm">
                 <img
                   src="portrait.png"
                   alt="Nils Hellwig"
