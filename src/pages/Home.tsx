@@ -17,6 +17,7 @@ const Home: React.FC = () => {
       <motion.img
         src={imageNilsHi}
         alt="Nils saying hi"
+        className="bg-white rounded-full p-4 border border-zinc-200 dark:border-zinc-700"
         width="200px"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}

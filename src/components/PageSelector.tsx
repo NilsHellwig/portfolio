@@ -74,7 +74,7 @@ const PageSelector: React.FC<{ transparentBackground: boolean }> = ({ transparen
                   ${
                     active
                       ? "bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 shadow-md scale-105"
-                      : "text-zinc-600 dark:text-zinc-400 hover:bg-white/40 dark:hover:bg-white/10 hover:backdrop-blur-md hover:text-zinc-900 dark:hover:text-zinc-100 hover:scale-110 hover:shadow-lg border border-transparent hover:border-white/20 dark:hover:border-white/10"
+                      : "text-zinc-600 dark:text-zinc-400 hover:bg-black/[0.05] dark:hover:bg-white/10 hover:backdrop-blur-md hover:text-zinc-900 dark:hover:text-zinc-100 hover:scale-110 hover:shadow-lg border border-transparent hover:border-black/[0.08] dark:hover:border-white/10"
                   }
                 `}
               >

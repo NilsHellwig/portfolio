@@ -205,13 +205,11 @@ const About: React.FC = () => {
             </div>
 
             <div className="w-64 md:w-72 flex-shrink-0 order-1 md:order-2">
-              <div className="relative group">
-                {/* Visual accent behind image */}
-                <div className="absolute inset-0 bg-zinc-100 dark:bg-zinc-700 translate-x-3 translate-y-3 rounded-2xl -z-10 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform duration-500" />
+              <div className="relative group bg-white rounded-2xl shadow-sm p-4">
                 <img
                   src="portrait.png"
                   alt="Nils Hellwig"
-                  className="rounded-2xl border-[0.5px] border-zinc-200 dark:border-zinc-700 object-cover w-full aspect-[4/5] transition-all duration-700 ease-in-out"
+                  className="rounded-xl object-cover w-full aspect-[4/5] transition-all duration-700 ease-in-out border border-zinc-200 dark:border-zinc-700"
                 />
               </div>
             </div>
