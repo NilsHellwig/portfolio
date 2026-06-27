@@ -7,6 +7,7 @@ export const PUBLICATIONS = [
     year: 2026,
     publisher: "Elsevier",
     url: "https://www.sciencedirect.com/science/article/pii/S0950705126000213",
+    pdfUrl: "https://epub.uni-regensburg.de/78479/1/1-s2.0-S0950705126000213-main.pdf",
     tooltipUrl: "sciencedirect.com",
   },
   {
@@ -17,7 +18,8 @@ export const PUBLICATIONS = [
     pages: "7955–7972",
     year: 2026,
     publisher: "European Language Resources Association (ELRA)",
-    url: "https://doi.org/10.63317/43srcdyc52cd",
+    url: "https://lrec.elra.info/lrec2026-main-632",
+    pdfUrl: "http://www.lrec-conf.org/proceedings/lrec2026/pdf/2026.lrec2026-1.632.pdf",
     tooltipUrl: "lrec.elra.info",
   },
   {
@@ -28,7 +30,20 @@ export const PUBLICATIONS = [
     pages: "7985–7998",
     year: 2026,
     publisher: "European Language Resources Association (ELRA)",
-    url: "https://doi.org/10.63317/56mac6pxbke6",
+    url: "https://lrec.elra.info/lrec2026-main-634",
+    pdfUrl: "http://www.lrec-conf.org/proceedings/lrec2026/pdf/2026.lrec2026-1.634.pdf",
+    tooltipUrl: "lrec.elra.info",
+  },
+  {
+    name: "Zero-Shot to Full-Resource: Cross-lingual Transfer Strategies for Aspect-Based Sentiment Analysis",
+    authors: "Fehle, Jakob, Hellwig, Nils Constantin, Kruschwitz, Udo, & Wolff, Christian",
+    conference:
+      "Proceedings of the Fifteenth Language Resources and Evaluation Conference (LREC 2026)",
+    pages: "7999–8013",
+    year: 2026,
+    publisher: "European Language Resources Association (ELRA)",
+    url: "https://lrec.elra.info/lrec2026-main-635",
+    pdfUrl: "http://www.lrec-conf.org/proceedings/lrec2026/pdf/2026.lrec2026-1.635.pdf",
     tooltipUrl: "lrec.elra.info",
   },
   {
@@ -41,6 +56,7 @@ export const PUBLICATIONS = [
     year: 2025,
     publisher: "HsH Applied Academics",
     url: "https://aclanthology.org/2025.konvens-1.19/",
+    pdfUrl: "https://aclanthology.org/2025.konvens-1.19.pdf",
     tooltipUrl: "aclanthology.org",
   },
   {
@@ -52,6 +68,7 @@ export const PUBLICATIONS = [
     year: 2025,
     publisher: "Association for Computational Linguistics",
     url: "https://aclanthology.org/2025.xllm-1.15/",
+    pdfUrl: "https://aclanthology.org/2025.xllm-1.15.pdf",
     tooltipUrl: "aclanthology.org",
   },
   {
@@ -62,6 +79,7 @@ export const PUBLICATIONS = [
     year: 2024,
     publisher: "Elsevier",
     url: "https://www.sciencedirect.com/science/article/pii/S0957417424023819",
+    pdfUrl: "https://epub.uni-regensburg.de/59433/1/1-s2.0-S0957417424023819-main.pdf",
     tooltipUrl: "sciencedirect.com",
   },
   {
@@ -70,7 +88,8 @@ export const PUBLICATIONS = [
     conference: "Proceedings of the 20th Conference on Natural Language Processing (KONVENS 2024)",
     pages: "123–133",
     year: 2024,
-    url: "https://aclanthology.org/2024.konvens-main.14.pdf",
+    url: "https://aclanthology.org/2024.konvens-main.14/",
+    pdfUrl: "https://aclanthology.org/2024.konvens-main.14.pdf",
     tooltipUrl: "aclanthology.org",
   },
   {
@@ -82,6 +101,7 @@ export const PUBLICATIONS = [
     year: 2024,
     publisher: "Springer",
     url: "https://link.springer.com/article/10.1007/s10772-024-10142-4",
+    pdfUrl: "https://epub.uni-regensburg.de/59582/1/s10772-024-10142-4.pdf",
     tooltipUrl: "springer.com",
   },
   {
@@ -89,7 +109,9 @@ export const PUBLICATIONS = [
     authors: "Hellwig, N. C., Bink, M., Schmidt, T., Fehle, J., & Wolff, C.",
     conference:
       "Proceedings of the 6th International Conference on Natural Language and Speech Processing (ICNLSP 2023)",
-    url: "https://aclanthology.org/2023.icnlsp-1.9.pdf",
+    year: 2023,
+    url: "https://aclanthology.org/2023.icnlsp-1.9/",
+    pdfUrl: "https://aclanthology.org/2023.icnlsp-1.9.pdf",
     tooltipUrl: "aclanthology.org",
   },
   {
@@ -97,7 +119,9 @@ export const PUBLICATIONS = [
     authors:
       "Hellwig, D., Hellwig, N. C., Boehner, S., Fuchs, T., Fischer, R., & Schmidt, D. (2023).",
     conference: "Nuklearmedizin-NuclearMedicine, 62(06), 334-342.",
-    url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10689088/",
+    year: 2023,
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10689088/",
+    pdfUrl: "https://www.thieme-connect.com/products/ejournals/pdf/10.1055/a-2198-0358.pdf",
     tooltipUrl: "ncbi.nlm.nih.gov",
   },
 ];

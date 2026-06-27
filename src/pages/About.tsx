@@ -51,7 +51,7 @@ const About: React.FC = () => {
 
   const timeline = [
     {
-      year: "2024",
+      year: "2024 - now",
       title: "PhD Candidate",
       description:
         "Chair of Media Informatics, Faculty of Informatics and Data Science (FIDS) at University of Regensburg",

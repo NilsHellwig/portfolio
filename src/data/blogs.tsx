@@ -1,5 +1,15 @@
 export const BLOGS = [
   {
+    id: "3",
+    url: "lrec2026",
+    category: "NLP",
+    author: "Nils Hellwig",
+    term: "20/05/2026",
+    title: "LREC 2026: Three Papers in Palma",
+    textColor: "#fefce8",
+    bgColor: "#134e4a",
+  },
+  {
     id: "2",
     url: "prompting",
     category: "NLP",

@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
     },
     {
       icon: LinkedinLogo,
-      url: "https://www.linkedin.com/in/nils-hellwig/",
+      url: "https://www.linkedin.com/in/nils-constantin-h-748711229/",
       label: "LinkedIn",
       color: "hover:text-blue-600 dark:hover:text-blue-400",
     },

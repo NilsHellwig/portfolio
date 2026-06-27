@@ -31,10 +31,6 @@ export const TECHNOLOGIES = [
       "Scikit-learn",
       "Tensorflow / Keras",
       "Huggingface Transformer",
-      "unsloth",
-      "vLLM",
-      "ollama",
-      "LangChain/LangGraph",
     ],
   },
   {
