@@ -4,10 +4,7 @@ import { ArrowSquareOut, FilePdf } from "phosphor-react";
 import { motion } from "framer-motion";
 import Footer from "../components/Footer";
 
-const DOMAIN_STYLES: Record<
-  string,
-  { dot: string; text: string; bg: string; hover: string }
-> = {
+const DOMAIN_STYLES: Record<string, { dot: string; text: string; bg: string; hover: string }> = {
   "aclanthology.org": {
     dot: "bg-red-500",
     text: "text-red-600 dark:text-red-400",
@@ -73,7 +70,8 @@ const Publications: React.FC = () => {
       <h2 className="text-2xl font-bold dark:text-white">Publications</h2>
       <p className="text-zinc-500 dark:text-zinc-400 mt-4 mb-8">
         Research contributions in Natural Language Processing, Computational Linguistics, and
-        Sentiment Analysis
+        Sentiment Analysis. For every publication, my collegues and I have made the code and data
+        publicly available, which can be found in the respective papers.
       </p>
       <motion.div
         className="grid grid-cols-1 gap-4 mt-8"
