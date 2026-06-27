@@ -75,11 +75,11 @@ const AI_CATEGORIES: AICategory[] = [
     icon: Cloud,
     title: "Cloud Deployment & Serving",
     skills: [
-      { name: "Vertex AI"},
+      { name: "Vertex AI" },
       { name: "Google Cloud Run" },
       { name: "Google Kubernetes Engine (GKE)" },
-      { name: "Docker"},
-      { name: "FastAPI"},
+      { name: "Docker" },
+      { name: "FastAPI" },
     ],
   },
   {
@@ -299,11 +299,10 @@ const Skills: React.FC = () => {
         </motion.div>
         <motion.p
           variants={itemVariants}
-          className="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed mb-4 max-w-3xl"
+          className="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed mb-4"
         >
-          I integrate AI coding assistants like Claude Code into my daily workflow, but always with
-          a critical eye. I review every suggestion to ensure I thoroughly understand the code
-          entering the repository, maintaining full accountability for the final output.
+          Especially Claude Code is a core part of my daily development workflow. Of course, I also
+          use custom rules, skills, and hooks to establish consistent behavior across sessions
         </motion.p>
         <motion.div variants={containerVariants} className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {VIBE_CODING.map((tool, index) => (
