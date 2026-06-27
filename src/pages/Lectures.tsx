@@ -1,60 +1,103 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useMemo, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { LECTURES } from "../data/lectures";
 import Lecture from "../components/Lecture";
 import Footer from "../components/Footer";
 
-const Lectures: React.FC = () => {
-  const containerVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 20,
-        mass: 1,
-        staggerChildren: 0.1,
-      },
-    },
-  };
+const containerVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 100, damping: 20, staggerChildren: 0.08 },
+  },
+};
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const Lectures: React.FC = () => {
+  const [activeTerm, setActiveTerm] = useState<string>("All");
+
+  const terms = useMemo(() => {
+    const unique = Array.from(new Set(LECTURES.map((l) => l.term)));
+    return ["All", ...unique];
+  }, []);
+
+  const getTermCount = (term: string) =>
+    term === "All" ? LECTURES.length : LECTURES.filter((l) => l.term === term).length;
+
+  const filteredLectures = useMemo(
+    () => (activeTerm === "All" ? LECTURES : LECTURES.filter((l) => l.term === activeTerm)),
+    [activeTerm],
+  );
 
   return (
-    <div className="pb-8">
+    <motion.div className="pb-8" initial="hidden" animate="visible" variants={containerVariants}>
+      {/* Header */}
       <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        variants={itemVariants}
+        className="border-b border-zinc-200 dark:border-zinc-700 pb-3 mb-6 mt-10"
       >
-        <h2 className="text-3xl font-bold dark:text-white mb-2">Lectures</h2>
-        <p className="text-zinc-500 dark:text-zinc-400 text-sm">
+        <div className="flex items-baseline gap-2.5">
+          <span className="text-base sm:text-lg font-mono font-bold text-zinc-400 dark:text-zinc-500 tabular-nums">
+            01
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-white tracking-tight">
+            Lectures
+          </h2>
+        </div>
+        <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1.5">
           University courses and teaching materials
         </p>
       </motion.div>
 
-      {/* Lectures List */}
-      <motion.div
-        className="flex flex-col gap-4 mt-8"
-        initial="hidden"
-        animate="visible"
-        variants={containerVariants}
-      >
-        {LECTURES.map((lecture, index) => {
-          return (
+      {/* Term filter */}
+      <motion.div variants={itemVariants} className="flex flex-wrap gap-2 mb-6">
+        {terms.map((term) => (
+          <button
+            key={term}
+            onClick={() => setActiveTerm(term)}
+            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-150 border-[0.5px]
+              ${
+                activeTerm === term
+                  ? "bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 border-zinc-900 dark:border-zinc-100"
+                  : "bg-white dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 border-zinc-300 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-600 hover:bg-zinc-50 dark:hover:bg-zinc-700"
+              }`}
+          >
+            {term}
+            <span
+              className={`text-xs px-1.5 py-0.5 rounded-full tabular-nums
+                ${activeTerm === term ? "bg-white/20 dark:bg-zinc-900/20" : "bg-zinc-100 dark:bg-zinc-700 text-zinc-500 dark:text-zinc-400"}`}
+            >
+              {getTermCount(term)}
+            </span>
+          </button>
+        ))}
+      </motion.div>
+
+      {/* Lectures list */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeTerm}
+          className="flex flex-col gap-4"
+          initial="hidden"
+          animate="visible"
+          exit="hidden"
+          variants={containerVariants}
+        >
+          {filteredLectures.map((lecture, index) => (
             <motion.div key={index} variants={itemVariants}>
               <Lecture lecture={lecture} />
             </motion.div>
-          );
-        })}
-      </motion.div>
+          ))}
+        </motion.div>
+      </AnimatePresence>
+
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 

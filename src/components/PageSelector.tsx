@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  ArrowSquareOut,
   House,
   User,
   Code,
@@ -27,7 +26,7 @@ const iconVariants = {
   },
 };
 
-const PageSelector: React.FC<{ transparentBackground: boolean }> = ({ transparentBackground }) => {
+const PageSelector: React.FC = () => {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -38,7 +37,7 @@ const PageSelector: React.FC<{ transparentBackground: boolean }> = ({ transparen
     { path: "/portfolio/projects", label: "Projects", icon: Briefcase },
     { path: "/portfolio/publications", label: "Publications", icon: BookOpen },
     { path: "/portfolio/lectures", label: "Lectures", icon: Chalkboard },
-    { path: "/portfolio/blog", label: "Blog", icon: Article, external: true },
+    { path: "/portfolio/blog", label: "Blog", icon: Article },
   ];
 
   const isActive = (path: string) => {
@@ -82,7 +81,6 @@ const PageSelector: React.FC<{ transparentBackground: boolean }> = ({ transparen
                   <Icon size={16} weight={active ? "fill" : "regular"} />
                 </motion.div>
                 <span>{item.label}</span>
-                {item.external && <ArrowSquareOut size={12} weight="bold" className="opacity-60" />}
               </Link>
             </motion.div>
           );
@@ -137,9 +135,6 @@ const PageSelector: React.FC<{ transparentBackground: boolean }> = ({ transparen
                       <Icon size={18} weight={active ? "fill" : "regular"} />
                     </motion.div>
                     <span className="text-sm">{item.label}</span>
-                    {item.external && (
-                      <ArrowSquareOut size={12} weight="bold" className="opacity-60 ml-auto" />
-                    )}
                   </Link>
                 );
               })}

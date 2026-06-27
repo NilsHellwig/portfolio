@@ -3,42 +3,60 @@ import { motion } from "framer-motion";
 import BlogListElement from "./BlogListElement";
 import Footer from "../Footer";
 
+const containerVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 100, damping: 20, staggerChildren: 0.08 },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
 const BlogIndex: React.FC = () => {
   return (
-    <div style={{ fontFamily: "Inter" }} className="min-h-screen bg-white dark:bg-zinc-900">
-      <div className="max-w-5xl mx-auto px-6 pt-32 pb-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-16"
-        >
-          <h1 className="text-5xl font-semibold text-zinc-900 dark:text-zinc-100 mb-4">Blog</h1>
-          <p className="text-xl text-zinc-600 dark:text-zinc-400">
-            Thoughts on my academic journey, software engineering, and innovation
-          </p>
-        </motion.div>
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      style={{ fontFamily: "Inter" }}
+      className="pb-8"
+    >
+      {/* Header */}
+      <motion.div
+        variants={itemVariants}
+        className="border-b border-zinc-200 dark:border-zinc-700 pb-3 mb-8 mt-10"
+      >
+        <div className="flex items-baseline gap-2.5">
+          <span className="text-base sm:text-lg font-mono font-bold text-zinc-400 dark:text-zinc-500 tabular-nums">
+            01
+          </span>
+          <h1 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-white tracking-tight">
+            Blog
+          </h1>
+        </div>
+        <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1.5">
+          Thoughts on my academic journey, software engineering, and innovation
+        </p>
+      </motion.div>
 
-        <div className="space-y-12 mb-16">
-          {BLOGS.map((blog, index) => (
-            <motion.div
-              key={blog.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.5,
-                delay: index * 0.1,
-              }}
-            >
-              <BlogListElement blog={blog} />
-            </motion.div>
-          ))}
-        </div>
-        <div className="max-w-5xl">
-          <Footer />
-        </div>
+      {/* Card grid */}
+      <motion.div variants={containerVariants} className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {BLOGS.map((blog) => (
+          <motion.div key={blog.id} variants={itemVariants}>
+            <BlogListElement blog={blog} />
+          </motion.div>
+        ))}
+      </motion.div>
+
+      <div className="mt-12">
+        <Footer />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

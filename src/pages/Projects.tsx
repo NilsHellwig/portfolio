@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { PROJECTS } from "../data/projects";
 import { useParams } from "react-router";
 import SingleProject from "../popups/SingleProject";
-import { GithubLogo, Funnel } from "@phosphor-icons/react";
+import { GithubLogo } from "@phosphor-icons/react";
 import Footer from "../components/Footer";
 
 interface ProjectsProps {
@@ -11,37 +11,44 @@ interface ProjectsProps {
   setShowOverlay: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
+const containerVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 100, damping: 20, staggerChildren: 0.07 },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
 const Projects: React.FC<ProjectsProps> = ({ showOverlay, setShowOverlay }) => {
   const [projectId, setProjectId] = useState("");
   const [activeFilter, setActiveFilter] = useState<string>("All");
   const { projectName } = useParams();
-  console.log(projectName);
 
-  // Extract unique types sorted by project count
   const categories = useMemo(() => {
     const uniqueTypes = Array.from(new Set(PROJECTS.map((p) => p.type)));
-    const sortedTypes = uniqueTypes.sort((a, b) => {
-      const countA = PROJECTS.filter((p) => p.type === a).length;
-      const countB = PROJECTS.filter((p) => p.type === b).length;
-      return countB - countA; // Sort descending by count
+    const sorted = uniqueTypes.sort((a, b) => {
+      return (
+        PROJECTS.filter((p) => p.type === b).length - PROJECTS.filter((p) => p.type === a).length
+      );
     });
-    return ["All", ...sortedTypes];
+    return ["All", ...sorted];
   }, []);
 
-  // Get project count per type
-  const getCategoryCount = (category: string) => {
-    if (category === "All") return PROJECTS.length;
-    return PROJECTS.filter((p) => p.type === category).length;
-  };
+  const getCategoryCount = (category: string) =>
+    category === "All" ? PROJECTS.length : PROJECTS.filter((p) => p.type === category).length;
 
-  // Filter projects
-  const filteredProjects = useMemo(() => {
-    if (activeFilter === "All") return PROJECTS;
-    return PROJECTS.filter((p) => p.type === activeFilter);
-  }, [activeFilter]);
+  const filteredProjects = useMemo(
+    () => (activeFilter === "All" ? PROJECTS : PROJECTS.filter((p) => p.type === activeFilter)),
+    [activeFilter],
+  );
 
   function showSingleProjectFct() {
-    // Toggle body overflow
     document.body.style.overflow = document.body.style.overflow === "hidden" ? "scroll" : "hidden";
     if (showOverlay) {
       window.history.replaceState(null, "Nils Hellwig - Portfolio", "/portfolio/projects");
@@ -57,171 +64,159 @@ const Projects: React.FC<ProjectsProps> = ({ showOverlay, setShowOverlay }) => {
     // eslint-disable-next-line
   }, []);
 
-  const containerVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 20,
-        mass: 1,
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
-
   return (
-    <div className="pb-8">
-      <h2 className="text-2xl font-bold dark:text-white">Projects</h2>
-      <div className="mt-4">
+    <motion.div className="pb-8" initial="hidden" animate="visible" variants={containerVariants}>
+      {/* Header */}
+      <motion.div
+        variants={itemVariants}
+        className="border-b border-zinc-200 dark:border-zinc-700 pb-3 mb-8 mt-10"
+      >
+        <div className="flex items-baseline gap-2.5">
+          <span className="text-base sm:text-lg font-mono font-bold text-zinc-400 dark:text-zinc-500 tabular-nums">
+            01
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-white tracking-tight">
+            Projects
+          </h2>
+        </div>
+        <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1.5">
+          Selected software projects — web apps, AI tools, mobile apps, and research utilities
+        </p>
+      </motion.div>
+
+      {/* GitHub link */}
+      <motion.div variants={itemVariants} className="mb-8">
         <a
           href="https://github.com/NilsHellwig"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-4 py-2 bg-zinc-900 hover:bg-zinc-800 dark:bg-zinc-700 dark:hover:bg-zinc-600 text-white rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold bg-white dark:bg-zinc-800 border-[0.5px] border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-700 transition-all duration-150 shadow-sm"
         >
-          <GithubLogo size={20} weight="fill" />
-          <span className="font-medium text-sm">github/NilsHellwig</span>
+          <GithubLogo size={16} weight="fill" />
+          github/NilsHellwig
         </a>
-      </div>
+      </motion.div>
 
-      <div className="mt-8 space-y-4">
-        <div className="border-[0.5px] border-zinc-300 dark:border-zinc-700 rounded-xl p-6 bg-zinc-50 dark:bg-zinc-800">
-          <h3 className="font-bold text-md mb-4 dark:text-white">GitHub Activity</h3>
-          <div className="flex flex-col gap-4">
-            <img
-              src="https://ghchart.rshah.org/16a34a/NilsHellwig"
-              alt="GitHub Contribution Chart"
-              className="w-full dark:invert dark:hue-rotate-180"
-            />
-          </div>
+      {/* GitHub Activity Chart */}
+      <motion.div
+        variants={itemVariants}
+        className="border-[0.5px] border-zinc-300 dark:border-zinc-700 rounded-xl p-5 bg-white dark:bg-zinc-800 mb-8"
+      >
+        <p className="text-xs font-semibold text-zinc-400 dark:text-zinc-500 uppercase tracking-wider mb-4">
+          GitHub Activity
+        </p>
+        <img
+          src="https://ghchart.rshah.org/16a34a/NilsHellwig"
+          alt="GitHub Contribution Chart"
+          className="w-full dark:invert dark:hue-rotate-180"
+        />
+      </motion.div>
+
+      {/* Section header: Selected Projects */}
+      <motion.div
+        variants={itemVariants}
+        className="border-b border-zinc-200 dark:border-zinc-700 pb-3 mb-6"
+      >
+        <div className="flex items-baseline gap-2.5">
+          <span className="text-base sm:text-lg font-mono font-bold text-zinc-400 dark:text-zinc-500 tabular-nums">
+            02
+          </span>
+          <h3 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-white tracking-tight">
+            Selected Projects
+          </h3>
         </div>
-      </div>
+        <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1.5">
+          Click a card to see details, tech stack, and links
+        </p>
+      </motion.div>
 
-      <section className="pt-8">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
-          <h3 className="font-bold text-md dark:text-white">Selected Projects</h3>
-          <div className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400">
-            <Funnel size={16} weight="fill" />
-            <span>
-              {filteredProjects.length} {filteredProjects.length === 1 ? "Projekt" : "Projekte"}
-            </span>
-          </div>
-        </div>
-
-        {/* Filter Pills */}
-        <motion.div
-          className="flex flex-wrap gap-2 mb-6"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          {categories.map((category) => (
-            <motion.button
-              key={category}
-              onClick={() => setActiveFilter(category)}
-              className={`
-                px-4 py-2 rounded-full text-sm font-medium transition-all duration-200
-                border-[0.5px] flex items-center gap-2
-                ${
-                  activeFilter === category
-                    ? "bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 border-zinc-900 dark:border-zinc-100 shadow-md"
-                    : "bg-white dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border-zinc-300 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-600 hover:shadow-sm"
-                }
-              `}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
-            >
-              <span>{category}</span>
-              <span
-                className={`
-                text-xs px-2 py-0.5 rounded-full
-                ${
-                  activeFilter === category
-                    ? "bg-white/20 dark:bg-zinc-900/20"
-                    : "bg-zinc-100 dark:bg-zinc-700"
-                }
-              `}
-              >
-                {getCategoryCount(category)}
-              </span>
-            </motion.button>
-          ))}
-        </motion.div>
-
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeFilter}
-            className="grid grid-cols-1 vsm:grid-cols-2 sm:grid-cols-2 gap-6"
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            variants={containerVariants}
+      {/* Filter pills */}
+      <motion.div variants={itemVariants} className="flex flex-wrap gap-2 mb-6">
+        {categories.map((category) => (
+          <button
+            key={category}
+            onClick={() => setActiveFilter(category)}
+            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-150 border-[0.5px]
+              ${
+                activeFilter === category
+                  ? "bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 border-zinc-900 dark:border-zinc-100"
+                  : "bg-white dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 border-zinc-300 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-600 hover:bg-zinc-50 dark:hover:bg-zinc-700"
+              }`}
           >
-            {filteredProjects.map((project, index) => (
-              <motion.div
-                key={index}
-                className="border-[0.5px] border-zinc-300 dark:border-zinc-700 rounded-xl flex p-5 flex-col gap-4 bg-white dark:bg-zinc-800 cursor-pointer hover:border-zinc-400 dark:hover:border-zinc-600 hover:shadow-md dark:hover:shadow-zinc-900/50 transition-all duration-150 ease-out"
-                onClick={() => {
-                  setProjectId(project.id!);
-                  showSingleProjectFct();
-                }}
-                variants={itemVariants}
-                whileHover={{ y: -4, scale: 1.005 }}
-                whileTap={{ scale: 0.98 }}
-                transition={{ type: "spring", stiffness: 400, damping: 25 }}
-              >
-                <div className="flex justify-end">
-                  <div className="flex bg-zinc-100 dark:bg-zinc-900 rounded-full border-[0.5px] border-zinc-300 dark:border-zinc-600 items-center px-2.5 py-1">
-                    <span className="text-xs font-bold text-zinc-700 dark:text-zinc-300">
-                      {project.type}
-                    </span>
-                  </div>
+            {category}
+            <span
+              className={`text-xs px-1.5 py-0.5 rounded-full tabular-nums
+                ${activeFilter === category ? "bg-white/20 dark:bg-zinc-900/20" : "bg-zinc-100 dark:bg-zinc-700 text-zinc-500 dark:text-zinc-400"}`}
+            >
+              {getCategoryCount(category)}
+            </span>
+          </button>
+        ))}
+      </motion.div>
+
+      {/* Project grid */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeFilter}
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"
+          initial="hidden"
+          animate="visible"
+          exit="hidden"
+          variants={containerVariants}
+        >
+          {filteredProjects.map((project, index) => (
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              whileHover={{ y: -4 }}
+              className="border-[0.5px] border-zinc-300 dark:border-zinc-700 rounded-xl bg-white dark:bg-zinc-800 cursor-pointer hover:shadow-md dark:hover:shadow-zinc-900/50 hover:border-zinc-400 dark:hover:border-zinc-600 transition-all duration-150 overflow-hidden flex flex-col"
+              onClick={() => {
+                setProjectId(project.id!);
+                showSingleProjectFct();
+              }}
+            >
+              <div className="p-4 flex flex-col flex-1">
+                {/* Type badge */}
+                <div className="flex justify-end mb-3">
+                  <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-zinc-100 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300">
+                    {project.type}
+                  </span>
                 </div>
-                <div className="flex justify-center">
-                  <div className="w-20 h-20 rounded-xl bg-zinc-100 dark:bg-zinc-900 shadow-sm border-[0.5px] border-zinc-200 dark:border-zinc-700 p-3">
+
+                {/* Icon */}
+                <div className="flex justify-center mb-3">
+                  <div className="w-14 h-14 rounded-xl bg-zinc-100 dark:bg-zinc-900 border-[0.5px] border-zinc-200 dark:border-zinc-700 p-3">
                     {project.iconPath && (
-                      <img src={project.iconPath} alt={`${project.title} icon`} className="mr-2" />
+                      <img
+                        src={project.iconPath}
+                        alt={project.title}
+                        className="w-full h-full object-contain"
+                      />
                     )}
                   </div>
                 </div>
-                <div className="flex flex-col">
-                  <span className="font-regular text-sm font-bold dark:text-white">
-                    {project.title}
-                  </span>
-                  <span className="text-xs text-zinc-400 dark:text-zinc-500 p-0 m-0">
-                    {project.subtitle}
-                  </span>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </AnimatePresence>
 
-        <AnimatePresence>
-          {showOverlay ? (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.3 }}
-            >
-              <SingleProject showSingleProjectFct={showSingleProjectFct} projectId={projectId} />
+                {/* Title + subtitle */}
+                <h3 className="font-bold text-sm text-zinc-900 dark:text-white text-center leading-snug">
+                  {project.title}
+                </h3>
+                <p className="text-xs text-zinc-400 dark:text-zinc-500 text-center mt-1 line-clamp-2 leading-relaxed">
+                  {project.subtitle}
+                </p>
+              </div>
             </motion.div>
-          ) : null}
-        </AnimatePresence>
+          ))}
+        </motion.div>
+      </AnimatePresence>
 
-        <Footer />
-      </section>
-    </div>
+      <AnimatePresence>
+        {showOverlay && (
+          <SingleProject showSingleProjectFct={showSingleProjectFct} projectId={projectId} />
+        )}
+      </AnimatePresence>
+
+      <Footer />
+    </motion.div>
   );
 };
 

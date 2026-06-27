@@ -16,6 +16,7 @@ import {
   GitBranch,
   Kanban,
   ListChecks,
+  Heart,
 } from "phosphor-react";
 import { PROGRAMMING_LANGUAGES } from "../data/programming-languages";
 import { IDES } from "../data/ides";
@@ -266,31 +267,28 @@ const Skills: React.FC = () => {
           <Code size={24} className="text-zinc-700 dark:text-zinc-300" weight="bold" />
           <h3 className="font-bold text-xl dark:text-white">Programming Languages</h3>
         </motion.div>
-        <motion.div variants={containerVariants} className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 vsm:grid-cols-3 sm:grid-cols-4 gap-4">
           {PROGRAMMING_LANGUAGES.map((language, index) => (
             <motion.div
               key={index}
+              className="relative border-[0.5px] border-zinc-300 dark:border-zinc-700 rounded-xl flex items-center justify-center p-4 flex-col gap-3 bg-white dark:bg-zinc-800 hover:shadow-md dark:hover:shadow-zinc-900/50 transition-all duration-150"
               variants={itemVariants}
-              className="border-[0.5px] border-zinc-300 dark:border-zinc-700 rounded-xl p-5 bg-white dark:bg-zinc-800 hover:shadow-md dark:hover:shadow-zinc-900/50 transition-all duration-150"
+              whileHover={{ y: -4 }}
             >
-              <div className="flex items-start gap-4">
-                <div className="w-14 h-14 p-3 rounded-xl border-[0.5px] border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900 flex-shrink-0">
-                  {language.iconPath && (
-                    <img src={language.iconPath} alt={`${language.name} icon`} />
-                  )}
+              {language.favorite && (
+                <div className="absolute top-2 right-2 flex items-center justify-center w-5 h-5 rounded-full bg-red-50 dark:bg-red-900/25">
+                  <Heart size={10} weight="fill" className="text-red-500" />
                 </div>
-                <div className="flex-1 min-w-0">
-                  <span className="font-bold text-zinc-900 dark:text-white block">
-                    {language.name}
-                  </span>
-                  <p className="text-sm text-zinc-600 dark:text-zinc-300 mt-1 leading-relaxed">
-                    {language.description}
-                  </p>
-                </div>
+              )}
+              <div className="w-12 h-12 rounded-xl bg-zinc-100 dark:bg-zinc-900 p-2.5 border-[0.5px] border-zinc-300 dark:border-zinc-700">
+                {language.iconPath && <img src={language.iconPath} alt={`${language.name} icon`} />}
               </div>
+              <span className="font-medium text-xs text-zinc-700 dark:text-zinc-300 text-center">
+                {language.name}
+              </span>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
 
         {/* Vibe coding */}
         <motion.div variants={itemVariants} className="flex items-center gap-2 mb-3 mt-8">

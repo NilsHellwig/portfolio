@@ -76,26 +76,6 @@ const BlogPost: React.FC = () => {
     );
   };
 
-  // Generate color scheme based on date
-  const getColorScheme = (term: string | undefined) => {
-    if (!term) return { primary: "#3b82f6", secondary: "#8b5cf6", accent: "#ec4899" };
-    const [, month, year] = term.split("/").map(Number);
-    const seed = month + year;
-    const schemes = [
-      { primary: "#3b82f6", secondary: "#8b5cf6", accent: "#ec4899" }, // Blue-Purple-Pink
-      { primary: "#06b6d4", secondary: "#0891b2", accent: "#14b8a6" }, // Cyan-Teal
-      { primary: "#8b5cf6", secondary: "#a855f7", accent: "#c084fc" }, // Purple
-      { primary: "#f59e0b", secondary: "#f97316", accent: "#fb923c" }, // Orange
-      { primary: "#10b981", secondary: "#059669", accent: "#34d399" }, // Green
-      { primary: "#ec4899", secondary: "#db2777", accent: "#f472b6" }, // Pink
-      { primary: "#6366f1", secondary: "#4f46e5", accent: "#818cf8" }, // Indigo
-      { primary: "#14b8a6", secondary: "#0d9488", accent: "#2dd4bf" }, // Teal
-      { primary: "#f97316", secondary: "#ea580c", accent: "#fb923c" }, // Deep Orange
-      { primary: "#a855f7", secondary: "#9333ea", accent: "#c084fc" }, // Violet
-    ];
-    return schemes[seed % schemes.length];
-  };
-
   useEffect(() => {
     const foundBlog = BLOGS.find((el) => el.url === projectName);
     setBlog(foundBlog || null);
@@ -134,105 +114,92 @@ const BlogPost: React.FC = () => {
     }
   };
 
-  const colors = getColorScheme(blog?.term);
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-white dark:bg-zinc-900"
+      className="min-h-screen"
     >
-      {/* Hero Header with Dynamic Gradient Blobs */}
-      <div className="relative w-full min-h-[400px] overflow-hidden bg-white dark:bg-zinc-900 pb-8">
-        {/* Soft background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-zinc-50/50 via-zinc-50/30 to-white dark:from-zinc-800/50 dark:via-zinc-800/30 dark:to-zinc-900" />
+      {/* Navigation bar above hero */}
+      <motion.div
+        initial={{ opacity: 0, x: -16 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.4 }}
+        className="flex items-center gap-3 mt-10 mb-4"
+      >
+        <Link
+          to="/portfolio/blog"
+          className="group inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-zinc-700 dark:text-zinc-300 bg-white dark:bg-zinc-800 border-[0.5px] border-zinc-300 dark:border-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-700 transition-colors shadow-sm"
+        >
+          <ArrowLeft
+            size={16}
+            weight="bold"
+            className="group-hover:-translate-x-0.5 transition-transform"
+          />
+          All blog posts
+        </Link>
+        <button
+          onClick={handleShare}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-zinc-700 dark:text-zinc-300 bg-white dark:bg-zinc-800 border-[0.5px] border-zinc-300 dark:border-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-700 transition-colors shadow-sm"
+        >
+          <Share size={16} weight="bold" />
+          {copiedToClipboard ? "Copied!" : "Share"}
+        </button>
+      </motion.div>
 
-        {/* Animated Gradient Blobs */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full blur-3xl opacity-20"
-          style={{ background: `radial-gradient(circle, ${colors.primary} 0%, transparent 70%)` }}
-        />
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.4 }}
-          className="absolute top-[20%] right-[-10%] w-[600px] h-[600px] rounded-full blur-3xl opacity-15"
-          style={{ background: `radial-gradient(circle, ${colors.secondary} 0%, transparent 70%)` }}
-        />
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.6 }}
-          className="absolute bottom-[-20%] left-[30%] w-[400px] h-[400px] rounded-full blur-3xl opacity-15"
-          style={{ background: `radial-gradient(circle, ${colors.accent} 0%, transparent 70%)` }}
-        />
+      {/* Hero Card */}
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        className="rounded-2xl overflow-hidden border-[0.5px] border-zinc-300 dark:border-zinc-700 shadow-sm mb-8"
+      >
+        <div
+          className="relative px-8 pt-8 pb-10 overflow-hidden"
+          style={{ backgroundColor: blog?.bgColor }}
+        >
+          {/* Decorative circles */}
+          <div className="absolute top-0 right-0 w-80 h-80 rounded-full translate-x-1/3 -translate-y-1/3 bg-white opacity-[0.06]" />
+          <div className="absolute bottom-0 left-0 w-56 h-56 rounded-full -translate-x-1/3 translate-y-1/3 bg-white opacity-[0.06]" />
 
-        {/* Soft bottom fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-white dark:to-zinc-900" />
-
-        {/* Content Container */}
-        <div className="relative z-10 max-w-5xl mx-auto px-6 pt-0">
-          {/* Buttons */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex items-center gap-3 mb-10 mt-24"
-          >
-            <Link
-              to="/portfolio/blog"
-              className="group inline-flex items-center gap-2 px-5 py-2.5 bg-zinc-900 hover:bg-zinc-800 text-white rounded-xl transition-all shadow-lg hover:shadow-xl hover:scale-105"
+          {/* Category + date + author */}
+          <div className="flex flex-wrap items-center gap-3 mb-6 relative z-10">
+            <span
+              className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-white/20 backdrop-blur-sm"
+              style={{ color: blog?.textColor }}
             >
-              <ArrowLeft
-                size={18}
-                weight="bold"
-                className="group-hover:-translate-x-1 transition-transform"
-              />
-              <span className="font-semibold">All blog posts</span>
-            </Link>
+              {blog?.category}
+            </span>
+            <span className="text-sm opacity-60" style={{ color: blog?.textColor }}>
+              {blog?.term &&
+                convertMonth[parseInt(blog.term.split("/")[1])] +
+                  " " +
+                  blog.term.split("/")[0] +
+                  ", " +
+                  blog.term.split("/")[2]}
+            </span>
+            <span className="opacity-30" style={{ color: blog?.textColor }}>
+              •
+            </span>
+            <span className="text-sm opacity-60" style={{ color: blog?.textColor }}>
+              By {blog?.author}
+            </span>
+          </div>
 
-            <button
-              onClick={handleShare}
-              className="group inline-flex items-center gap-2 px-5 py-2.5 bg-zinc-900 hover:bg-zinc-800 text-white rounded-xl transition-all shadow-lg hover:shadow-xl hover:scale-105"
-            >
-              <Share size={18} weight="bold" />
-              <span className="font-semibold">{copiedToClipboard ? "Copied!" : "Share"}</span>
-            </button>
-          </motion.div>
-
-          {/* Title Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+          {/* Title */}
+          <h1
+            className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight relative z-10"
+            style={{ color: blog?.textColor }}
           >
-            <div className="flex items-center gap-3 text-sm text-zinc-600 dark:text-zinc-400 mb-4">
-              <span>
-                {blog?.term &&
-                  convertMonth[parseInt(blog.term.split("/")[1])] +
-                    " " +
-                    blog.term.split("/")[0] +
-                    ", " +
-                    blog.term.split("/")[2]}
-              </span>
-              <span>•</span>
-              <span>By {blog?.author}</span>
-            </div>
-
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-zinc-900 dark:text-zinc-100 leading-tight">
-              {blog?.title}
-            </h1>
-          </motion.div>
+            {blog?.title}
+          </h1>
         </div>
-      </div>
+      </motion.div>
 
       {/* Content Section */}
-      <div className="max-w-5xl mx-auto px-6 pt-8 pb-16">
+      <div className="pt-2 pb-16">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -294,8 +261,8 @@ const BlogPost: React.FC = () => {
                 <li className="text-lg text-zinc-700 dark:text-zinc-300">{children}</li>
               ),
               img: ({ src, alt }) => (
-                <div className="my-8 flex justify-center">
-                  <img src={src} alt={alt} className="w-1/2 rounded-lg shadow-md" />
+                <div className="my-8">
+                  <img src={src} alt={alt} className="w-full rounded-xl shadow-md" />
                 </div>
               ),
             }}

@@ -96,7 +96,11 @@ const NavBar: React.FC = () => {
                 onClick={() => openLinkInNewTab(social.url)}
                 whileHover={iconVariants.hover}
               >
-                <social.icon size={24} className="text-zinc-900 dark:text-zinc-100" weight="regular" />
+                <social.icon
+                  size={24}
+                  className="text-zinc-900 dark:text-zinc-100"
+                  weight="regular"
+                />
               </motion.div>
             </Tooltip>
           ))}
@@ -119,10 +123,7 @@ const NavBar: React.FC = () => {
           <AnimatePresence>
             {isDropdownOpen && (
               <>
-                <div
-                  className="fixed inset-0 z-10"
-                  onClick={() => setIsDropdownOpen(false)}
-                />
+                <div className="fixed inset-0 z-10" onClick={() => setIsDropdownOpen(false)} />
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95, y: -10 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}

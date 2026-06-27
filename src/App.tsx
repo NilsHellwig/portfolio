@@ -14,10 +14,6 @@ import NavBar from "./components/Navbar";
 import PageSelector from "./components/PageSelector";
 import CustomCursor from "./components/CustomCursor";
 
-// blog implementieren
-// darkmode?
-// texte durchlesen
-
 const App: React.FC = () => {
   const [showOverlay, setShowOverlay] = useState(false);
 
@@ -45,9 +41,9 @@ const App: React.FC = () => {
           <Route
             path="portfolio/blog/*"
             element={
-              <BlogUI>
+              <StandardUI transparentBackground={false}>
                 <Blog />
-              </BlogUI>
+              </StandardUI>
             }
           />
           <Route
@@ -116,7 +112,7 @@ const StandardUI: React.FC<{ children: ReactNode; transparentBackground: boolean
         >
           <header className="max-w-[1100px] w-[100%] mx-auto px-4 mt-0">
             <NavBar />
-            <PageSelector transparentBackground={transparentBackground} />
+            <PageSelector />
           </header>
         </div>
         <div className="page-inner flex-1 max-w-[1100px] w-[100%] mx-auto p-4 py-40">
@@ -125,10 +121,6 @@ const StandardUI: React.FC<{ children: ReactNode; transparentBackground: boolean
       </div>
     </div>
   );
-};
-
-const BlogUI: React.FC<{ children: ReactNode }> = ({ children }) => {
-  return <div className="">{children}</div>;
 };
 
 export default App;

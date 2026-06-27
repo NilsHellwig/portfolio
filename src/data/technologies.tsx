@@ -27,11 +27,7 @@ export const TECHNOLOGIES = [
   },
   {
     name: "Machine Learning",
-    technologies: [
-      "Scikit-learn",
-      "Tensorflow / Keras",
-      "Huggingface Transformer",
-    ],
+    technologies: ["Scikit-learn", "Tensorflow / Keras", "Huggingface Transformer"],
   },
   {
     name: "Databases",
