@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { PUBLICATIONS } from "../data/publications";
-import { ArrowSquareOut, FilePdf } from "phosphor-react";
+import { ArrowSquareOut, FilePdf, Medal } from "phosphor-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Footer from "../components/Footer";
 
@@ -165,6 +165,12 @@ const Publications: React.FC = () => {
                     {publication.year && (
                       <span className="text-xs font-semibold text-zinc-400 dark:text-zinc-500 tabular-nums">
                         {publication.year}
+                      </span>
+                    )}
+                    {publication.award && (
+                      <span className="inline-flex items-center gap-1 text-xs font-bold px-2.5 py-1 rounded-full bg-gradient-to-r from-slate-300 via-zinc-300 to-slate-400 dark:from-slate-500 dark:via-zinc-500 dark:to-slate-600 text-zinc-800 dark:text-zinc-50 shadow-sm">
+                        <Medal size={12} weight="fill" />
+                        {publication.award}
                       </span>
                     )}
                   </div>

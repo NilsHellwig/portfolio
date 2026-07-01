@@ -209,24 +209,44 @@ const BlogPost: React.FC = () => {
           <ReactMarkdown
             components={{
               h1: ({ children }) => (
-                <h1 className="text-4xl font-semibold text-zinc-900 dark:text-zinc-100 mt-12 mb-6">
+                <h1 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mt-12 mb-6">
                   {children}
                 </h1>
               ),
               h2: ({ children }) => (
-                <h2 className="text-3xl font-semibold text-zinc-900 dark:text-zinc-100 mt-10 mb-4">
+                <h2 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mt-14 mb-5 pb-3 border-b border-zinc-200 dark:border-zinc-700">
                   {children}
                 </h2>
               ),
               h3: ({ children }) => (
-                <h3 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mt-8 mb-3">
+                <h3 className="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 mt-10 mb-3">
                   {children}
                 </h3>
               ),
               p: ({ children }) => (
-                <p className="text-lg text-zinc-700 dark:text-zinc-300 leading-relaxed my-6 text-justify">
+                <p className="text-lg text-zinc-700 dark:text-zinc-300 leading-relaxed my-6">
                   {children}
                 </p>
+              ),
+              strong: ({ children }) => (
+                <strong className="font-semibold text-zinc-900 dark:text-white">
+                  {children}
+                </strong>
+              ),
+              em: ({ children }) => (
+                <em className="italic text-zinc-800 dark:text-zinc-200">{children}</em>
+              ),
+              blockquote: ({ children }) => (
+                <blockquote className="my-8 pl-6 pr-4 py-3 border-l-4 border-zinc-300 dark:border-zinc-600 bg-zinc-50 dark:bg-zinc-800/50 rounded-r-xl italic text-zinc-700 dark:text-zinc-300 [&>p]:my-2 [&>p:first-child]:mt-0 [&>p:last-child]:mb-0">
+                  {children}
+                </blockquote>
+              ),
+              hr: () => (
+                <div className="flex items-center justify-center gap-2 my-12" aria-hidden="true">
+                  <span className="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-600" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-600" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-600" />
+                </div>
               ),
               code({ node, inline, className, children, ...props }: any) {
                 const match = /language-(\w+)/.exec(className || "");
@@ -234,7 +254,7 @@ const BlogPost: React.FC = () => {
                   <CodeBlock language={match[1]}>{String(children)}</CodeBlock>
                 ) : (
                   <code
-                    className="px-2 py-1 bg-zinc-100 dark:bg-zinc-800 rounded text-sm font-mono text-zinc-800 dark:text-zinc-200"
+                    className="px-1.5 py-0.5 bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-md text-[0.9em] font-mono text-zinc-800 dark:text-zinc-200"
                     {...props}
                   >
                     {children}
@@ -246,24 +266,60 @@ const BlogPost: React.FC = () => {
                   target="_blank"
                   rel="noreferrer"
                   href={href}
-                  className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline"
+                  className="font-medium text-blue-600 dark:text-blue-400 underline underline-offset-2 decoration-blue-300 dark:decoration-blue-700 hover:decoration-blue-500 dark:hover:decoration-blue-400 transition-colors"
                 >
                   {children}
                 </a>
               ),
               ul: ({ children }) => (
-                <ul className="my-6 space-y-3 list-disc list-inside">{children}</ul>
+                <ul className="my-6 space-y-2.5 list-disc list-outside pl-5 marker:text-zinc-400 dark:marker:text-zinc-500">
+                  {children}
+                </ul>
               ),
               ol: ({ children }) => (
-                <ol className="my-6 space-y-3 list-decimal list-inside">{children}</ol>
+                <ol className="my-6 space-y-2.5 list-decimal list-outside pl-5 marker:text-zinc-400 dark:marker:text-zinc-500 marker:font-semibold">
+                  {children}
+                </ol>
               ),
               li: ({ children }) => (
-                <li className="text-lg text-zinc-700 dark:text-zinc-300">{children}</li>
+                <li className="text-lg text-zinc-700 dark:text-zinc-300 leading-relaxed pl-1">
+                  {children}
+                </li>
               ),
               img: ({ src, alt }) => (
-                <div className="my-8">
-                  <img src={src} alt={alt} className="w-full rounded-xl shadow-md" />
+                <figure className="my-8">
+                  <img
+                    src={src}
+                    alt={alt}
+                    className="w-full rounded-xl border-[0.5px] border-zinc-300 dark:border-zinc-700 shadow-sm"
+                  />
+                  {alt && (
+                    <figcaption className="mt-3 text-center text-sm text-zinc-500 dark:text-zinc-400 italic">
+                      {alt}
+                    </figcaption>
+                  )}
+                </figure>
+              ),
+              table: ({ children }) => (
+                <div className="my-8 overflow-x-auto rounded-xl border-[0.5px] border-zinc-300 dark:border-zinc-700">
+                  <table className="w-full text-left border-collapse">{children}</table>
                 </div>
+              ),
+              thead: ({ children }) => (
+                <thead className="bg-zinc-50 dark:bg-zinc-800/80">{children}</thead>
+              ),
+              tr: ({ children }) => (
+                <tr className="border-b border-zinc-200 dark:border-zinc-700 last:border-0">
+                  {children}
+                </tr>
+              ),
+              th: ({ children }) => (
+                <th className="px-4 py-3 text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+                  {children}
+                </th>
+              ),
+              td: ({ children }) => (
+                <td className="px-4 py-3 text-sm text-zinc-700 dark:text-zinc-300">{children}</td>
               ),
             }}
           >
