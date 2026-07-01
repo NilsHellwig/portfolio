@@ -24,7 +24,7 @@ const BlogListElement: React.FC<BlogListElementProps> = ({ blog }) => {
   const year = blog.term.split("/")[2];
 
   return (
-    <Link to={`/portfolio/blog/${blog.url}`} className="block group h-full">
+    <Link to={`/blog/${blog.url}`} className="block group h-full">
       <motion.div
         whileHover={{ y: -4 }}
         transition={{ duration: 0.2 }}

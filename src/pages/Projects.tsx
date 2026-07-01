@@ -51,7 +51,7 @@ const Projects: React.FC<ProjectsProps> = ({ showOverlay, setShowOverlay }) => {
   function showSingleProjectFct() {
     document.body.style.overflow = document.body.style.overflow === "hidden" ? "scroll" : "hidden";
     if (showOverlay) {
-      window.history.replaceState(null, "Nils Hellwig - Portfolio", "/portfolio/projects");
+      window.history.replaceState(null, "Nils Hellwig - Portfolio", "/projects");
     }
     setShowOverlay(!showOverlay);
   }

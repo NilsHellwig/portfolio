@@ -130,7 +130,7 @@ const BlogPost: React.FC = () => {
         className="flex items-center gap-3 mt-10 mb-4"
       >
         <Link
-          to="/portfolio/blog"
+          to="/blog"
           className="group inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-zinc-700 dark:text-zinc-300 bg-white dark:bg-zinc-800 border-[0.5px] border-zinc-300 dark:border-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-700 transition-colors shadow-sm"
         >
           <ArrowLeft

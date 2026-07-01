@@ -58,7 +58,7 @@ const Home: React.FC = () => {
       </motion.h2>
 
       <motion.div variants={itemVariants}>
-        <Link to="/portfolio/about">
+        <Link to="/about">
           <motion.div
             className="flex items-center gap-3 cursor-pointer duration-300 shadow-button-black px-8 py-4 text-white rounded-2xl focus:outline-none text-lg font-semibold group"
             whileHover={{ scale: 1.02, translateY: -2 }}

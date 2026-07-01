@@ -51,10 +51,10 @@ const Footer: React.FC = () => {
   ];
 
   const navigationLinks = [
-    { to: "/portfolio/about", icon: User, label: "About" },
-    { to: "/portfolio/projects", icon: Briefcase, label: "Projects" },
-    { to: "/portfolio/publications", icon: BookOpen, label: "Publications" },
-    { to: "/portfolio/blog", icon: BookOpen, label: "Blog" },
+    { to: "/about", icon: User, label: "About" },
+    { to: "/projects", icon: Briefcase, label: "Projects" },
+    { to: "/publications", icon: BookOpen, label: "Publications" },
+    { to: "/blog", icon: BookOpen, label: "Blog" },
   ];
 
   return (

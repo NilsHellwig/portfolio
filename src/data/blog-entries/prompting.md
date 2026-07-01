@@ -1,4 +1,4 @@
-![Illustration](/portfolio/blog-imgs/acl2025/prompting-1.png)
+![Illustration](/blog-imgs/acl2025/prompting-1.png)
 
 Over the past three years, my research has also involved extensive exploration of the effective use of large language models (LLMs). We probably all heard of standard techniques like prompt design, hyperparameters, and model selection. However, there are many other techniques that, whether in academic studies or industrial applications, deliver significant performance/efficiency gains, yet have received far less attention than they deserve.
 

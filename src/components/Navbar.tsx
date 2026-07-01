@@ -77,7 +77,7 @@ const NavBar: React.FC = () => {
 
   return (
     <div className="flex flex-row items-center mt-2 mb-4 justify-between relative px-2 sm:px-0">
-      <Link to="/portfolio">
+      <Link to="/">
         <motion.h1
           className="font-bold text-md hover:cursor-pointer hover:text-zinc-500 dark:text-zinc-100 dark:hover:text-zinc-400 duration-300"
           whileHover={textVariants.hover}

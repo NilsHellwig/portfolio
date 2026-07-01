@@ -31,18 +31,18 @@ const PageSelector: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navigationItems = [
-    { path: "/portfolio", label: "Home", icon: House },
-    { path: "/portfolio/about", label: "About", icon: User },
-    { path: "/portfolio/skills", label: "Skills", icon: Code },
-    { path: "/portfolio/projects", label: "Projects", icon: Briefcase },
-    { path: "/portfolio/publications", label: "Publications", icon: BookOpen },
-    { path: "/portfolio/lectures", label: "Lectures", icon: Chalkboard },
-    { path: "/portfolio/blog", label: "Blog", icon: Article },
+    { path: "/", label: "Home", icon: House },
+    { path: "/about", label: "About", icon: User },
+    { path: "/skills", label: "Skills", icon: Code },
+    { path: "/projects", label: "Projects", icon: Briefcase },
+    { path: "/publications", label: "Publications", icon: BookOpen },
+    { path: "/lectures", label: "Lectures", icon: Chalkboard },
+    { path: "/blog", label: "Blog", icon: Article },
   ];
 
   const isActive = (path: string) => {
-    if (path === "/portfolio") {
-      return location.pathname === path || location.pathname === "/portfolio/";
+    if (path === "/") {
+      return location.pathname === path;
     }
     return location.pathname.startsWith(path);
   };

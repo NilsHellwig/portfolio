@@ -466,7 +466,10 @@ export const PROJECTS: Project[] = [
       "portfolio/portfolio-4.png",
     ],
     links: [
-      { name: "GitHub Repository: Portfolio", url: "https://github.com/NilsHellwig/portfolio" },
+      {
+        name: "GitHub Repository: Portfolio",
+        url: "https://github.com/NilsHellwig/NilsHellwig.github.io",
+      },
     ],
   },
 ];

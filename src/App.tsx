@@ -23,7 +23,7 @@ const App: React.FC = () => {
       <Router>
         <Routes>
           <Route
-            path="portfolio"
+            path=""
             element={
               <StandardUI transparentBackground={true}>
                 <Home />
@@ -31,7 +31,7 @@ const App: React.FC = () => {
             }
           />
           <Route
-            path="portfolio/about"
+            path="about"
             element={
               <StandardUI transparentBackground={false}>
                 <About />
@@ -39,7 +39,7 @@ const App: React.FC = () => {
             }
           />
           <Route
-            path="portfolio/blog/*"
+            path="blog/*"
             element={
               <StandardUI transparentBackground={false}>
                 <Blog />
@@ -47,7 +47,7 @@ const App: React.FC = () => {
             }
           />
           <Route
-            path="portfolio/lectures"
+            path="lectures"
             element={
               <StandardUI transparentBackground={false}>
                 <Lectures />
@@ -55,7 +55,7 @@ const App: React.FC = () => {
             }
           />
           <Route
-            path="portfolio/projects/:projectName?"
+            path="projects/:projectName?"
             element={
               <StandardUI transparentBackground={false}>
                 <Projects showOverlay={showOverlay} setShowOverlay={setShowOverlay} />
@@ -63,7 +63,7 @@ const App: React.FC = () => {
             }
           />
           <Route
-            path="portfolio/publications"
+            path="publications"
             element={
               <StandardUI transparentBackground={false}>
                 <Publications />
@@ -71,7 +71,7 @@ const App: React.FC = () => {
             }
           />
           <Route
-            path="portfolio/skills"
+            path="skills"
             element={
               <StandardUI transparentBackground={false}>
                 <Skills />
